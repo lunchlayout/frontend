@@ -1,3 +1,4 @@
+import {Router} from "./providers"
 
 
 function App() {
@@ -5,6 +6,7 @@ function App() {
 
   return (
     <>
+      <Router/>
     </>
   )
 }
