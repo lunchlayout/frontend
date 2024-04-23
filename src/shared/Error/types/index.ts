@@ -1,1 +1,0 @@
-export type {IError} from './error'

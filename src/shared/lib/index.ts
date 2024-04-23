@@ -1,0 +1,1 @@
+export {isRejected, isPending, isFulfilled} from './predicate'

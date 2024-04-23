@@ -1,4 +1,4 @@
-import {ReduxProvider, RouterProvider} from "./providers"
+import {ReduxProvider, RouterProvider} from "."
 
 
 function App() {

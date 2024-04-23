@@ -1,3 +1,3 @@
-const BASE_URL = '/dishes';
+const BASE_URL = '/cafes';
 
 export {BASE_URL}

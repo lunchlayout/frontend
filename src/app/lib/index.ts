@@ -1,1 +1,1 @@
-export {getBaseURL} from './getFullURL'
+export {getBaseURL} from './getBaseURL'

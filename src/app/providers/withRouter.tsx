@@ -44,11 +44,10 @@ const router = createBrowserRouter([
     }
 ])
 
-function RouterProvider() {
+export default function RouterProvider() {
   return (
     <ReactRouterProvider router={router}/>
   )
 }
 
-export {RouterProvider}
 

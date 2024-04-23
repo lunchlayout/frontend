@@ -1,7 +1,7 @@
 import axios from "axios";
 import { getBaseURL } from "../lib";
 import yaml from 'node-yaml-config';
-import { IConfig } from "../../../config/types/config";
+import { IConfig } from "../../../config/types";
 
 const {server}: IConfig = yaml.load('../config/config.yaml')
 
