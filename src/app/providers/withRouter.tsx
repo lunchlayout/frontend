@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider as ReactRouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([
     {
@@ -44,11 +44,11 @@ const router = createBrowserRouter([
     }
 ])
 
-function Router() {
+function RouterProvider() {
   return (
-    <RouterProvider router={router}/>
+    <ReactRouterProvider router={router}/>
   )
 }
 
-export {Router}
+export {RouterProvider}
 

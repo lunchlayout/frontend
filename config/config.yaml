@@ -1,0 +1,9 @@
+default:
+  client:
+    host: localhost
+    port: 3000
+    protocol: 'http'
+  server:
+    host: localhost
+    port: 5000
+    protocol: 'http'

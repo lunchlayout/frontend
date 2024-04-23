@@ -1,0 +1,1 @@
+export {getDishById} from './getDishById'

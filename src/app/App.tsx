@@ -1,12 +1,13 @@
-import {Router} from "./providers"
+import {ReduxProvider, RouterProvider} from "./providers"
 
 
 function App() {
   
-
   return (
     <>
-      <Router/>
+      <ReduxProvider>
+        <RouterProvider/>
+      </ReduxProvider>
     </>
   )
 }

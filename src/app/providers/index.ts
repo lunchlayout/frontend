@@ -1,1 +1,2 @@
-export {Router} from './withRouter'
+export {RouterProvider} from './withRouter'
+export {ReduxProvider} from './withRedux'

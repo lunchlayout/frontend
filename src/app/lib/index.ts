@@ -1,0 +1,1 @@
+export {getBaseURL} from './getFullURL'
