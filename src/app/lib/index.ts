@@ -1,1 +1,0 @@
-export {getBaseURL} from './getBaseURL'

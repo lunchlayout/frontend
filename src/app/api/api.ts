@@ -1,12 +1,13 @@
 import axios from "axios";
-import { getBaseURL } from "../lib";
-import yaml from 'node-yaml-config';
-import { IConfig } from "../../../config/types";
+import { getBaseURL } from "../../shared/lib";
 
-const {server}: IConfig = yaml.load('../config/config.yaml')
 
 const $api = axios.create({
-    baseURL: getBaseURL(server),
+    baseURL: getBaseURL({
+        host: import.meta.env.VITE_SERVER_HOST,
+        port: import.meta.env.VITE_SERVER_PORT,
+        protocol: import.meta.env.VITE_SERVER_PROTOCOL,
+    }),
     headers: {
         'Content-Type': 'application/json'
     },

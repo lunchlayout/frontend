@@ -1,5 +1,4 @@
+export {actions, reducer} from './model/slice'
+
 export * as api from './api'
-
-export {cafesReducer, setIsLoading} from './model/slice'
-
-export {selectCafe} from './model/selectors'
+export * as selectors from './model/selectors'

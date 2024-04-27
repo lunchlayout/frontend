@@ -1,4 +1,5 @@
 import { createBrowserRouter, RouterProvider as ReactRouterProvider } from "react-router-dom";
+import * as Pages from "../../pages";
 
 const router = createBrowserRouter([
     {
@@ -6,9 +7,11 @@ const router = createBrowserRouter([
         children: [
             {
                 index: true,
+                element: <Pages.HomePage/>
             },
             {
-                path: 'scan'
+                path: 'scan',
+                element: <Pages.ScanPage/>
             },
         ]   
     },
@@ -20,12 +23,15 @@ const router = createBrowserRouter([
                 children: [
                     {
                         index: true,
+                        element: <Pages.DishPage/>
                     },
                     {
-                        path: 'model'
+                        path: '3d',
+                        element: <Pages.Dish3DPage/>
                     },
                     {
-                        path: 'ar'
+                        path: 'ar',
+                        element: <Pages.DishARPage/>
                     }
                 ]
             }
@@ -35,12 +41,14 @@ const router = createBrowserRouter([
         path: '/cafes',
         children: [
             {
-                path: ':cafeId'
+                path: ':cafeId',
+                element: <Pages.CafePage/>
             }
         ]
     },
     {
-        path: '/reviews'
+        path: '/reviews',
+        element: <Pages.ReviewPage/>
     }
 ])
 

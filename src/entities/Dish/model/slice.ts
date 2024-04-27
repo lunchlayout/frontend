@@ -1,7 +1,6 @@
 import { createSlice, isFulfilled, PayloadAction } from "@reduxjs/toolkit";
 import { initialState } from "./initState";
 import { isPending, isRejected } from "../../../shared/lib";
-import { IError } from "../../../shared/Error";
 import { getDishById } from "./thunks";
 import { IGetDishByIdRes } from "../types";
 
@@ -25,16 +24,19 @@ const DishesSlice = createSlice({
             state.isLoading = true;
             state.errors = [];
         })
-        builder.addMatcher(isRejected, (state, action: PayloadAction<IError>) => {
+        builder.addMatcher(isRejected, (state, action: PayloadAction<Error>) => {
             state.isLoading = false;
             state.errors.push(action.payload);
         })
     }
 })
 
-const dishesReducer = DishesSlice.reducer
-const {setIsLoading} = DishesSlice.actions
+const {reducer} = DishesSlice
+const actions = {
+    ...DishesSlice.actions,
+    getDishById
+}
 
-export {dishesReducer, setIsLoading}
+export {reducer, actions}
 
 

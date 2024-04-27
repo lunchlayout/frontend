@@ -1,8 +1,7 @@
-import { IError } from "../Error"
 
 interface IDefaultState {
     isLoading: boolean,
-    errors: IError[]
+    errors: Error[]
 }
 
 export type {IDefaultState}

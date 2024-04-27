@@ -1,1 +1,0 @@
-export type {IURL} from './url'
