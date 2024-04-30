@@ -1,0 +1,26 @@
+@import "../../../app/styles/variables",  "../../../app/styles/mixins";
+
+
+.default {
+    padding: map-get($padding, input);
+    font-family: inherit;
+    color: inherit;
+    border: none;
+    background: map-get($colors, secondary);
+    transition: map-get($transitions, control);
+    &::placeholder {
+        color: map-get($colors, primaryTextHover);
+    }
+    
+}
+.outline {
+    @include outline;
+}
+
+.primary {
+    border-radius: map-get($radius, m);
+}
+
+.secondary {
+    border-radius: map-get($radius, s);
+}

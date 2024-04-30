@@ -7,5 +7,16 @@ export default defineConfig({
   server: {
     host: 'localhost',
     port: 3000
+  },
+  resolve: {
+    alias: {
+      "@shared": "/src/shared",
+      "@pages": "/src/pages",
+      "@entities": "/src/entities",
+      "@features": "/src/features",
+      "@widgets": "/src/widgets",
+      "@app": "/src/app",
+      "@styles": "/src/app/styles"
+    }
   }
 })

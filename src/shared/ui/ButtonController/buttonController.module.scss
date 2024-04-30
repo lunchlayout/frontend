@@ -1,0 +1,16 @@
+@import "../../../app/styles/variables", "../../../app/styles/mixins";
+
+.button.button {
+    padding: map-get($padding, rounded);
+}
+.arrow {
+    fill: map-get($colors, primaryText);
+    width: 25px;
+    height: 25px;
+}
+.right {
+    transform: translateX(1px);
+}
+.left {
+    transform: translateX(-1px) rotate(180deg);
+}

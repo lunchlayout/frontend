@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wdth,wght@0,62.5..100,100..900;1,62.5..100,100..900&display=swap');
+
+$colors: (
+    primary: #803E2F,
+    primaryHover: #803E2FCC,
+    secondary: #F6F5F1,
+    secondaryHover: #F6F5F1CC,
+    tertiary: #B59C45,
+    tertiaryHover: #B59C45CC,
+    primaryText: #26273B,
+    primaryTextHover: #26273BAA,
+    track: #DFD7BF,
+    trackHover: #DFD7BFCC,
+    rate: #F5B340,
+    rateBg: #EFF0FF,
+    scanBg: #F6F5F16b
+);
+
+$radius: (
+    s: 1rem,
+    m: 1.5rem
+);
+
+$padding: (
+    button: .7rem 2.5rem,
+    input: .7rem 1rem,
+    rounded: .7rem
+);
+
+$fonts: (
+    family: 'Noto Sans',
+    sizes: (
+        h1: 1.5rem,
+        h2: 1.3rem,
+        h3: 1.1rem,
+        h4: 1rem,
+        h5: 1rem,
+        h6: 1rem
+    )
+);
+
+$transitions: (
+    link: .3s,
+    control: .5s
+);

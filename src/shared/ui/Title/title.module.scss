@@ -1,0 +1,10 @@
+@import "../../../app/styles/variables", "../../../app/styles/mixins";
+
+.default {
+    font-weight: 600;
+}
+@each $header, $size in map-get($fonts, sizes) {
+    .#{$header} {
+        font-size: $size;
+    }
+}

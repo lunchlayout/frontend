@@ -1,0 +1,16 @@
+@mixin outline {
+    outline-offset: .1rem;
+    outline: .1rem solid transparent;
+    
+    &:focus-visible {
+        outline: .1rem solid map-get($colors, primary);
+    }
+}
+
+@mixin flex($dir: row) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $dir;
+    @content;
+}

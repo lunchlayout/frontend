@@ -20,7 +20,16 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-
+    "baseUrl": "src",
+    "paths": {
+      "@pages/*": ["pages/*"],
+      "@app/*": ["app/*"],
+      "@shared/*": ["shared/*"],
+      "@entities/*": ["entities/*"],
+      "@widgets/*": ["widgets/*"],
+      "@features/*": ["features/*"],
+      "@styles/*": ["app/styles/*"]
+    },
     "plugins": [
       {
         "name": "typescript-plugin-css-modules"

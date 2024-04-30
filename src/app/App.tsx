@@ -1,5 +1,5 @@
 import {ReduxProvider, RouterProvider} from "."
-
+import "@styles/globals.scss"
 
 function App() {
   

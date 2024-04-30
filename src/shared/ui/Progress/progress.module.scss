@@ -1,0 +1,41 @@
+@import "../../../app/styles/variables", "../../../app/styles/mixins";
+
+.default {
+    position: relative;
+    @include flex;
+    border-radius: map-get($radius, m);
+    background: map-get($colors, track);
+    width: 15rem;
+    height: 1.5rem;
+    
+    
+    &::before {
+        content: '';
+        width: 0%;
+        max-width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        background: map-get($colors, primary);
+        border-radius: inherit;
+        
+    }
+}
+
+.spinner {
+    position: absolute;
+    left: 0;
+}
+@for $i from 0 through 100 {
+    .progress-#{$i} {
+        &::before {
+            width: $i * 1%;
+        }
+        & .spinner {
+            left: $i * 1%;
+            transform: translate(-50%) rotate(($i * 18 % 360) * 1deg);
+        }
+    }
+}
+
+

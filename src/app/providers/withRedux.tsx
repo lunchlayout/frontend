@@ -1,9 +1,9 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
-import { IDefaultProps } from "../../shared/types";
+import { IDefaultProps } from "@shared/types";
 import {logger} from 'redux-logger'
-import { dishesReducer } from "../../entities/Dish";
-import { cafesReducer } from "../../entities/Cafe";
+import { reducer as dishesReducer } from "@entities/Dish";
+import { reducer as cafesReducer } from "@entities/Cafe";
 
 const mainReducer = combineReducers({
     dishes: dishesReducer,

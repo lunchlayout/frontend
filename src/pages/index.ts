@@ -1,9 +1,9 @@
-import CafePage from "./cafe";
-import DishPage from "./dish";
-import Dish3DPage from "./dish3D";
-import DishARPage from "./dishAR";
-import HomePage from "./home";
-import ScanPage from "./scan";
-import ReviewPage from "./review";
+import CafePage from "./Cafe";
+import DishPage from "./Dish";
+import Dish3DPage from "./Dish3D";
+import DishARPage from "./DishAR";
+import HomePage from "./Home";
+import ScanPage from "./Scan";
+import ReviewPage from "./Review";
 
 export {CafePage, DishPage, Dish3DPage, DishARPage, HomePage, ScanPage, ReviewPage}
