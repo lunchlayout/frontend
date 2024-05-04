@@ -1,0 +1,16 @@
+@import "../../../app/styles/variables", "../../../app/styles/mixins";
+
+.form {
+    color: map-get($colors, primaryText);
+    padding-inline: map-get($padding, default) * 2;
+    @include flex(column) {
+        gap: map-get($gaps, secondary);
+    }
+    & * {
+       @include outline(false, secondary); 
+    }
+}
+
+.input {
+    align-self: stretch;
+}

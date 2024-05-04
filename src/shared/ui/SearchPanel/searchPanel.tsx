@@ -34,6 +34,7 @@ export default function SearchPanel(
                             </svg>
                         </Icon>
                         <Input
+                            type="search"
                             hasOutline={false}
                             className={styles.input}
                             value={value}

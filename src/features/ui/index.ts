@@ -3,5 +3,10 @@ import ReviewLink from "./ReviewLink";
 import CafeLink from "./CafeLink";
 import CommentSection from "./CommentSection";
 import RatingSection from "./RatingSection";
+import DishIdForm from "./DishIdForm";
+import ModelLink from "./ModelLink";
+import SearchDishesPanel from "./SearchDishesPanel";
 
-export {QuizOption, ReviewLink, CafeLink, CommentSection, RatingSection}
+export {QuizOption, ReviewLink, CafeLink, 
+    CommentSection, RatingSection, DishIdForm, 
+    ModelLink, SearchDishesPanel}

@@ -7,19 +7,20 @@ import { useParams } from "react-router-dom";
 import { Query } from "@features/context";
 import { ICafeParams } from "@app/types";
 import { debounce } from "@shared/lib";
+import { useAppDispatch } from "@app/index";
 
 
 
 export default function SearchDishesPanel({className = ''}: ISearchDishesPanelProps) {
 
     const currentPage = useSelector(selectors.currentPage);
+    const dispatch = useAppDispatch();
     const {cafeId} = useParams<keyof ICafeParams>() as ICafeParams;
-    
     const [query, setQuery] = useState('');
 
     const searchDishes = debounce(async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        actions.getCafeById({cafeId, query, page: currentPage});
+        await dispatch(actions.getCafeById({cafeId, query, page: currentPage}));
     }, 300) 
 
     return (

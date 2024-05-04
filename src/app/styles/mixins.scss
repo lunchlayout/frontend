@@ -1,13 +1,13 @@
-@mixin outline($within: false) {
+@mixin outline($within: false, $color: primary) {
     outline-offset: .1rem;
     outline: .1rem solid transparent;
     
     &:focus-visible {
-        outline: .1rem solid map-get($colors, primary);
+        outline: .1rem solid map-get($colors, $color);
     }
     @if $within {
         &:focus-within {
-            outline: .1rem solid map-get($colors, primary);
+            outline: .1rem solid map-get($colors, $color);
         }
     }
 

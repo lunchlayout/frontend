@@ -1,6 +1,6 @@
 @import "../../../app/styles/variables", "../../../app/styles/mixins";
 
-.modelLink.modelLink {
+.modelLink {
     padding: map-get($padding, rounded);
     border: .1rem solid map-get($colors, secondary);
 }
