@@ -1,7 +1,13 @@
-export type {IDefaultProps} from './component'
+export type {IDefaultProps} from './defaultComponent'
 
-export type {IDefaultState} from './state'
+export type {IDefaultState} from './defaultState'
 
 export type {IURL} from './url'
 
-export type {IntRange} from './range'
+export type {IFormControlContext} from './formControlContext'
+
+export type {IntRange} from './intRange'
+
+export {EmojiTypes} from './emojiTypes'
+
+export type {ValueOf} from './valueOf'

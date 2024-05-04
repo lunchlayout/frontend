@@ -9,6 +9,7 @@ export interface IInputProps extends IDefaultProps {
     customType?: InputCustomType,
     value?: string,
     hasOutline?: boolean,
-    required?: boolean
+    required?: boolean,
+    disabled?: boolean,
     onChange?: ChangeEventHandler<HTMLInputElement>
 }

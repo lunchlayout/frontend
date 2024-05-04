@@ -1,0 +1,23 @@
+@import "../../../app/styles/variables", "../../../app/styles/mixins";
+
+.default {
+    
+    border-radius: map-get($radius, m);
+    background: map-get($colors, secondary);
+    transition: map-get($transitions, control);
+    @include outline(true);
+    
+}
+
+.label {
+    @include flex;
+    
+    padding: map-get($padding, rounded);
+    cursor: pointer;
+}
+
+.input {
+    border-radius: map-get($radius, s);
+    padding: map-get($padding, rounded);
+
+}

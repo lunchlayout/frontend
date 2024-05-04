@@ -13,8 +13,16 @@ $colors: (
     trackHover: #DFD7BFCC,
     rate: #F5B340,
     rateBg: #EFF0FF,
-    scanBg: #F6F5F16b
+    scanBg: #F6F5F16b,
 );
+
+$quizColors: (
+    selected: #40aceecc,
+    correct: #33a22bcc,
+    wrong: #df3a3acc,
+    default: #EFF0FF
+);
+
 
 $radius: (
     s: 1rem,
@@ -24,7 +32,8 @@ $radius: (
 $padding: (
     button: .7rem 2.5rem,
     input: .7rem 1rem,
-    rounded: .7rem
+    rounded: .7rem,
+    default: 1rem
 );
 
 $fonts: (
@@ -43,3 +52,8 @@ $transitions: (
     link: .3s,
     control: .5s
 );
+
+$gaps: (
+    primary: 2rem,
+    secondary: 1rem
+)

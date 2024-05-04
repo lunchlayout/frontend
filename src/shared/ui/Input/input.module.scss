@@ -6,6 +6,7 @@
     font-family: inherit;
     color: inherit;
     border: none;
+    outline: none;
     background: map-get($colors, secondary);
     transition: map-get($transitions, control);
     &::placeholder {

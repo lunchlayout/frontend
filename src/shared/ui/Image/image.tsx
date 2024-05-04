@@ -1,6 +1,7 @@
 import { IImageProps } from "./image.props"
 import styles from "./image.module.scss"
 
+
 export default function Image(
     {
         src,
@@ -10,12 +11,13 @@ export default function Image(
         srcset,
         decoding = "auto",
         height,
-        width
+        width,
+        className = ''
     }: IImageProps) {
 
         return (
             <img
-                className={styles.default} 
+                className={[styles.default, className].join(' ')} 
                 src={src}
                 alt={alt}
                 loading={loading}

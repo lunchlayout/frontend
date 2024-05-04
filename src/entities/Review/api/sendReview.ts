@@ -4,7 +4,7 @@ import { ISendReviewReq, ISendReviewRes } from "../types";
 
 async function sendReview(req: ISendReviewReq) {
     const res = await $api.post<ISendReviewRes>(`${BASE_URL}`, req)
-    return res.data
+    return res.headers.Location
 }
 
 export {sendReview}

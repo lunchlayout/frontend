@@ -1,6 +1,7 @@
 import type {Meta, StoryObj} from '@storybook/react'
 import BackLink from './backLink'
 import {withRouter} from 'storybook-addon-remix-react-router'
+
 const meta = {
     component: BackLink,
     decorators: [withRouter()],

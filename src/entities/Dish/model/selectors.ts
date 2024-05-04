@@ -1,8 +1,8 @@
-import { IDishesState } from "../types";
+import { IRootState } from "@app/types";
 
-const selectDish = (state: IDishesState) => state.dish;
+const dish = (state: IRootState) => state.dishes.dish;
 
-export {selectDish}
+export {dish}
 
 
 

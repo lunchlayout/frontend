@@ -1,5 +1,3 @@
-interface ISendReviewRes {
-    insertedId: string
-}
+interface ISendReviewRes {}
 
 export type {ISendReviewRes}

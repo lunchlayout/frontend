@@ -1,0 +1,18 @@
+@import "../../../../app/styles/variables", "../../../../app/styles/mixins";
+
+.default {
+    max-width: 100%;
+    @include content;
+    @include flex(column) {
+        gap: calc(map-get($gaps, secondary) / 4);
+        align-items: flex-start;
+    }
+}
+.label {
+    color: map-get($colors, secondaryHover);
+}
+.content {
+    max-width: inherit;
+}
+
+

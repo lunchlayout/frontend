@@ -26,7 +26,7 @@ export const ButtonPrimary: Story = {
     },
     args: {
         children: "Продолжить",
-        type: 'primary'
+        customType: 'primary'
         
     }
 }
@@ -40,7 +40,7 @@ export const ButtonSecondary: Story = {
     },
     args: {
         children: "Продолжить",
-        type: 'secondary'
+        customType: 'secondary'
         
     }
 }
@@ -54,7 +54,7 @@ export const ButtonTertiary: Story = {
     },
     args: {
         children: "Продолжить",
-        type: 'tertiary'
+        customType: 'tertiary'
         
     }
 }
@@ -68,7 +68,22 @@ export const ButtonSimple: Story = {
   },
   args: {
       children: "Продолжить",
-      type: 'simple'
+      customType: 'simple'
+      
+  }
+}
+export const ButtonDisabled: Story = {
+  parameters: {
+    docs: {
+      description: {
+          story: "disabled button"
+      },
+    },
+  },
+  args: {
+      children: "Продолжить",
+      customType: 'primary',
+      disabled: true
       
   }
 }

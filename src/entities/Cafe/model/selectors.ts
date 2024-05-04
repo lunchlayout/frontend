@@ -1,8 +1,15 @@
-import { ICafesState } from "../types";
+import { IRootState } from "@app/types";
 
-const selectCafe = (state: ICafesState) => state.cafe;
 
-export {selectCafe}
+const сafe = (state: IRootState) => state.cafes.cafe;
+
+const pageCnt = (state: IRootState) => state.cafes.pageCnt;
+
+const currentPage = (state: IRootState) => state.cafes.currentPage;
+
+
+
+export {сafe, pageCnt, currentPage}
 
 
 

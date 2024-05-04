@@ -8,18 +8,21 @@ export default function Input(
         customType="primary", 
         value,
         onChange,
+        disabled = false,
         hasOutline = true,
-        required = false
+        required = false,
+        className = ''
     }: IInputProps) {
 
         return (
             <input 
                 type={type} 
-                className={[styles.default, styles[customType], (hasOutline ? styles.outline : '')].join(' ')} 
+                className={[styles.default, styles[customType], (hasOutline ? styles.outline : ''), className].join(' ')} 
                 onChange={onChange}
                 value={value}
                 placeholder={placeholder}
                 required={required}
+                disabled={disabled}
             />
         )
 }

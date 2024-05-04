@@ -1,8 +1,8 @@
 import { ILinkProps } from "./link.props"
 import styles from "./link.module.scss"
 
-export default function BackLink({type="simple", to, children}: ILinkProps) {
+export default function Link({type="simple", to, children, className = ''}: ILinkProps) {
     return (
-        <a href={to} className={[styles.default, styles[type]].join(' ')}>{children}</a>
+        <a href={to} className={[styles.default, styles[type], className].join(' ')}>{children}</a>
     )
 }

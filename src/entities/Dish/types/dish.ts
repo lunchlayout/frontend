@@ -1,4 +1,4 @@
-type Unit = "ml" | "g"
+type Unit = "мл" | "г"
 
 interface INutritionalValue {
     calories: number,

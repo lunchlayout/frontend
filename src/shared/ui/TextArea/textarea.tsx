@@ -8,7 +8,8 @@ export default function TextArea(
         value,
         onChange,
         hasOutline = true,
-        required = false
+        required = false,
+        className = ''
     }: ITextAreaProps) {
         function handleChange(e: ChangeEvent<HTMLTextAreaElement>) {
             onChange && onChange(e);
@@ -19,7 +20,7 @@ export default function TextArea(
         }
         return (
             <textarea 
-                className={[styles.default, (hasOutline ? styles.outline : '')].join(' ')} 
+                className={[styles.default, (hasOutline ? styles.outline : ''), className].join(' ')} 
                 onChange={handleChange}
                 value={value}
                 placeholder={placeholder}

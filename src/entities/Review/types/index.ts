@@ -1,4 +1,5 @@
-export type {IReview} from './review'
+export type {IReview, IRating} from './review'
+
+export type {ISendReviewReq} from './request'
 
 export type {ISendReviewRes} from './response'
-export type {ISendReviewReq} from './request'

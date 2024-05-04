@@ -10,11 +10,15 @@ const CafesSlice = createSlice({
     reducers: {
         setIsLoading(state, action: PayloadAction<boolean>) {
             state.isLoading = action.payload
+        },
+        setCurrentPage(state, action: PayloadAction<number>) {
+            state.currentPage = action.payload
         }
     },
     extraReducers: builder => {
         builder.addCase(getCafeById.fulfilled, (state, action: PayloadAction<IGetCafeByIdRes>) => {
-            state.cafe = action.payload
+            state.pageCnt = action.payload.pageCnt;
+            state.cafe = {...action.payload, pageCnt: undefined} as Omit<IGetCafeByIdRes, 'pageCnt'>
         })
         builder.addMatcher(isFulfilled, (state) => {
             state.isLoading = false;

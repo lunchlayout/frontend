@@ -1,10 +1,16 @@
-@mixin outline {
+@mixin outline($within: false) {
     outline-offset: .1rem;
     outline: .1rem solid transparent;
     
     &:focus-visible {
         outline: .1rem solid map-get($colors, primary);
     }
+    @if $within {
+        &:focus-within {
+            outline: .1rem solid map-get($colors, primary);
+        }
+    }
+
 }
 
 @mixin flex($dir: row) {
@@ -12,5 +18,19 @@
     justify-content: center;
     align-items: center;
     flex-direction: $dir;
+    @content;
+}
+
+@mixin glass($background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0))) {
+    background: $background;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    @content;
+}
+
+@mixin content {
+    text-align: justify;
+    overflow-wrap: break-word;
+    font-weight: 500;
     @content;
 }

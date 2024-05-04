@@ -4,7 +4,7 @@
 .default {
     padding: map-get($padding, input);
     font-family: inherit;
-    color: inherit;
+    color: map-get($colors, primaryText);
     border: none;
     background: map-get($colors, secondary);
     transition: outline map-get($transitions, control);

@@ -8,5 +8,11 @@ import EmojiRadio from "./EmojiRadio";
 import Title from "./Title";
 import Progress from "./Progress";
 import Image from "./Image";
+import FormSection from "./FormSection";
+import Icon from "./Icon";
+import SearchPanel from "./SearchPanel";
 
-export {BackLink, Button, Link, Input, TextArea, ButtonController, EmojiRadio, Title, Progress, Image}
+
+export {BackLink, Button, Link, Input, 
+    TextArea, ButtonController, EmojiRadio, Title, 
+    Progress, Image, FormSection, Icon, SearchPanel}
