@@ -6,7 +6,8 @@ import RatingSection from "./RatingSection";
 import DishIdForm from "./DishIdForm";
 import ModelLink from "./ModelLink";
 import SearchDishesPanel from "./SearchDishesPanel";
+import DishesPaginationControl from "./DishesPaginationControl";
 
 export {QuizOption, ReviewLink, CafeLink, 
     CommentSection, RatingSection, DishIdForm, 
-    ModelLink, SearchDishesPanel}
+    ModelLink, SearchDishesPanel, DishesPaginationControl}

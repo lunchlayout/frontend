@@ -5,5 +5,6 @@ type DirectionType = "left" | "right"
 
 export interface IButtonControllerProps extends IDefaultProps {
     direction?: DirectionType
-    onClick?: MouseEventHandler<HTMLButtonElement>
+    onClick?: MouseEventHandler<HTMLButtonElement>,
+    disabled?: boolean
 }

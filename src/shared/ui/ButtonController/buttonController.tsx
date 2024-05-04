@@ -1,9 +1,9 @@
 import { IButtonControllerProps } from "./buttonController.props"
 import styles from "./buttonController.module.scss"
 import Button from '../Button'
-export default function ButtonController({direction = "right", onClick}: IButtonControllerProps) {
+export default function ButtonController({direction = "right", onClick, disabled = false}: IButtonControllerProps) {
     return (
-        <Button type="simple" onClick={onClick} className={styles.button}>
+        <Button disabled={disabled} customType="simple" onClick={onClick} className={styles.button}>
             <svg className={[styles.arrow, styles[direction]].join(' ')} viewBox="0 0 18 23" xmlns="http://www.w3.org/2000/svg">
                 <path d="M4.13924 0.185549C5.03315 0.184512 5.90017 0.482288 6.59447 1.0288L16.2265 8.74638C16.6043
                  9.03825 16.9093 9.40904 17.119 9.83116C17.3286 10.2533 17.4375 10.7159 17.4375 11.1845C17.4375

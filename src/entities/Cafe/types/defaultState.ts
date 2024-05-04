@@ -6,7 +6,7 @@ interface ICafesState extends IDefaultState {
     cafe?: ICafe & {
         dishes: Pick<IDishWithId, 'dishId' | 'name' | 'img' | 'amount' | 'unit'>[]
     },
-    pageCnt?: number
+    pageCnt: number
     currentPage: number    
 }
 
