@@ -1,3 +1,5 @@
+import { IContent } from "./content";
+
 type Unit = "мл" | "г";
 
 interface INutritionalValue {
@@ -17,12 +19,15 @@ interface IDish {
 	allergens: string[];
 	nutritionalValue: INutritionalValue;
 }
+interface IDishWithContent extends IDish {
+	content: IContent;
+}
 
-interface IDishWithCafeId extends IDish {
+interface IDishWithCafeId extends IDishWithContent {
 	cafeId: string;
 }
 
-interface IDishWithId extends IDish {
+interface IDishWithId extends IDishWithContent {
 	dishId: string;
 }
 

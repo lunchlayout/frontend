@@ -13,4 +13,4 @@ const Store = configureStore({
 	middleware: getDefaultMiddl => getDefaultMiddl().concat(logger),
 });
 
-export { Store };
+export { Store, mainReducer };

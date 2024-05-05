@@ -1,10 +1,10 @@
-import { Store } from "@app/index";
+import { mockStore } from "@app/index";
 import { Provider } from "react-redux";
 import PaginationControl from "./paginationControl";
 
 export default function MockProvider() {
 	return (
-		<Provider store={Store}>
+		<Provider store={mockStore}>
 			<PaginationControl />
 		</Provider>
 	);

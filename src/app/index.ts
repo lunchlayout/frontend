@@ -5,7 +5,7 @@ export { RouterProvider, ReduxProvider };
 
 export { $api } from "./api/api";
 
-export { Store } from "./model/store";
+export { mockStore, Store } from "./model";
 
 export { useAppDispatch } from "./hook/useAppDispatch";
 

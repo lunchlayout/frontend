@@ -1,6 +1,6 @@
 import { createSlice, isFulfilled, PayloadAction } from "@reduxjs/toolkit";
 import { initialState } from "./initState";
-import { isPending, isRejected } from "../../../shared/lib";
+import { isPending, isRejected } from "@shared/lib";
 import { getDishById } from "./thunks";
 import { IGetDishByIdRes } from "../types";
 

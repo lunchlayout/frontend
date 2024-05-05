@@ -1,0 +1,27 @@
+@import "../../../../app/styles/variables", "../../../../app/styles/mixins";
+
+.default {
+	padding: 0;
+	@include flex {
+		gap: map-get($gaps, secondary);
+		flex-wrap: wrap;
+		justify-content: flex-start;
+	}
+	@include glass(map-get($colors, primaryHover));
+	border-radius: map-get($radius, m);
+}
+
+.dishLink {
+	padding: 0;
+	@include outline(false, secondary);
+	transition:
+		background,
+		outline map-get($transitions, link);
+	&:hover {
+		outline: 0.1rem solid map-get($colors, secondary);
+	}
+}
+
+.dish {
+	width: 100%;
+}

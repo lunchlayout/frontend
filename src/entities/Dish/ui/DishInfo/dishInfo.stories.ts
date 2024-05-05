@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import DishInfo from "./dishInfo";
+import DishInfo from "./mockProvider";
 
 const meta = {
 	component: DishInfo,
@@ -20,21 +20,7 @@ export const DishInfoSimple: Story = {
 			},
 		},
 	},
-	args: {
-		description:
-			"Нежный клубничный торт - сладкая симфония ароматной клубники",
-		allergens: ["Сахар"],
-		ingredients: ["Сливки", "Клубника"],
-		nutritionalValue: {
-			fats: 200,
-			calories: 450,
-			carbohydrates: 250,
-			proteins: 50,
-		},
-		amount: 1000,
-		unit: "г",
-		img: "https://rsute.ru/wp-content/uploads/2020/12/maxresdefault-59.jpg",
-	},
+	args: {},
 };
 
 export default meta;

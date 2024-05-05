@@ -1,11 +1,11 @@
 import { mockStore } from "@app/index";
-import SendDishIdPanel from "./sendDishIdPanel";
+import DishInfo from "./dishInfo";
 import { Provider } from "react-redux";
 
 export default function MockProvider() {
 	return (
 		<Provider store={mockStore}>
-			<SendDishIdPanel />
+			<DishInfo />
 		</Provider>
 	);
 }

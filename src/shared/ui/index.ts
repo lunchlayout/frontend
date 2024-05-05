@@ -13,6 +13,7 @@ import Icon from "./Icon";
 import SearchPanel from "./SearchPanel";
 import VideoFrame from "./VideoFrame";
 import PaginationControl from "./PaginationControl";
+import QRLink from "./QRLink";
 
 export {
 	BackLink,
@@ -30,4 +31,5 @@ export {
 	SearchPanel,
 	VideoFrame,
 	PaginationControl,
+	QRLink,
 };

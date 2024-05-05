@@ -1,5 +1,5 @@
-import { IDefaultState } from "../../../shared/types";
-import { IDishWithId } from "../../Dish/types";
+import { IDefaultState } from "@shared/types";
+import { IDishWithId } from "@entities/Dish/types";
 import { ICafe } from "./cafe";
 
 interface ICafesState extends IDefaultState {

@@ -3,6 +3,7 @@
 .default {
 	@include flex {
 		gap: map-get($gaps, secondary);
+		justify-content: flex-start;
 		align-items: flex-start;
 	}
 	padding: map-get($padding, default);
