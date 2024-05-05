@@ -1,1 +1,1 @@
-export {default} from './dishInfoSection'
+export { default } from "./dishInfoSection";

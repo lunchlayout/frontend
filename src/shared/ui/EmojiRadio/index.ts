@@ -1,1 +1,1 @@
-export {default} from './emojiRadio'
+export { default } from "./emojiRadio";

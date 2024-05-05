@@ -1,7 +1,6 @@
-
 interface IDefaultState {
-    isLoading: boolean,
-    errors: Error[]
+	isLoading: boolean;
+	errors: Error[];
 }
 
-export type {IDefaultState}
+export type { IDefaultState };

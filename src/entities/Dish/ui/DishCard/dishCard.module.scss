@@ -1,36 +1,35 @@
 @import "../../../../app/styles/variables", "../../../../app/styles/mixins";
 
 .default {
-    @include flex {
-        gap: map-get($gaps, secondary);
-        align-items: flex-start;
-    }
-    padding: map-get($padding, default);
-    padding-right: calc(map-get($padding, default) * 3);
-    border-radius: map-get($radius, m);
+	@include flex {
+		gap: map-get($gaps, secondary);
+		align-items: flex-start;
+	}
+	padding: map-get($padding, default);
+	padding-right: calc(map-get($padding, default) * 3);
+	border-radius: map-get($radius, m);
 
-    background: map-get($colors, secondary);
-    transition: map-get($transitions, link);
+	background: map-get($colors, secondary);
+	transition: map-get($transitions, link);
 
-    &:hover {
-        color: map-get($colors, secondary);
-        background: map-get($colors, primaryHover);
-        & .image {
-            outline: .1rem solid map-get($colors, secondary);
-        }
-    }
+	&:hover {
+		color: map-get($colors, secondary);
+		background: map-get($colors, primaryHover);
+		& .image {
+			outline: 0.1rem solid map-get($colors, secondary);
+		}
+	}
 }
 .info {
-    @include flex(column) {
-        align-items: flex-start;
-        gap: calc(map-get($gaps, secondary) / 4);
-        
-    }
-    padding-top: calc(map-get($gaps, secondary) / 3);
-    @include content;
+	@include flex(column) {
+		align-items: flex-start;
+		gap: calc(map-get($gaps, secondary) / 4);
+	}
+	padding-top: calc(map-get($gaps, secondary) / 3);
+	@include content;
 }
 .image {
-    flex: 0;
-    @include outline;
-    transition: map-get($transitions, link);
+	flex: 0;
+	@include outline;
+	transition: map-get($transitions, link);
 }

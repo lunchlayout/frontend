@@ -1,1 +1,1 @@
-export {default} from './backLink'
+export { default } from "./backLink";

@@ -1,59 +1,58 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wdth,wght@0,62.5..100,100..900;1,62.5..100,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wdth,wght@0,62.5..100,100..900;1,62.5..100,100..900&display=swap");
 
 $colors: (
-    primary: #803E2F,
-    primaryHover: #803E2FCC,
-    secondary: #F6F5F1,
-    secondaryHover: #F6F5F1CC,
-    tertiary: #B59C45,
-    tertiaryHover: #B59C45CC,
-    primaryText: #26273B,
-    primaryTextHover: #26273BAA,
-    track: #DFD7BF,
-    trackHover: #DFD7BFCC,
-    rate: #F5B340,
-    rateBg: #EFF0FF,
-    scanBg: #F6F5F16b,
+	primary: #803e2f,
+	primaryHover: #803e2fcc,
+	secondary: #f6f5f1,
+	secondaryHover: #f6f5f1cc,
+	tertiary: #b59c45,
+	tertiaryHover: #b59c45cc,
+	primaryText: #26273b,
+	primaryTextHover: #26273baa,
+	track: #dfd7bf,
+	trackHover: #dfd7bfcc,
+	rate: #f5b340,
+	rateBg: #eff0ff,
+	scanBg: #f6f5f16b,
 );
 
 $quizColors: (
-    selected: #40aceecc,
-    correct: #33a22bcc,
-    wrong: #df3a3acc,
-    default: #EFF0FF
+	selected: #40aceecc,
+	correct: #33a22bcc,
+	wrong: #df3a3acc,
+	default: #eff0ff,
 );
 
-
 $radius: (
-    s: 1rem,
-    m: 1.5rem
+	s: 1rem,
+	m: 1.5rem,
 );
 
 $padding: (
-    button: .7rem 2.5rem,
-    input: .7rem 1rem,
-    rounded: .7rem,
-    default: 1rem
+	button: 0.7rem 2.5rem,
+	input: 0.7rem 1rem,
+	rounded: 0.7rem,
+	default: 1rem,
 );
 
 $fonts: (
-    family: 'Noto Sans',
-    sizes: (
-        h1: 1.5rem,
-        h2: 1.3rem,
-        h3: 1.1rem,
-        h4: 1rem,
-        h5: 1rem,
-        h6: 1rem
-    )
+	family: "Noto Sans",
+	sizes: (
+		h1: 1.5rem,
+		h2: 1.3rem,
+		h3: 1.1rem,
+		h4: 1rem,
+		h5: 1rem,
+		h6: 1rem,
+	),
 );
 
 $transitions: (
-    link: .3s,
-    control: .5s
+	link: 0.3s,
+	control: 0.5s,
 );
 
 $gaps: (
-    primary: 2rem,
-    secondary: 1rem
-)
+	primary: 2rem,
+	secondary: 1rem,
+);

@@ -1,20 +1,26 @@
-import { Link } from "@shared/ui"
-import styles from "./modelLink.module.scss"
-import { useLocation } from "react-router-dom"
+import { Link } from "@shared/ui";
+import styles from "./modelLink.module.scss";
+import { useLocation } from "react-router-dom";
 import { ReactElement, SVGProps } from "react";
 
-
 export default function ModelLink() {
-    let {pathname} = useLocation();
+	let { pathname } = useLocation();
 
-    const mode = pathname.slice(pathname.lastIndexOf('/') + 1);
+	const mode = pathname.slice(pathname.lastIndexOf("/") + 1);
 
-    let linkSvg: ReactElement<SVGProps<SVGSVGElement>>;
+	let linkSvg: ReactElement<SVGProps<SVGSVGElement>>;
 
-    if (mode === '3d') {
-        pathname = pathname.slice(0, pathname.lastIndexOf('/')) + 'ar'
-        linkSvg = <svg className={styles.icon} viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M16.4289 31.562L6.93222 26.0456C6.43963 25.7643 6.05463 25.3799 5.77722 24.8925C5.49982
+	if (mode === "3d") {
+		pathname = pathname.slice(0, pathname.lastIndexOf("/")) + "ar";
+		linkSvg = (
+			<svg
+				className={styles.icon}
+				viewBox="0 0 36 36"
+				fill="none"
+				xmlns="http://www.w3.org/2000/svg"
+			>
+				<path
+					d="M16.4289 31.562L6.93222 26.0456C6.43963 25.7643 6.05463 25.3799 5.77722 24.8925C5.49982
                      24.4051 5.36111 23.8833 5.36111 23.3272V12.2964C5.36111 11.7403 5.49982 11.2185 5.77722 10.7311C6.05593
                       10.2437 6.44093 9.85936 6.93222 9.57807L16.4289 4.06362C16.9215 3.78103 17.4452 3.63973 18 3.63973C18.5548
                        3.63973 19.0785 3.78103 19.5711 4.06362L29.0678 9.57807C29.5604 9.85936 29.9454 10.2437 30.2228
@@ -33,25 +39,39 @@ export default function ModelLink() {
                                     0.200012 33.9691 0.505938 34.5822 1.11779C35.1941 1.72964 35.5 2.47047 35.5
                                      3.34029V7.97779H33.5556ZM8.30111 11.0558L7.30556 11.6236V12.802L17.0278 18.332V29.6681L18
                                       30.2261L18.9722 29.67V18.332L28.6944 12.802V11.6236L27.6989 11.0558L18 16.6597L8.30111
-                                       11.0558Z"/>
-                </svg>
-    } else {
-        if (mode === 'ar') {
-            pathname = pathname.slice(0, pathname.lastIndexOf('/'));
-        }
-        pathname = pathname + '3d'
-        linkSvg = <svg className={styles.icon} viewBox="0 0 38 39" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M19 10.1137V20.0057M19 20.0057L9.27773 24.9518M19 20.0057L28.7222 24.9518M19 2.20001L36.5
+                                       11.0558Z"
+				/>
+			</svg>
+		);
+	} else {
+		if (mode === "ar") {
+			pathname = pathname.slice(0, pathname.lastIndexOf("/"));
+		}
+		pathname = pathname + "3d";
+		linkSvg = (
+			<svg
+				className={styles.icon}
+				viewBox="0 0 38 39"
+				fill="none"
+				xmlns="http://www.w3.org/2000/svg"
+			>
+				<path
+					d="M19 10.1137V20.0057M19 20.0057L9.27773 24.9518M19 20.0057L28.7222 24.9518M19 2.20001L36.5
                     11.1029V26.6235C36.5 27.3181 36.2925 28.0004 35.8983 28.6019C35.5042 29.2034 34.9373 29.7029 34.2547
                     30.0501L21.2453 36.6699C20.5627 37.0172 19.7883 37.2 19 37.2C18.2117 37.2 17.4373 37.0172 16.7547
                     36.6699L3.74532 30.0501C3.06267 29.7029 2.49579 29.2034 2.10166 28.6019C1.70753 28.0004 1.50002
-                    27.3181 1.5 26.6235V11.1029L19 2.20001Z" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-    }
+                    27.3181 1.5 26.6235V11.1029L19 2.20001Z"
+					stroke-width="3"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+				/>
+			</svg>
+		);
+	}
 
-    return (
-        <Link to={pathname} type="secondary" className={styles.modelLink}>
-            {linkSvg}
-        </Link>
-    )
+	return (
+		<Link to={pathname} type="secondary" className={styles.modelLink}>
+			{linkSvg}
+		</Link>
+	);
 }

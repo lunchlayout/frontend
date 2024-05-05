@@ -1,12 +1,12 @@
 @import "../../../app/styles/variables", "../../../app/styles/mixins";
 
 .modelLink {
-    padding: map-get($padding, rounded);
-    border: .1rem solid map-get($colors, secondary);
+	padding: map-get($padding, rounded);
+	border: 0.1rem solid map-get($colors, secondary);
 }
 
 .icon {
-    stroke: map-get($colors, secondary);
-    width: 38px;
-    height: 39px;
+	stroke: map-get($colors, secondary);
+	width: 38px;
+	height: 39px;
 }

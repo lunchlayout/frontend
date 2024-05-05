@@ -1,3 +1,3 @@
-const BASE_URL = '/dishes';
+const BASE_URL = "/dishes";
 
-export {BASE_URL}
+export { BASE_URL };

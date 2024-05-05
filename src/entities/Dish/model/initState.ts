@@ -1,8 +1,8 @@
 import { IDishesState } from "../types";
 
 const initialState: IDishesState = {
-    isLoading: false,
-    errors: []
-}
+	isLoading: false,
+	errors: [],
+};
 
-export {initialState}
+export { initialState };

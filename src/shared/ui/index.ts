@@ -14,8 +14,20 @@ import SearchPanel from "./SearchPanel";
 import VideoFrame from "./VideoFrame";
 import PaginationControl from "./PaginationControl";
 
-
-export {BackLink, Button, Link, Input, 
-    TextArea, ButtonController, EmojiRadio, Title, 
-    Progress, Image, FormSection, Icon, SearchPanel, 
-    VideoFrame, PaginationControl}
+export {
+	BackLink,
+	Button,
+	Link,
+	Input,
+	TextArea,
+	ButtonController,
+	EmojiRadio,
+	Title,
+	Progress,
+	Image,
+	FormSection,
+	Icon,
+	SearchPanel,
+	VideoFrame,
+	PaginationControl,
+};

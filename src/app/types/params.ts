@@ -1,9 +1,9 @@
 interface ICafeParams {
-    cafeId: string,
+	cafeId: string;
 }
 
 interface IDishParams {
-    dishId: string,
+	dishId: string;
 }
 
-export type {ICafeParams, IDishParams}
+export type { ICafeParams, IDishParams };

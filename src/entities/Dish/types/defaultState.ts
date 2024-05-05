@@ -2,7 +2,7 @@ import { IDefaultState } from "../../../shared/types";
 import { IDishWithCafeId } from "../../Dish/types";
 
 interface IDishesState extends IDefaultState {
-    dish?: IDishWithCafeId  
+	dish?: IDishWithCafeId;
 }
 
-export type {IDishesState}
+export type { IDishesState };

@@ -1,8 +1,7 @@
 @import "../../../app/styles/variables", "../../../app/styles/mixins";
 
 .default {
-    @include flex {
-        gap: map-get($gaps, secondary);
-    };
+	@include flex {
+		gap: map-get($gaps, secondary);
+	}
 }
-

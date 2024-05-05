@@ -1,34 +1,32 @@
 @import "../../../app/styles/variables", "../../../app/styles/mixins";
 
 .default {
-    padding: map-get($padding, rounded);
-    border-radius: map-get($radius, m);
-    & svg {
-        fill: map-get($colors, primaryText);
-    }
-    @include flex {
-        display: inline-flex;
-    };
-    
+	padding: map-get($padding, rounded);
+	border-radius: map-get($radius, m);
+	& svg {
+		fill: map-get($colors, primaryText);
+	}
+	@include flex {
+		display: inline-flex;
+	}
 }
 .simple {
-    background: map-get($colors, secondary);
+	background: map-get($colors, secondary);
 }
 .primary {
-    background: map-get($colors, primary);
-    & svg {
-        fill: map-get($colors, secondary);
-    }
+	background: map-get($colors, primary);
+	& svg {
+		fill: map-get($colors, secondary);
+	}
 }
 
 .secondary {
-    background: map-get($colors, tertiary);
-    & svg {
-        fill: map-get($colors, secondary);
-    }
+	background: map-get($colors, tertiary);
+	& svg {
+		fill: map-get($colors, secondary);
+	}
 }
 
 .tertiary {
-    background: map-get($colors, track);
+	background: map-get($colors, track);
 }
-

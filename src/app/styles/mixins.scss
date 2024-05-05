@@ -1,36 +1,42 @@
 @mixin outline($within: false, $color: primary) {
-    outline-offset: .1rem;
-    outline: .1rem solid transparent;
-    
-    &:focus-visible {
-        outline: .1rem solid map-get($colors, $color);
-    }
-    @if $within {
-        &:focus-within {
-            outline: .1rem solid map-get($colors, $color);
-        }
-    }
+	outline-offset: 0.1rem;
+	outline: 0.1rem solid transparent;
 
+	&:focus-visible {
+		outline: 0.1rem solid map-get($colors, $color);
+	}
+	@if $within {
+		&:focus-within {
+			outline: 0.1rem solid map-get($colors, $color);
+		}
+	}
 }
 
 @mixin flex($dir: row) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: $dir;
-    @content;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: $dir;
+	@content;
 }
 
-@mixin glass($background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0))) {
-    background: $background;
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    @content;
+@mixin glass(
+	$background:
+		linear-gradient(
+			135deg,
+			rgba(255, 255, 255, 0.1),
+			rgba(255, 255, 255, 0)
+		)
+) {
+	background: $background;
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
+	@content;
 }
 
 @mixin content {
-    text-align: justify;
-    overflow-wrap: break-word;
-    font-weight: 500;
-    @content;
+	text-align: justify;
+	overflow-wrap: break-word;
+	font-weight: 500;
+	@content;
 }

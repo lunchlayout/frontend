@@ -1,6 +1,6 @@
 interface ICafe {
-    name: string, 
-    logo: string
+	name: string;
+	logo: string;
 }
 
-export type {ICafe}
+export type { ICafe };

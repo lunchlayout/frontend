@@ -1,46 +1,44 @@
 @import "../../../app/styles/variables", "../../../app/styles/mixins";
 
 .default {
-    padding: map-get($padding, button);
-    border-radius: map-get($radius, m);
-    border: none;
-    cursor: pointer;
-    font-family: inherit;
-    color: map-get($colors, secondary);
-    text-decoration: none;
-    transition: background map-get($transitions, link);
-    @include flex {
-        display: inline-flex;
-    };
-    @include outline;
-    
+	padding: map-get($padding, button);
+	border-radius: map-get($radius, m);
+	border: none;
+	cursor: pointer;
+	font-family: inherit;
+	color: map-get($colors, secondary);
+	text-decoration: none;
+	transition: background map-get($transitions, link);
+	@include flex {
+		display: inline-flex;
+	}
+	@include outline;
 }
 .simple {
-    background: map-get($colors, secondary);
-    color: map-get($colors, primaryText);
-    &:hover {
-        background:  map-get($colors, secondaryHover);
-    }
+	background: map-get($colors, secondary);
+	color: map-get($colors, primaryText);
+	&:hover {
+		background: map-get($colors, secondaryHover);
+	}
 }
 .primary {
-    background: map-get($colors, primary);
-    &:hover {
-        background:  map-get($colors, primaryHover);
-    }
+	background: map-get($colors, primary);
+	&:hover {
+		background: map-get($colors, primaryHover);
+	}
 }
 
 .secondary {
-    background: map-get($colors, tertiary);
-    &:hover {
-        background:  map-get($colors, tertiaryHover);
-    }
+	background: map-get($colors, tertiary);
+	&:hover {
+		background: map-get($colors, tertiaryHover);
+	}
 }
 
 .tertiary {
-    background: map-get($colors, track);
-    color: map-get($colors, primaryText);
-    &:hover {
-        background:  map-get($colors, trackHover);
-    }
+	background: map-get($colors, track);
+	color: map-get($colors, primaryText);
+	&:hover {
+		background: map-get($colors, trackHover);
+	}
 }
-

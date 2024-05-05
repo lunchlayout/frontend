@@ -1,3 +1,3 @@
-const BASE_URL = '/reviews';
+const BASE_URL = "/reviews";
 
-export {BASE_URL}
+export { BASE_URL };

@@ -1,1 +1,1 @@
-export {getDishById} from './getDishById'
+export { getDishById } from "./getDishById";

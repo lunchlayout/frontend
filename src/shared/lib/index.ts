@@ -1,7 +1,6 @@
-export {isRejected, isPending, isFulfilled} from './predicate'
-export {getBaseURL} from './getBaseURL'
+export { isRejected, isPending, isFulfilled } from "./predicate";
+export { getBaseURL } from "./getBaseURL";
 
+export { debounce } from "./debounce";
 
-export {debounce} from './debounce'
-
-export {createGenericContext} from './createGenericContext'
+export { createGenericContext } from "./createGenericContext";

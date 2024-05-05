@@ -8,6 +8,14 @@ import ModelLink from "./ModelLink";
 import SearchDishesPanel from "./SearchDishesPanel";
 import DishesPaginationControl from "./DishesPaginationControl";
 
-export {QuizOption, ReviewLink, CafeLink, 
-    CommentSection, RatingSection, DishIdForm, 
-    ModelLink, SearchDishesPanel, DishesPaginationControl}
+export {
+	QuizOption,
+	ReviewLink,
+	CafeLink,
+	CommentSection,
+	RatingSection,
+	DishIdForm,
+	ModelLink,
+	SearchDishesPanel,
+	DishesPaginationControl,
+};

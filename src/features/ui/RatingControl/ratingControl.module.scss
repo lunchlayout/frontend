@@ -1,11 +1,12 @@
 @import "../../../app/styles/variables", "../../../app/styles/mixins";
 
 .default {
-    @include flex {
-        gap: map-get($gaps, primary);
-    }
-    border: none;
-    background: map-get($colors, secondary);
-    border-radius: map-get($radius, m);
-    padding: calc(map-get($padding, default) / 1.3) map-get($padding, default) * 1.5;
+	@include flex {
+		gap: map-get($gaps, primary);
+	}
+	border: none;
+	background: map-get($colors, secondary);
+	border-radius: map-get($radius, m);
+	padding: calc(map-get($padding, default) / 1.3) map-get($padding, default) *
+		1.5;
 }

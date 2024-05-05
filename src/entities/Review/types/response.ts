@@ -1,3 +1,3 @@
 interface ISendReviewRes {}
 
-export type {ISendReviewRes}
+export type { ISendReviewRes };

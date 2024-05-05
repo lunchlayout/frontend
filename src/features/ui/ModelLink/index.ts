@@ -1,1 +1,1 @@
-export {default} from './modelLink'
+export { default } from "./modelLink";

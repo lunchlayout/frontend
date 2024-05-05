@@ -1,19 +1,19 @@
 @import "../../../app/styles/variables", "../../../app/styles/mixins";
 
 .default {
-    @include flex;
-    width: 26px;
-    height: 26px;
-    color: inherit;
-    text-decoration: none;
-    @include outline;
-    border-radius: map-get($radius, m);
+	@include flex;
+	width: 26px;
+	height: 26px;
+	color: inherit;
+	text-decoration: none;
+	@include outline;
+	border-radius: map-get($radius, m);
 }
 .arrow {
-    fill: currentColor;
-    width: 100%;
-    transition: fill map-get($transitions, link);
-    &:hover {
-        fill: map-get($colors, primaryTextHover);
-    }
+	fill: currentColor;
+	width: 100%;
+	transition: fill map-get($transitions, link);
+	&:hover {
+		fill: map-get($colors, primaryTextHover);
+	}
 }

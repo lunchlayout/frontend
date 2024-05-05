@@ -1,14 +1,13 @@
 @import "../../../app/styles/variables", "../../../app/styles/mixins";
 
 .default {
-    border-radius: map-get($radius, m);
-    object-fit: cover;
-    object-position: center;
-    width: 100%;
+	border-radius: map-get($radius, m);
+	object-fit: cover;
+	object-position: center;
+	width: 100%;
 }
 @supports (image-rendering: crisp-edges) {
-    .default {
-        image-rendering: crisp-edges;
-    }
+	.default {
+		image-rendering: crisp-edges;
+	}
 }
-

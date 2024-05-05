@@ -1,28 +1,25 @@
 @import "../../../app/styles/variables", "../../../app/styles/mixins";
 
-
 .ratio {
-    appearance: none;
+	appearance: none;
 }
 .emoji {
-    width: 70%;
-    stroke: map-get($colors, primaryText);
-    transition: map-get($transitions, control);
+	width: 70%;
+	stroke: map-get($colors, primaryText);
+	transition: map-get($transitions, control);
 }
 .ratio:checked ~ .emoji {
-    stroke: map-get($colors, rate);
+	stroke: map-get($colors, rate);
 }
 .label {
-    @include flex;
-    @include outline;
-    width: 40px;
-    height: 40px;
-    border-radius: map-get($radius, m);
-    cursor: pointer;
-    transition: map-get($transitions, control);
-
+	@include flex;
+	@include outline;
+	width: 40px;
+	height: 40px;
+	border-radius: map-get($radius, m);
+	cursor: pointer;
+	transition: map-get($transitions, control);
 }
 .label:has(.ratio:checked) {
-    background: map-get($colors, rateBg);;
+	background: map-get($colors, rateBg);
 }
-

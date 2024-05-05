@@ -1,39 +1,35 @@
 @import "../../../app/styles/variables", "../../../app/styles/mixins";
 
 .ratio {
-    appearance: none;
+	appearance: none;
 }
 
 .option {
-    @include flex {
-        justify-content: flex-start;
-    };
-    @include outline;
-    padding: map-get($padding, input);
-    border-radius: map-get($radius, m);
-    cursor: pointer;
-    min-width: 10rem;
-    transition: map-get($transitions, link);
+	@include flex {
+		justify-content: flex-start;
+	}
+	@include outline;
+	padding: map-get($padding, input);
+	border-radius: map-get($radius, m);
+	cursor: pointer;
+	min-width: 10rem;
+	transition: map-get($transitions, link);
 }
 
-
 @each $type, $color in $quizColors {
-    @if $type != selected {
-        .#{$type} {
-            background: $color;
-            @if $type == default {
-                color: map-get($colors, primaryText);
-            } @else {
-                color: map-get($colors, secondary);
-            }
-            
-        }
-    }
-
+	@if $type != selected {
+		.#{$type} {
+			background: $color;
+			@if $type == default {
+				color: map-get($colors, primaryText);
+			} @else {
+				color: map-get($colors, secondary);
+			}
+		}
+	}
 }
 
 .option:has(.ratio:checked) {
-    background: map-get($quizColors, selected);
-    color: map-get($colors, secondary);
-    
+	background: map-get($quizColors, selected);
+	color: map-get($colors, secondary);
 }

@@ -1,4 +1,4 @@
-export {actions, reducer} from './model/slice'
+export { actions, reducer } from "./model/slice";
 
-export * as api from './api'
-export * as selectors from './model/selectors'
+export * as api from "./api";
+export * as selectors from "./model/selectors";

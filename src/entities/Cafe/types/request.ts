@@ -1,7 +1,7 @@
 interface IGetCafeByIdReq {
-    cafeId: string,
-    query?: string,
-    page?: number
+	cafeId: string;
+	query?: string;
+	page?: number;
 }
 
-export type {IGetCafeByIdReq}
+export type { IGetCafeByIdReq };

@@ -1,1 +1,1 @@
-export {default} from './searchDishesPanel'
+export { default } from "./searchDishesPanel";

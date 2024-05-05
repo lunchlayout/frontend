@@ -1,23 +1,23 @@
-@import 'variables';
+@import "variables";
 
 *,
 *::before,
 *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 ul,
 ol {
-    padding-left: map-get($padding, default);
+	padding-left: map-get($padding, default);
 }
 
 body {
-    min-height: 100vh;
-    line-height: 1.5;
-    font: {
-        family: map-get($fonts, family), sans-serif;
-    }
-    color: map-get($colors, primaryText);
+	min-height: 100vh;
+	line-height: 1.5;
+	font: {
+		family: map-get($fonts, family), sans-serif;
+	}
+	color: map-get($colors, primaryText);
 }

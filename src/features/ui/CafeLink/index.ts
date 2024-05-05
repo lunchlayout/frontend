@@ -1,1 +1,1 @@
-export {default} from './cafeLink'
+export { default } from "./cafeLink";

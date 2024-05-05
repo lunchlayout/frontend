@@ -1,1 +1,1 @@
-export {default} from './dishCard'
+export { default } from "./dishCard";

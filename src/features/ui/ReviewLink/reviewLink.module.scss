@@ -1,12 +1,11 @@
 @import "../../../app/styles/variables", "../../../app/styles/mixins";
 
-.reviewLink {    
-    padding: map-get($padding, rounded);
+.reviewLink {
+	padding: map-get($padding, rounded);
 }
 
 .icon {
-    fill: map-get($colors, secondary);
-    width: 26px;
-    height: 26px;
+	fill: map-get($colors, secondary);
+	width: 26px;
+	height: 26px;
 }
-

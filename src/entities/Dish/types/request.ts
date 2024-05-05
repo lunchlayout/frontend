@@ -1,5 +1,5 @@
 interface IGetDishByIdReq {
-    dishId: string
+	dishId: string;
 }
 
-export type {IGetDishByIdReq}
+export type { IGetDishByIdReq };

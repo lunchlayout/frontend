@@ -1,1 +1,1 @@
-export {default} from './sendDishIdPanel'
+export { default } from "./sendDishIdPanel";

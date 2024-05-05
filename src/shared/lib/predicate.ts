@@ -1,13 +1,13 @@
-import { Action } from "@reduxjs/toolkit"
+import { Action } from "@reduxjs/toolkit";
 
 function isPending(action: Action) {
-    return action.type.endsWith('pending')
+	return action.type.endsWith("pending");
 }
 function isRejected(action: Action) {
-    return action.type.endsWith('rejected')
+	return action.type.endsWith("rejected");
 }
 function isFulfilled(action: Action) {
-    return action.type.endsWith('fulfilled')
+	return action.type.endsWith("fulfilled");
 }
 
-export {isFulfilled, isPending, isRejected}
+export { isFulfilled, isPending, isRejected };

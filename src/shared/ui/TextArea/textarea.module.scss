@@ -1,19 +1,18 @@
-@import "../../../app/styles/variables",  "../../../app/styles/mixins";
-
+@import "../../../app/styles/variables", "../../../app/styles/mixins";
 
 .default {
-    padding: map-get($padding, input);
-    font-family: inherit;
-    color: map-get($colors, primaryText);
-    border: none;
-    background: map-get($colors, secondary);
-    transition: outline map-get($transitions, control);
-    border-radius: map-get($radius, s);
-    resize: vertical;
-    &::placeholder {
-        color: map-get($colors, primaryTextHover);
-    }
+	padding: map-get($padding, input);
+	font-family: inherit;
+	color: map-get($colors, primaryText);
+	border: none;
+	background: map-get($colors, secondary);
+	transition: outline map-get($transitions, control);
+	border-radius: map-get($radius, s);
+	resize: vertical;
+	&::placeholder {
+		color: map-get($colors, primaryTextHover);
+	}
 }
 .outline {
-    @include outline;
+	@include outline;
 }

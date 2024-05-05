@@ -6,4 +6,12 @@ import HomePage from "./Home";
 import ScanPage from "./Scan";
 import ReviewPage from "./Review";
 
-export {CafePage, DishPage, Dish3DPage, DishARPage, HomePage, ScanPage, ReviewPage}
+export {
+	CafePage,
+	DishPage,
+	Dish3DPage,
+	DishARPage,
+	HomePage,
+	ScanPage,
+	ReviewPage,
+};

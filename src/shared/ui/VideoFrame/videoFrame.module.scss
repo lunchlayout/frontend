@@ -1,5 +1,5 @@
 @import "../../../app/styles/variables", "../../../app/styles/mixins";
 
 .default {
-    border-radius: map-get($radius, m);
+	border-radius: map-get($radius, m);
 }

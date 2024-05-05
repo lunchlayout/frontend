@@ -1,1 +1,1 @@
-export {default} from './ratingControl'
+export { default } from "./ratingControl";

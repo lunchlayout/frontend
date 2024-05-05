@@ -1,1 +1,1 @@
-export {default} from './dishARPage'
+export { default } from "./dishARPage";

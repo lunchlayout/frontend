@@ -1,1 +1,1 @@
-export {default} from './dishIdForm'
+export { default } from "./dishIdForm";

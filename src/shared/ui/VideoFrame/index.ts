@@ -1,1 +1,1 @@
-export {default} from './videoFrame'
+export { default } from "./videoFrame";
