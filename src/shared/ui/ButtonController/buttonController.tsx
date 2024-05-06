@@ -5,13 +5,14 @@ export default function ButtonController({
 	direction = "right",
 	onClick,
 	disabled = false,
+	className = "",
 }: IButtonControllerProps) {
 	return (
 		<Button
 			disabled={disabled}
 			customType="simple"
 			onClick={onClick}
-			className={styles.button}
+			className={[styles.button, className].join(" ")}
 		>
 			<svg
 				className={[styles.arrow, styles[direction]].join(" ")}

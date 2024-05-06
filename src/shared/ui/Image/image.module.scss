@@ -4,7 +4,7 @@
 	border-radius: map-get($radius, m);
 	object-fit: cover;
 	object-position: center;
-	width: 100%;
+	max-width: 100%;
 }
 @supports (image-rendering: crisp-edges) {
 	.default {

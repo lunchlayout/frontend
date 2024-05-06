@@ -14,6 +14,7 @@ import SearchPanel from "./SearchPanel";
 import VideoFrame from "./VideoFrame";
 import PaginationControl from "./PaginationControl";
 import QRLink from "./QRLink";
+import SEO from "./SEO";
 
 export {
 	BackLink,
@@ -32,4 +33,5 @@ export {
 	VideoFrame,
 	PaginationControl,
 	QRLink,
+	SEO,
 };

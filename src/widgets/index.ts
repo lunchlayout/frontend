@@ -1,3 +1,3 @@
 import SendDishIdPanel from "./SendDishIdPanel";
-
-export { SendDishIdPanel };
+import DishesPanel from "./DishesPanel";
+export { SendDishIdPanel, DishesPanel };

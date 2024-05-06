@@ -17,4 +17,10 @@
 .input {
 	border-radius: map-get($radius, s);
 	padding: map-get($padding, rounded);
+
+	flex-grow: 1;
+	&::-webkit-search-cancel-button {
+		cursor: pointer;
+		margin-left: map-get($padding, default);
+	}
 }

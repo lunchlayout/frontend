@@ -15,12 +15,14 @@ export default function PaginationControl({
 				disabled={currentPage < 2}
 				direction="left"
 				onClick={onLeftClick}
+				className={styles.control}
 			/>
 			<span>{`${currentPage}/${pageCnt}`}</span>
 			<ButtonController
 				disabled={currentPage >= pageCnt}
 				direction="right"
 				onClick={onRightClick}
+				className={styles.control}
 			/>
 		</div>
 	);

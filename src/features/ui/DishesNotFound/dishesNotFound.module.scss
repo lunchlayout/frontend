@@ -1,11 +1,11 @@
 @import "../../../app/styles/variables", "../../../app/styles/mixins";
 
 .default {
-	@include flex {
+	@include flex(column) {
 		gap: map-get($gaps, secondary);
 	}
+	color: map-get($colors, secondary);
 }
-
-.control {
-	@include outline(false, secondary);
+.icon {
+	background: transparent;
 }

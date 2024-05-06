@@ -1,6 +1,6 @@
+import { SEO } from "@shared/ui";
 import React from "react";
-import { IDefaultProps } from "../../shared/types";
 
-export default function ReviewPage({ children }: IDefaultProps) {
-	return <div>reviewPage</div>;
+export default function ReviewPage() {
+	return <SEO title={`Обратная связь — Lunch Layout`} />;
 }

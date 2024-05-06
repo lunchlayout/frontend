@@ -1,5 +1,5 @@
 @import "../../../app/styles/variables", "../../../app/styles/mixins";
 
 .default {
-	@include outline(true, secondary);
+	color: map-get($colors, secondary);
 }

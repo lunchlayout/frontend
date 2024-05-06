@@ -7,6 +7,7 @@ import DishIdForm from "./DishIdForm";
 import ModelLink from "./ModelLink";
 import SearchDishesPanel from "./SearchDishesPanel";
 import DishesPaginationControl from "./DishesPaginationControl";
+import DishesNotFound from "./DishesNotFound";
 
 export {
 	QuizOption,
@@ -18,4 +19,5 @@ export {
 	ModelLink,
 	SearchDishesPanel,
 	DishesPaginationControl,
+	DishesNotFound,
 };

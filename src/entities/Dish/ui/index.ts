@@ -1,4 +1,5 @@
 import DishCard from "./DishCard";
 import DishInfo from "./DishInfo";
+import DishList from "./DishList";
 
-export { DishCard, DishInfo };
+export { DishCard, DishInfo, DishList };

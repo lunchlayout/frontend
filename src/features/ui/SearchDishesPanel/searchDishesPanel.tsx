@@ -6,8 +6,8 @@ import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { Query } from "@features/context";
 import { ICafeParams } from "@app/types";
-import { debounce } from "@shared/lib";
 import { useAppDispatch } from "@app/index";
+import styles from "./searchDishesPanel.module.scss";
 
 export default function SearchDishesPanel({
 	className = "",
@@ -17,13 +17,12 @@ export default function SearchDishesPanel({
 	const { cafeId } = useParams<keyof ICafeParams>() as ICafeParams;
 	const [query, setQuery] = useState("");
 
-	const searchDishes = debounce(async (e: FormEvent<HTMLFormElement>) => {
+	async function searchDishes(e: FormEvent<HTMLFormElement>) {
 		e.preventDefault();
 		await dispatch(
 			actions.getCafeById({ cafeId, query, page: currentPage }),
 		);
-	}, 300);
-
+	}
 	return (
 		<Query.Context.Provider
 			value={{
@@ -34,7 +33,7 @@ export default function SearchDishesPanel({
 			<SearchPanel
 				disabled={!currentPage}
 				onSubmit={searchDishes}
-				className={[className].join(" ")}
+				className={[styles.default, className].join(" ")}
 				placeholder="Найти блюдо"
 			/>
 		</Query.Context.Provider>

@@ -3,6 +3,7 @@ import { IDishesPaginationControlProps } from "./dishesPaginationControl.props";
 import { useSelector } from "react-redux";
 import { actions, selectors } from "@entities/Cafe";
 import { useAppDispatch } from "@app/index";
+import styles from "./dishesPaginationControl.module.scss";
 
 export default function DishesPaginationControl({
 	className = "",
@@ -24,7 +25,7 @@ export default function DishesPaginationControl({
 			pageCnt={pageCnt}
 			onLeftClick={prevPage}
 			onRightClick={nextPage}
-			className={className}
+			className={[styles.default, className].join(" ")}
 		/>
 	);
 }
