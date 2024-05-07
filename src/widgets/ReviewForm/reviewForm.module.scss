@@ -1,0 +1,9 @@
+@import "../../app/styles/variables", "../../app/styles/mixins";
+
+.default {
+	max-width: 30rem;
+	@include flex(column) {
+		gap: map-get($gaps, primary);
+		align-items: stretch;
+	}
+}

@@ -3,6 +3,7 @@
 .default {
 	@include flex {
 		gap: map-get($gaps, primary);
+		justify-content: space-around;
 	}
 	background: map-get($colors, secondary);
 	border-radius: map-get($radius, m);

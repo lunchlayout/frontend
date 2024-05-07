@@ -3,7 +3,7 @@ import { Button, Input, SEO, TextArea } from "@shared/ui";
 import EmojiRadio from "@shared/ui/EmojiRadio";
 import Progress from "../../shared/ui/Progress/progress";
 import QuizOption from "@features/ui/QuizOption";
-import { CommentSection } from "@features/ui";
+import { CommentSection } from "@entities/Review/ui";
 import { Comment } from "@features/context";
 
 import SearchDishesPanel from "@features/ui/SearchDishesPanel";

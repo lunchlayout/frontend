@@ -15,6 +15,7 @@ import VideoFrame from "./VideoFrame";
 import PaginationControl from "./PaginationControl";
 import QRLink from "./QRLink";
 import SEO from "./SEO";
+import FormControl from "./FormControl";
 
 export {
 	BackLink,
@@ -34,4 +35,5 @@ export {
 	PaginationControl,
 	QRLink,
 	SEO,
+	FormControl
 };

@@ -6,7 +6,7 @@ export default function CommentSection() {
 	const { value, handleChange } = Comment.useContext();
 
 	return (
-		<FormSection title="Что вы думаете о нас?">
+		<FormSection title="Есть ли у вас мысли, которыми вы бы хотели поделиться?">
 			<TextArea
 				className={styles.textarea}
 				value={value}

@@ -1,0 +1,11 @@
+@import "../../../app/styles/variables", "../../../app/styles/mixins";
+
+.default {
+	@include glass(map-get($colors, primaryHover));
+	color: map-get($colors, secondary);
+	padding: map-get($padding, default);
+	border-radius: map-get($radius, m);
+}
+.lowerText {
+	font-size: map-get(map-get($fonts, sizes), h2);
+}

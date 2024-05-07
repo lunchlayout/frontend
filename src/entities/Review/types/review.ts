@@ -1,7 +1,7 @@
 type IRating = 1 | 2 | 3 | 4;
 
 interface IReview {
-	text: string;
+	comment: string;
 	rating: IRating;
 }
 
