@@ -8,8 +8,8 @@ interface IStory {
 	img: string;
 }
 
-interface IQuetion {
-	text: string;
+interface IQuiz {
+	question: string;
 	answer: string;
 	options: string[];
 }
@@ -21,7 +21,7 @@ interface IModel {
 interface IContent extends IModel {
 	stories: IStory[];
 	videos: IVideo[];
-	quetions: IQuetion[];
+	quizzes: IQuiz[];
 }
 
-export type { IVideo, IStory, IQuetion, IModel, IContent };
+export type { IVideo, IStory, IQuiz, IModel, IContent };

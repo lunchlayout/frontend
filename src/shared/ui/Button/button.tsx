@@ -7,7 +7,7 @@ export default function Button({
 	children,
 	onClick,
 	className = "",
-	formId = "",
+	formId,
 	disabled = false,
 }: IButtonProps) {
 	return (

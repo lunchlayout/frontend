@@ -1,9 +1,9 @@
 import { Rating } from "@features/context";
 import styles from "./ratingControl.module.scss";
 import { EmojiRadio } from "@shared/ui";
-import { EmojiTypes, KeyOf } from "@shared/types";
+import { EmojiTypes } from "@shared/types";
 
-type EmojiKeys = KeyOf<typeof EmojiTypes>;
+type EmojiKeys = keyof typeof EmojiTypes;
 
 export default function RatingControl() {
 	const { value, handleChange } = Rating.useContext();

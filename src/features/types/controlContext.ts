@@ -10,4 +10,6 @@ type ICommentContext = IFormControlContext<string, HTMLTextAreaElement>;
 
 type IQueryContext = IFormControlContext<string, HTMLInputElement>;
 
-export type { IRatingContext, ICommentContext, IQueryContext };
+type IQuizContext = IFormControlContext<string | undefined, HTMLInputElement>;
+
+export type { IRatingContext, ICommentContext, IQueryContext, IQuizContext };

@@ -4,11 +4,15 @@ import styles from "./quizOption.module.scss";
 export default function QuizOption({
 	type = "default",
 	checked = false,
-	children,
+	label,
 	onChange,
+	disabled = false,
 }: IQuizOptionProps) {
 	return (
-		<label tabIndex={0} className={[styles.option, styles[type]].join(" ")}>
+		<label
+			tabIndex={disabled ? -1 : 0}
+			className={[styles.option, styles[type]].join(" ")}
+		>
 			<input
 				type="radio"
 				checked={checked}
@@ -16,8 +20,10 @@ export default function QuizOption({
 				className={styles.ratio}
 				aria-hidden="true"
 				tabIndex={-1}
+				name={label}
+				disabled={disabled}
 			/>
-			{children}
+			{label}
 		</label>
 	);
 }

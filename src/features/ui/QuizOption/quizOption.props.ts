@@ -1,11 +1,12 @@
 import { IDefaultProps } from "@shared/types";
-import { ReactNode, ChangeEventHandler } from "react";
+import { ChangeEventHandler } from "react";
 
-type QuizOptionType = "correct" | "wrong" | "default";
+export type QuizOptionType = "correct" | "wrong" | "default";
 
 export interface IQuizOptionProps extends IDefaultProps {
-	children: ReactNode;
+	label: string;
 	type?: QuizOptionType;
+	disabled?: boolean;
 	checked: boolean;
 	onChange: ChangeEventHandler<HTMLInputElement>;
 }
