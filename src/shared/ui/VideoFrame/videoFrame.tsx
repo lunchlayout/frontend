@@ -1,23 +1,26 @@
 import { IVideoFrameProps } from "./videoFrame.props";
 import styles from "./videoFrame.module.scss";
+import ReactPlayer from "react-player";
+import {ButtonController} from "@shared/ui";
+import React from "react";
 
 export default function VideoFrame({
 	src,
-	title = "",
 	className = "",
-	width,
+	width = "100%",
 	height,
 }: IVideoFrameProps) {
 	return (
-		<iframe
-			className={[styles.default, className].join(" ")}
-			width={width}
-			height={height}
-			src={src}
-			title={title}
-			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-			referrerPolicy="strict-origin-when-cross-origin"
-			allowFullScreen
-		></iframe>
+		<div className={[styles.default, className].join(' ')}>
+			<ReactPlayer
+					url={src}
+					light
+					playing
+					controls
+					playIcon={<ButtonController/>}
+					width={width}
+					height={height}
+			/>
+		</div>
 	);
 }

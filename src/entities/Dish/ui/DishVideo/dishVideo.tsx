@@ -9,7 +9,7 @@ export default function DishVideo({
 }: IDishVideoProps) {
 	return (
 		<article className={[styles.default, className].join(" ")}>
-			<VideoFrame src={link} title={title} width={400} height={230} />
+			<VideoFrame src={link} title={title} height={300} />
 			<p className={styles.text}>{title}</p>
 		</article>
 	);
