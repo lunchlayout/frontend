@@ -4,4 +4,7 @@ const dish = (state: IRootState) => state.dishes.dish;
 
 const dishContent = (state: IRootState) => state.dishes.dish?.content;
 
-export { dish, dishContent };
+const modelLoadingProgress = (state: IRootState) =>
+	state.dishes.modelLoadingProgress;
+
+export { dish, dishContent, modelLoadingProgress };

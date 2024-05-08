@@ -3,6 +3,7 @@ import { initialState } from "./initState";
 import { isPending, isRejected } from "@shared/lib";
 import { getDishById } from "./thunks";
 import { IGetDishByIdRes } from "../types";
+import { IProgress } from "@shared/ui/Progress";
 
 const DishesSlice = createSlice({
 	name: "dishes",
@@ -11,11 +12,15 @@ const DishesSlice = createSlice({
 		setIsLoading(state, action: PayloadAction<boolean>) {
 			state.isLoading = action.payload;
 		},
+		setModelLoadingProgress(state, action: PayloadAction<IProgress>) {
+			state.modelLoadingProgress = action.payload;
+		},
 	},
 	extraReducers: builder => {
 		builder.addCase(
 			getDishById.fulfilled,
 			(state, action: PayloadAction<IGetDishByIdRes>) => {
+				delete state.modelLoadingProgress;
 				state.dish = action.payload;
 			},
 		);

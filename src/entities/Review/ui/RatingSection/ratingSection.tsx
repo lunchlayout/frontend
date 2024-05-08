@@ -1,5 +1,5 @@
 import { FormSection } from "@shared/ui";
-import {RatingControl} from "@features/ui";
+import { RatingControl } from "@features/ui";
 
 export default function RatingSection() {
 	return (

@@ -1,0 +1,27 @@
+@import "../../../app/styles/variables", "../../../app/styles/mixins";
+
+.default {
+	position: absolute;
+	inset: 0;
+	z-index: map-get($zIndex, modal);
+}
+.modal {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.overlay {
+	position: absolute;
+	inset: 0;
+
+	@include glass(map-get($colors, primaryTextHover));
+}
+
+.close {
+	position: absolute;
+	right: -1rem;
+	top: -1rem;
+	border: 0.1rem solid map-get($colors, secondary);
+}

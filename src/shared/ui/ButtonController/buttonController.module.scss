@@ -1,13 +1,9 @@
 @import "../../../app/styles/variables", "../../../app/styles/mixins";
 
-.button.button {
-	padding: map-get($padding, rounded);
+.button {
+	@include icon(map-get($colors, primaryText));
 }
-.arrow {
-	fill: map-get($colors, primaryText);
-	width: 25px;
-	height: 25px;
-}
+
 .right {
 	transform: translateX(1px);
 }

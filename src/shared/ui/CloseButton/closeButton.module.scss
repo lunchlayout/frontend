@@ -1,0 +1,9 @@
+@import "../../../app/styles/variables", "../../../app/styles/mixins";
+
+.default.default:where(.primary, .secondary) {
+	@include icon;
+}
+
+.default.default:where(.tertiary, .simple) {
+	@include icon(map-get($colors, primaryText));
+}

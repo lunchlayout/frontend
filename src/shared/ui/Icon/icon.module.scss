@@ -1,11 +1,7 @@
 @import "../../../app/styles/variables", "../../../app/styles/mixins";
 
 .default {
-	padding: map-get($padding, rounded);
-	border-radius: map-get($radius, m);
-	& svg {
-		fill: map-get($colors, primaryText);
-	}
+	@include icon;
 	@include flex {
 		display: inline-flex;
 	}

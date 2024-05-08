@@ -3,7 +3,7 @@ import MockProvider from "./mockProvider";
 
 const meta = {
 	component: MockProvider,
-	title: "Features/CommentSection",
+	title: "Entities/CommentSection",
 	tags: ["autodocs"],
 	parameters: {
 		layout: "centered",

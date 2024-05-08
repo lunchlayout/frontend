@@ -1,0 +1,20 @@
+@import "../../../app/styles/variables", "../../../app/styles/mixins";
+
+.default {
+	@include flex(column) {
+		gap: map-get($gaps, secondary);
+	}
+}
+
+.text {
+	animation: show 1s;
+}
+
+@keyframes show {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}

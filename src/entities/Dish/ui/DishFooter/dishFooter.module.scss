@@ -1,0 +1,16 @@
+@import "../../../../app/styles/variables", "../../../../app/styles/mixins";
+
+.default {
+	@include flex {
+		gap: map-get($gaps, primary);
+		justify-content: space-between;
+		align-items: flex-end;
+	}
+}
+.info {
+	@include icon;
+}
+
+.model {
+	padding-bottom: calc(map-get($padding, default) / 1.5);
+}

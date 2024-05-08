@@ -1,3 +1,3 @@
-import CafeLink from './CafeLink'
+import CafeLink from "./CafeLink";
 
-export {CafeLink}
+export { CafeLink };

@@ -1,6 +1,6 @@
 import { IProgressProps } from "./progress.props";
 import styles from "./progress.module.scss";
-import { IntRange } from "@shared/types";
+import { convertProgressToPercent } from "@shared/lib";
 
 export default function Progress({
 	value,
@@ -8,7 +8,7 @@ export default function Progress({
 	label = "",
 }: IProgressProps) {
 	if (max <= 0) max = 100;
-	const perValue = Math.round((value / max) * 100) as IntRange<0, 100>;
+	const perValue = convertProgressToPercent(value, max);
 
 	return (
 		<div

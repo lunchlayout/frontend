@@ -2,16 +2,11 @@
 
 .default {
 	@include flex;
-	width: 26px;
-	height: 26px;
-	color: inherit;
+	@include icon(map-get($colors, primaryText), 30px);
 	text-decoration: none;
 	@include outline;
-	border-radius: map-get($radius, m);
 }
 .arrow {
-	fill: currentColor;
-	width: 100%;
 	transition: fill map-get($transitions, link);
 	&:hover {
 		fill: map-get($colors, primaryTextHover);

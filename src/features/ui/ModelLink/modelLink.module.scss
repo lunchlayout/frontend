@@ -1,12 +1,15 @@
 @import "../../../app/styles/variables", "../../../app/styles/mixins";
 
+.default {
+	@include flex(column) {
+		gap: map-get($gaps, secondary);
+	}
+}
+
 .modelLink {
 	padding: map-get($padding, rounded);
 	border: 0.1rem solid map-get($colors, secondary);
-}
-
-.icon {
-	stroke: map-get($colors, secondary);
-	width: 38px;
-	height: 39px;
+	& svg {
+		stroke: map-get($colors, secondary);
+	}
 }

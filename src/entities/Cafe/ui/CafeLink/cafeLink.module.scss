@@ -1,11 +1,5 @@
 @import "../../../../app/styles/variables", "../../../../app/styles/mixins";
 
 .cafeLink {
-	padding: map-get($padding, rounded);
-}
-
-.icon {
-	fill: map-get($colors, secondary);
-	width: 26px;
-	height: 26px;
+	@include icon;
 }

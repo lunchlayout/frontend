@@ -1,7 +1,7 @@
 import { Provider } from "react-redux";
 import { IDefaultProps } from "@shared/types";
-import { Store } from "@app/index";
+import { Store, mockStore } from "@app/index";
 
 export default function ReduxProvider({ children }: IDefaultProps) {
-	return <Provider store={Store}>{children}</Provider>;
+	return <Provider store={mockStore}>{children}</Provider>;
 }

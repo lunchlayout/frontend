@@ -1,7 +1,13 @@
 import { IDefaultProps } from "@shared/types";
 
-export interface IProgressProps extends IDefaultProps {
+interface IProgress {
 	value: number;
-	max?: number;
+	max: number;
+}
+
+interface IProgressProps extends IDefaultProps, Partial<IProgress> {
+	value: number;
 	label?: string;
 }
+
+export type { IProgress, IProgressProps };

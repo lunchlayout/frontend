@@ -26,6 +26,7 @@ $quizColors: (
 $radius: (
 	s: 1rem,
 	m: 1.5rem,
+	rounded: 10rem,
 );
 
 $padding: (
@@ -55,4 +56,8 @@ $transitions: (
 $gaps: (
 	primary: 2rem,
 	secondary: 1rem,
+);
+
+$zIndex: (
+	modal: 3,
 );

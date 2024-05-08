@@ -2,7 +2,7 @@ import { ILinkProps } from "./link.props";
 import styles from "./link.module.scss";
 
 export default function Link({
-	type = "simple",
+	type = "text",
 	to,
 	children,
 	className = "",

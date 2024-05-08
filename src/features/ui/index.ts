@@ -7,6 +7,7 @@ import DishesNotFound from "./DishesNotFound";
 import QuizOptions from "./QuizOptions";
 import MainTitle from "./MainTitle";
 import RatingControl from "./RatingControl";
+import ProgressPanel from "./ProgressPanel";
 
 export {
 	QuizOption,
@@ -17,5 +18,6 @@ export {
 	DishesNotFound,
 	QuizOptions,
 	MainTitle,
-	RatingControl
+	RatingControl,
+	ProgressPanel,
 };

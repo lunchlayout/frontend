@@ -1,3 +1,3 @@
-const FORM_ID = "SEND_REVIEW"
+const FORM_ID = "SEND_REVIEW";
 
-export {FORM_ID}
+export { FORM_ID };

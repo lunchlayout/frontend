@@ -7,6 +7,7 @@ import { CommentSection } from "@entities/Review/ui";
 import { Comment } from "@features/context";
 
 import SearchDishesPanel from "@features/ui/SearchDishesPanel";
+import DishFooter from "@entities/Dish/ui/DishFooter";
 
 export default function HomePage() {
 	const [checked, setChecked] = useState(false);
@@ -35,9 +36,11 @@ export default function HomePage() {
 				onChange={() => setChecked(!checked)}
 			/>
 			<Progress value={progress} max={200} />
-			<QuizOption checked={checked} onChange={() => setChecked(!checked)}>
-				Привет!
-			</QuizOption>
+			<QuizOption
+				label="Привет!"
+				checked={checked}
+				onChange={() => setChecked(!checked)}
+			/>
 			<SearchDishesPanel />
 			<Comment.Context.Provider
 				value={{
@@ -49,6 +52,7 @@ export default function HomePage() {
 			>
 				<CommentSection />
 			</Comment.Context.Provider>
+			<DishFooter />
 			<SEO title={`Lunch Layout`} />
 		</>
 	);

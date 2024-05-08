@@ -30,17 +30,19 @@ export default function DishInfo({ className = "" }: IDishInfoProps) {
 				</DishInfoSection>
 				<DishInfoSection label="Состав">
 					<ol>
-						{dish.ingredients.map(ingredient => {
-							return <li>{ingredient}</li>;
+						{dish.ingredients.map((ingredient, idx) => {
+							return <li key={idx}>{ingredient}</li>;
 						})}
 					</ol>
 				</DishInfoSection>
 				<DishInfoSection label="Энергетическая ценность">
 					<ul>
 						{Object.entries(dish.nutritionalValue).map(
-							([name, val]) => {
+							([name, val], idx) => {
 								return (
-									<li>{`${TranslatedCBZHU[name as keyof INutritionalValue]}: ${val}`}</li>
+									<li
+										key={idx}
+									>{`${TranslatedCBZHU[name as keyof INutritionalValue]}: ${val}`}</li>
 								);
 							},
 						)}
@@ -48,8 +50,8 @@ export default function DishInfo({ className = "" }: IDishInfoProps) {
 				</DishInfoSection>
 				<DishInfoSection label="Аллергены">
 					<ol>
-						{dish.allergens.map(allergen => {
-							return <li>{allergen}</li>;
+						{dish.allergens.map((allergen, idx) => {
+							return <li key={idx}>{allergen}</li>;
 						})}
 					</ol>
 				</DishInfoSection>

@@ -64,5 +64,17 @@ export const LinkSimple: Story = {
 		children: "Ввести код",
 	},
 };
-
+export const LinkText: Story = {
+	parameters: {
+		docs: {
+			description: {
+				story: "text link",
+			},
+		},
+	},
+	args: {
+		type: "text",
+		children: "Ввести код",
+	},
+};
 export default meta;

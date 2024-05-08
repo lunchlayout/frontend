@@ -1,3 +1,3 @@
 export { default } from "./reviewForm";
 
-export {FORM_ID} from './consts'
+export { FORM_ID } from "./consts";

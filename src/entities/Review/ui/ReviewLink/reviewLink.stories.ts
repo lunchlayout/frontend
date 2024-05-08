@@ -3,7 +3,7 @@ import ReviewLink from "./reviewLink";
 
 const meta = {
 	component: ReviewLink,
-	title: "Features/ReviewLink",
+	title: "Entities/ReviewLink",
 	tags: ["autodocs"],
 	parameters: {
 		layout: "centered",

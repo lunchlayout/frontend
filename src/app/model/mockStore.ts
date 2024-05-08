@@ -7,6 +7,10 @@ const mockState: IRootState = {
 	dishes: {
 		isLoading: false,
 		errors: [],
+		modelLoadingProgress: {
+			value: 50,
+			max: 100,
+		},
 		dish: {
 			name: "Клубничный торт",
 			cafeId: "123456",
@@ -39,9 +43,9 @@ const mockState: IRootState = {
 						link: "https://www.youtube.com/embed/fXsnmqbgvYw",
 					},
 				],
-				quetions: [
+				quizzes: [
 					{
-						text: "Сколько выпекается клубничный торт",
+						question: "Сколько выпекается клубничный торт",
 						answer: "40 минут",
 						options: ["40 минут", "30 минут", "20 минут"],
 					},

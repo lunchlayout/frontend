@@ -16,6 +16,8 @@ import PaginationControl from "./PaginationControl";
 import QRLink from "./QRLink";
 import SEO from "./SEO";
 import FormControl from "./FormControl";
+import CloseButton from "./CloseButton";
+import Modal from "./Modal";
 
 export {
 	BackLink,
@@ -35,5 +37,7 @@ export {
 	PaginationControl,
 	QRLink,
 	SEO,
-	FormControl
+	FormControl,
+	CloseButton,
+	Modal,
 };

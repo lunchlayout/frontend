@@ -22,7 +22,7 @@ export const FormControlSimple: Story = {
 		},
 	},
 	args: {
-		formId: FORM_ID
+		formId: FORM_ID,
 	},
 };
 
