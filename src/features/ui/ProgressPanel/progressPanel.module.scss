@@ -9,6 +9,9 @@
 .text {
 	animation: show 1s;
 }
+.progress {
+	width: 100%;
+}
 
 @keyframes show {
 	from {

@@ -8,6 +8,7 @@
 	font-family: inherit;
 	color: map-get($colors, secondary);
 	text-decoration: none;
+	text-align: center;
 	transition: map-get($transitions, control);
 	@include flex {
 		display: inline-flex;
@@ -46,11 +47,11 @@
 
 .text {
 	color: map-get($colors, primaryText);
-	padding: calc(map-get($padding, rounded) / 2);
-	
+	padding: 0;
+
 	&::after {
 		content: "";
-		
+
 		height: 3px;
 		width: 100%;
 		border-radius: map-get($radius, m);

@@ -2,9 +2,8 @@
 
 .default {
 	/* React-player при показе обложки содержит div, а после старта - iframe */
-	& iframe, div {
+	& iframe,
+	div {
 		border-radius: map-get($radius, m);
 	}
 }
-
-

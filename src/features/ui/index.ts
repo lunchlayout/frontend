@@ -8,6 +8,7 @@ import QuizOptions from "./QuizOptions";
 import MainTitle from "./MainTitle";
 import RatingControl from "./RatingControl";
 import ProgressPanel from "./ProgressPanel";
+import MainLogo from "./MainLogo";
 
 export {
 	QuizOption,
@@ -20,4 +21,5 @@ export {
 	MainTitle,
 	RatingControl,
 	ProgressPanel,
+	MainLogo,
 };

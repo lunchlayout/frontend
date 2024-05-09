@@ -1,0 +1,9 @@
+@import "../../app/styles/variables", "../../app/styles/mixins";
+
+.default {
+	@include mobileBoundary(top);
+	@include flex {
+		justify-content: space-between;
+		gap: map-get($gaps, primary);
+	}
+}

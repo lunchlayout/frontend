@@ -50,3 +50,34 @@
 		fill: $fill;
 	}
 }
+
+@mixin logo {
+	border-radius: map-get($radius, rounded);
+	@content;
+}
+
+@mixin resetList {
+	list-style: none;
+	padding: 0;
+	@content;
+}
+
+@mixin grid {
+	display: grid;
+	justify-content: center;
+	align-items: center;
+	@content;
+}
+
+@mixin mobileBoundary($type) {
+	@if ($type == top) {
+		$type: bottom;
+	} @else if ($type == bottom) {
+		$type: top;
+	}
+	padding: map-get($padding, default) map-get($padding, default) * 1.5;
+	background: map-get($colors, secondary);
+	border-#{$type}-left-radius: map-get($radius, m);
+	border-#{$type}-right-radius: map-get($radius, m);
+	@content;
+}

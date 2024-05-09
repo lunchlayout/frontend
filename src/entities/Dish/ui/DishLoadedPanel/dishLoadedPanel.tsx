@@ -1,5 +1,5 @@
 import { CafeLink } from "@entities/Cafe/ui";
-import styles from "./dishFooter.module.scss";
+import styles from "./dishLoadedPanel.module.scss";
 import { Button } from "@shared/ui";
 import { useSelector } from "react-redux";
 import { selectors } from "@entities/Dish";
@@ -8,8 +8,11 @@ import { ModelLink } from "@features/ui";
 import { useState } from "react";
 import DishInfo from "../DishInfo";
 import { Modal } from "@shared/ui";
+import { IDishLoadedPanelProps } from "./dishLoadedPanel.props";
 
-export default function DishFooter() {
+export default function DishLoadedPanel({
+	className = "",
+}: IDishLoadedPanelProps) {
 	const { cafeId, name } = useSelector(selectors.dish) as IDishWithCafeId;
 
 	const [showModal, setShowModal] = useState(false);
@@ -20,7 +23,7 @@ export default function DishFooter() {
 
 	return (
 		<>
-			<footer className={styles.default}>
+			<div className={[styles.default, className].join(" ")}>
 				<CafeLink cafeId={cafeId} />
 				<ModelLink className={styles.model} />
 				<Button
@@ -48,7 +51,7 @@ export default function DishFooter() {
 						/>
 					</svg>
 				</Button>
-			</footer>
+			</div>
 			<Modal
 				container={document.getElementById("root")!}
 				open={showModal}

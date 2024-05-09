@@ -18,6 +18,7 @@ import SEO from "./SEO";
 import FormControl from "./FormControl";
 import CloseButton from "./CloseButton";
 import Modal from "./Modal";
+import NavLink from "./NavLink";
 
 export {
 	BackLink,
@@ -40,4 +41,5 @@ export {
 	FormControl,
 	CloseButton,
 	Modal,
+	NavLink,
 };

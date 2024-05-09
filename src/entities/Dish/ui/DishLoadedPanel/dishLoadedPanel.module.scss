@@ -1,8 +1,9 @@
 @import "../../../../app/styles/variables", "../../../../app/styles/mixins";
 
 .default {
+	position: relative;
 	@include flex {
-		gap: map-get($gaps, primary);
+		gap: map-get($gaps, primary) * 6;
 		justify-content: space-between;
 		align-items: flex-end;
 	}
@@ -12,5 +13,7 @@
 }
 
 .model {
-	padding-bottom: calc(map-get($padding, default) / 1.5);
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, -10%);
 }

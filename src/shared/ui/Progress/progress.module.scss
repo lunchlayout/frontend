@@ -5,7 +5,7 @@
 	@include flex;
 	border-radius: map-get($radius, m);
 	background: map-get($colors, track);
-	width: 15rem;
+	min-width: 15rem;
 	height: 1.5rem;
 
 	&::before {

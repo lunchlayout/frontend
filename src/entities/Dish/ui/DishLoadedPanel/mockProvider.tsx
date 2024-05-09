@@ -1,11 +1,11 @@
 import { mockStore } from "@app/index";
-import DishFooter from "./dishFooter";
+import DishLoadedPanel from "./dishLoadedPanel";
 import { Provider } from "react-redux";
 
 export default function MockProvider() {
 	return (
 		<Provider store={mockStore}>
-			<DishFooter />
+			<DishLoadedPanel />
 		</Provider>
 	);
 }

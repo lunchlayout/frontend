@@ -1,3 +1,4 @@
 import CafeLink from "./CafeLink";
+import CafeLogo from "./CafeLogo";
 
-export { CafeLink };
+export { CafeLink, CafeLogo };

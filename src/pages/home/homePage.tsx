@@ -7,7 +7,7 @@ import { CommentSection } from "@entities/Review/ui";
 import { Comment } from "@features/context";
 
 import SearchDishesPanel from "@features/ui/SearchDishesPanel";
-import DishFooter from "@entities/Dish/ui/DishFooter";
+import DishFooter from "@entities/Dish/ui/DishLoadedPanel";
 
 export default function HomePage() {
 	const [checked, setChecked] = useState(false);

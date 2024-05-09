@@ -5,6 +5,7 @@ export default function BackLink() {
 	return (
 		<Link to=".." className={styles.default}>
 			<svg
+				aria-label="Вернуться назад"
 				className={styles.arrow}
 				viewBox="0 0 26 26"
 				fill="none"

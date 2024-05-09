@@ -12,13 +12,15 @@ export default function DishList({ className = "" }: IDishListProps) {
 		<ul className={[styles.default, className].join(" ")}>
 			{dishes?.map(dish => {
 				return (
-					<Link
-						className={styles.dishLink}
-						key={dish.dishId}
-						to={`/dishes/${dish.dishId}`}
-					>
-						<DishCard className={styles.dish} {...dish} />
-					</Link>
+					<li className={styles.dishItem} key={dish.dishId}>
+						<Link
+							type="simple"
+							className={styles.dishLink}
+							to={`/dishes/${dish.dishId}`}
+						>
+							<DishCard className={styles.dish} {...dish} />
+						</Link>
+					</li>
 				);
 			})}
 		</ul>
