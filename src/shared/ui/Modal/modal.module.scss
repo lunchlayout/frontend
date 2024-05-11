@@ -15,6 +15,7 @@
 .overlay {
 	position: absolute;
 	inset: 0;
+	cursor: pointer;
 
 	@include glass(map-get($colors, primaryTextHover));
 }

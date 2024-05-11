@@ -7,7 +7,7 @@ export default function MobileReviewHeader() {
 	return (
 		<header className={styles.default}>
 			<BackLink />
-			<Title level={2}>Обратная связь</Title>
+			<Title level={1}>Обратная связь</Title>
 			<MainLogo />
 		</header>
 	);

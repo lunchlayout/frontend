@@ -1,0 +1,13 @@
+@import "../../app/styles/variables", "../../app/styles/mixins";
+
+.default {
+	@include desktopHeader;
+	@include flex {
+		justify-content: space-between;
+		gap: map-get($gaps, primary);
+	}
+}
+
+.nav {
+	flex: 1;
+}

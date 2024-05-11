@@ -1,5 +1,5 @@
 export { isRejected, isPending, isFulfilled } from "./predicate";
-export { getBaseURL } from "./getBaseURL";
+export { getOriginURL } from "./getOriginURL";
 
 export { debounce } from "./debounce";
 

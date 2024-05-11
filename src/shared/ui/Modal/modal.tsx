@@ -8,18 +8,17 @@ export default function Modal({
 	children,
 	container = document.body,
 	className = "",
-	open = false,
+	isOpen = false,
 	onClose,
 	label = "Модальное окно",
 }: IModalProps) {
 	const dialogRef = useRef<HTMLDivElement>(null);
 	const containerRef = useRef<HTMLDivElement>(null);
-
+	console.log(1);
 	function closeDialogOnOutsideClick({ target }: MouseEvent) {
 		if (target instanceof HTMLElement) {
 			const isDialog = target === dialogRef.current;
 			const isDialogChildren = dialogRef.current?.contains(target);
-
 			const isOutsideOfDialog = !(isDialog || isDialogChildren);
 
 			if (isOutsideOfDialog && onClose) {
@@ -30,6 +29,7 @@ export default function Modal({
 
 	useEffect(() => {
 		document.body.addEventListener("click", closeDialogOnOutsideClick);
+
 		return () => {
 			document.body.removeEventListener(
 				"click",
@@ -56,7 +56,7 @@ export default function Modal({
 				setChildrenInert(root, false);
 			}
 		};
-	}, [open]);
+	}, [isOpen]);
 
 	const modal = (
 		<div className={styles.default} ref={containerRef}>
@@ -74,5 +74,5 @@ export default function Modal({
 			</div>
 		</div>
 	);
-	return <>{open && createPortal(modal, container)}</>;
+	return <>{isOpen && createPortal(modal, container)}</>;
 }

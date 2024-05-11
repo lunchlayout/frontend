@@ -81,3 +81,11 @@
 	border-#{$type}-right-radius: map-get($radius, m);
 	@content;
 }
+
+@mixin desktopHeader() {
+	padding: map-get($padding, default) map-get($padding, default) * 1.5;
+	background: map-get($colors, secondary);
+	border-bottom-left-radius: map-get($radius, m);
+	border-bottom-right-radius: map-get($radius, m);
+	@content;
+}

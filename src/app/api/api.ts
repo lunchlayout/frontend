@@ -1,8 +1,8 @@
 import axios from "axios";
-import { getBaseURL } from "../../shared/lib";
+import { getOriginURL } from "@shared/lib";
 
 const $api = axios.create({
-	baseURL: getBaseURL({
+	baseURL: getOriginURL({
 		host: import.meta.env.VITE_SERVER_HOST,
 		port: import.meta.env.VITE_SERVER_PORT,
 		protocol: import.meta.env.VITE_SERVER_PROTOCOL,

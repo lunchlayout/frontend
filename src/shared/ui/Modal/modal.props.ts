@@ -4,7 +4,7 @@ import { MouseEvent, ReactNode } from "react";
 export interface IModalProps extends IDefaultProps {
 	children: ReactNode;
 	container?: Element;
-	open?: boolean;
+	isOpen?: boolean;
 	onClose?: (
 		event?: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>,
 	) => void;

@@ -2,7 +2,7 @@ export type { IDefaultProps } from "./defaultComponent";
 
 export type { IDefaultState } from "./defaultState";
 
-export type { IURL } from "./url";
+export type { IOrigin } from "./origin";
 
 export type { IFormControlContext } from "./formControlContext";
 

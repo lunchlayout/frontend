@@ -9,6 +9,8 @@ import MainTitle from "./MainTitle";
 import RatingControl from "./RatingControl";
 import ProgressPanel from "./ProgressPanel";
 import MainLogo from "./MainLogo";
+import DesktopDishNav from "./DesktopDishNav";
+import DesktopEntryNav from "./DesktopEntryNav";
 
 export {
 	QuizOption,
@@ -22,4 +24,6 @@ export {
 	RatingControl,
 	ProgressPanel,
 	MainLogo,
+	DesktopDishNav,
+	DesktopEntryNav,
 };

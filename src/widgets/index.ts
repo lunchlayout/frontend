@@ -6,6 +6,10 @@ import MobileEntryFooter from "./MobileEntryFooter";
 import MobileCafeFooter from "./MobileCafeFooter";
 import MobileDishHeader from "./MobileDishHeader";
 import MobileEntryHeader from "./MobileEntryHeader";
+import DesktopDishHeader from "./DesktopDishHeader";
+import DesktopEntryHeader from "./DesktopEntryHeader";
+import DesktopReviewHeader from "./DesktopReviewHeader";
+import DesktopCafeHeader from "./DesktopCafeHeader";
 
 export {
 	SendDishIdPanel,
@@ -16,4 +20,8 @@ export {
 	MobileCafeFooter,
 	MobileDishHeader,
 	MobileEntryHeader,
+	DesktopDishHeader,
+	DesktopEntryHeader,
+	DesktopCafeHeader,
+	DesktopReviewHeader,
 };

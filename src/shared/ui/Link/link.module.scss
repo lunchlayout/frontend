@@ -47,7 +47,8 @@
 
 .text {
 	color: map-get($colors, primaryText);
-	padding: 0;
+	padding: calc(map-get($padding, default) / 4)
+		calc(map-get($padding, default) / 2);
 
 	&::after {
 		content: "";

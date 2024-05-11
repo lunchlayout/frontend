@@ -1,0 +1,1 @@
+export { getCafePathById } from "./getCafePathById";

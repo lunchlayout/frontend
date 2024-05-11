@@ -8,6 +8,7 @@ import { Comment } from "@features/context";
 
 import SearchDishesPanel from "@features/ui/SearchDishesPanel";
 import DishFooter from "@entities/Dish/ui/DishLoadedPanel";
+import DesktopDishNav from "@features/ui/DesktopDishNav";
 
 export default function HomePage() {
 	const [checked, setChecked] = useState(false);
@@ -52,7 +53,7 @@ export default function HomePage() {
 			>
 				<CommentSection />
 			</Comment.Context.Provider>
-			<DishFooter />
+			<DesktopDishNav />
 			<SEO title={`Lunch Layout`} />
 		</>
 	);
