@@ -3,7 +3,6 @@
 .default {
 	@include grid {
 		grid-template-columns: repeat(2, minmax(50px, 150px));
-		gap: map-get($gaps, secondary);
-		justify-content: space-between;
+		gap: map-get($gaps, primary);
 	}
 }

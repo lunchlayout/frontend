@@ -14,13 +14,6 @@ const meta = {
 type Story = StoryObj<typeof FormControl>;
 
 export const FormControlSimple: Story = {
-	parameters: {
-		docs: {
-			description: {
-				story: "simple form control",
-			},
-		},
-	},
 	args: {
 		formId: FORM_ID,
 	},

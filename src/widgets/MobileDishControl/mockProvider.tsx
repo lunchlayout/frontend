@@ -1,11 +1,11 @@
 import { mockStore } from "@app/index";
-import MobileDishFooter from "./mobileDishFooter";
+import MobileDishControl from "./mobileDishControl";
 import { Provider } from "react-redux";
 
 export default function MockProvider() {
 	return (
 		<Provider store={mockStore}>
-			<MobileDishFooter />
+			<MobileDishControl />
 		</Provider>
 	);
 }

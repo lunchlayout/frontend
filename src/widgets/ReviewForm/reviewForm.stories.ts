@@ -13,14 +13,12 @@ const meta = {
 type Story = StoryObj<typeof ReviewForm>;
 
 export const ReviewFormSimple: Story = {
-	parameters: {
-		docs: {
-			description: {
-				story: "simple review form",
-			},
-		},
-	},
 	args: {},
+};
+export const ReviewFormWithControl: Story = {
+	args: {
+		hasControl: true,
+	},
 };
 
 export default meta;

@@ -1,9 +1,9 @@
 import { NavLink } from "@shared/ui";
-import styles from "./mobileEntryFooter.module.scss";
+import styles from "./mobileEntryControl.module.scss";
 
-export default function MobileEntryFooter() {
+export default function MobileEntryControl() {
 	return (
-		<footer className={styles.default}>
+		<div className={styles.default}>
 			<nav>
 				<ul className={styles.links}>
 					<li>
@@ -22,6 +22,6 @@ export default function MobileEntryFooter() {
 					</li>
 				</ul>
 			</nav>
-		</footer>
+		</div>
 	);
 }

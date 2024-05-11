@@ -3,3 +3,7 @@
 .default {
 	@include mobileBoundary(bottom);
 }
+
+.formControl {
+	justify-content: space-between;
+}

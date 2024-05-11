@@ -1,20 +1,20 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import MobileDishFooter from "./mockProvider";
+import MobileCafeControl from "./mobileCafeControl";
 import { withRouter } from "storybook-addon-remix-react-router";
 
 const meta = {
-	component: MobileDishFooter,
-	title: "Widgets/MobileDishFooter",
+	component: MobileCafeControl,
+	title: "Widgets/MobileCafeControl",
 	decorators: [withRouter()],
 	tags: ["autodocs"],
 	parameters: {
 		layout: "centered",
 	},
-} satisfies Meta<typeof MobileDishFooter>;
+} satisfies Meta<typeof MobileCafeControl>;
 
-type Story = StoryObj<typeof MobileDishFooter>;
+type Story = StoryObj<typeof MobileCafeControl>;
 
-export const MobileDishFooterSimple: Story = {
+export const MobileCafeControlSimple: Story = {
 	args: {},
 };
 

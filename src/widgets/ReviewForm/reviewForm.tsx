@@ -5,8 +5,10 @@ import { IRating } from "@entities/Review/types";
 import { Comment, Rating } from "@features/context";
 import { api } from "@entities/Review";
 import { FORM_ID } from "./consts";
+import { IReviewFormProps } from "./reviewForm.props";
+import { FormControl } from "@shared/ui";
 
-export default function ReviewForm() {
+export default function ReviewForm({ hasControl = false }: IReviewFormProps) {
 	const [rating, setRating] = useState<IRating>();
 	const [comment, SetComment] = useState("");
 
@@ -35,6 +37,7 @@ export default function ReviewForm() {
 			>
 				<CommentSection />
 			</Comment.Context.Provider>
+			{hasControl && <FormControl />}
 		</form>
 	);
 }
