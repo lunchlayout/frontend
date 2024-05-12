@@ -1,7 +1,13 @@
-import { IContent, IDishWithCafeId } from "../../Dish/types";
+import { IDishWithCafeId, IQuiz, IStory, IVideo } from "@entities/Dish/types";
 
-interface IGetDishByIdRes extends IDishWithCafeId {
-	content: IContent;
+interface IEntertainmentRes {
+	stories: IStory[];
+	videos: IVideo[];
+	quizzes: IQuiz[];
+}
+
+interface IGetDishByIdRes extends Omit<IDishWithCafeId, "entertainment"> {
+	entertainment: IEntertainmentRes;
 }
 
 export type { IGetDishByIdRes };

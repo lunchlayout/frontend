@@ -1,0 +1,39 @@
+@import "../../../../app/styles/variables", "../../../../app/styles/mixins";
+
+.default {
+	position: relative;
+	@include flex(column) {
+		gap: map-get($gaps, primary);
+	}
+}
+
+.controller {
+	@include desktop {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+}
+
+.leftController {
+	@include desktop {
+		left: -2%;
+	}
+}
+
+.rightController {
+	@include desktop {
+		right: -2%;
+	}
+}
+
+.sliderController {
+	@include flex {
+		gap: map-get($gaps, primary);
+	}
+}
+
+.entertainment {
+	//TODO: temporary
+	width: 600px;
+}

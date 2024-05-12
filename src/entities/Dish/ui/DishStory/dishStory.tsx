@@ -9,7 +9,7 @@ export default function DishStory({
 }: IDishStoryProps) {
 	return (
 		<article className={[styles.default, className].join(" ")}>
-			<Image width={160} height={90} className={styles.image} src={img} />
+			<Image height={90} className={styles.image} src={img} />
 			<p className={styles.text}>{description}</p>
 		</article>
 	);

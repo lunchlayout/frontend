@@ -1,31 +1,45 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Button, Input, SEO, TextArea } from "@shared/ui";
 import EmojiRadio from "@shared/ui/EmojiRadio";
-import Progress from "../../shared/ui/Progress/progress";
 import QuizOption from "@features/ui/QuizOption";
 import { CommentSection } from "@entities/Review/ui";
 import { Comment } from "@features/context";
 
 import SearchDishesPanel from "@features/ui/SearchDishesPanel";
-import DishFooter from "@entities/Dish/ui/DishLoadedPanel";
-import DesktopDishNav from "@features/ui/DesktopDishNav";
+import MobileDishControl from "@widgets/MobileDishControl";
+import { actions, selectors } from "@entities/Dish";
+import { useSelector } from "react-redux";
+import { IProgress } from "@shared/ui/Progress";
+import { useAppDispatch } from "@app/index";
 
 export default function HomePage() {
 	const [checked, setChecked] = useState(false);
-	const [progress, setProgress] = useState(0);
 	const refId = useRef<NodeJS.Timeout | 0>(0);
+	const [progress, setProgress] = useState(0);
 	const [comment, setComment] = useState<string>("");
-
+	const modelProgress = useSelector(selectors.modelLoadingProgress);
+	const dispatch = useAppDispatch();
 	useEffect(() => {
-		refId.current = setInterval(() => {
-			setProgress(pr => {
-				if (pr >= 200) {
-					clearInterval(refId.current);
-					return 200;
-				} else return pr + 1;
-			});
-		}, 100);
-	}, []);
+		if (!modelProgress) {
+			dispatch(
+				actions.setModelLoadingInit({
+					max: 200,
+					value: 1,
+				}),
+			);
+		} else {
+			if (refId.current) return;
+			refId.current = setInterval(() => {
+				setProgress(pr => {
+					if (pr >= modelProgress.max) {
+						clearInterval(refId.current);
+					}
+					dispatch(actions.setModelLoadingValue(pr + 1));
+					return pr + 1;
+				});
+			}, 100);
+		}
+	}, [modelProgress]);
 
 	return (
 		<>
@@ -36,7 +50,6 @@ export default function HomePage() {
 				checked={checked}
 				onChange={() => setChecked(!checked)}
 			/>
-			<Progress value={progress} max={200} />
 			<QuizOption
 				label="Привет!"
 				checked={checked}
@@ -53,7 +66,7 @@ export default function HomePage() {
 			>
 				<CommentSection />
 			</Comment.Context.Provider>
-			<DesktopDishNav />
+			<MobileDishControl />
 			<SEO title={`Lunch Layout`} />
 		</>
 	);

@@ -1,9 +1,14 @@
 import { Link } from "@shared/ui";
 import styles from "./reviewLink.module.scss";
+import { IReviewLinkProps } from "./reviewLink.props";
 
-export default function ReviewLink() {
+export default function ReviewLink({ className = "", type }: IReviewLinkProps) {
 	return (
-		<Link to="/reviews" type="primary" className={styles.reviewLink}>
+		<Link
+			to="/reviews"
+			type={type}
+			className={[styles.reviewLink, className].join(" ")}
+		>
 			<svg
 				width="22"
 				height="20"

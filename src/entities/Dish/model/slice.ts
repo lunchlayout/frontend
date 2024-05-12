@@ -1,6 +1,6 @@
 import { createSlice, isFulfilled, PayloadAction } from "@reduxjs/toolkit";
 import { initialState } from "./initState";
-import { isPending, isRejected } from "@shared/lib";
+import { isPending, isRejected, shuffle } from "@shared/lib";
 import { getDishById } from "./thunks";
 import { IGetDishByIdRes } from "../types";
 import { IProgress } from "@shared/ui/Progress";
@@ -12,8 +12,26 @@ const DishesSlice = createSlice({
 		setIsLoading(state, action: PayloadAction<boolean>) {
 			state.isLoading = action.payload;
 		},
-		setModelLoadingProgress(state, action: PayloadAction<IProgress>) {
+		setModelLoadingValue(state, action: PayloadAction<number>) {
+			if (state.modelLoadingProgress) {
+				state.modelLoadingProgress.value = action.payload;
+			}
+		},
+		setModelLoadingInit(state, action: PayloadAction<IProgress>) {
 			state.modelLoadingProgress = action.payload;
+		},
+		setCurrentEntIdx(state, action: PayloadAction<number>) {
+			const { dish, entertainmentDetails: entDetails } = state;
+			if (entDetails && dish) {
+				const { length: entLength } = dish.entertainment;
+				if (action.payload < 0) {
+					entDetails.currentEntIdx = entLength - 1;
+				} else if (action.payload === entLength) {
+					entDetails.currentEntIdx = 0;
+				} else {
+					entDetails.currentEntIdx = action.payload;
+				}
+			}
 		},
 	},
 	extraReducers: builder => {
@@ -21,7 +39,20 @@ const DishesSlice = createSlice({
 			getDishById.fulfilled,
 			(state, action: PayloadAction<IGetDishByIdRes>) => {
 				delete state.modelLoadingProgress;
-				state.dish = action.payload;
+				state.entertainmentDetails = {
+					currentEntIdx: 0,
+				};
+				const { entertainment } = action.payload;
+				const entertainmentArr = [
+					...entertainment.stories,
+					...entertainment.quizzes,
+					...entertainment.videos,
+				];
+				shuffle(entertainmentArr);
+				state.dish = {
+					...action.payload,
+					entertainment: entertainmentArr,
+				};
 			},
 		);
 		builder.addMatcher(isFulfilled, state => {

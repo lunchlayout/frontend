@@ -2,6 +2,7 @@
 
 .default {
 	@include mobileBoundary(bottom);
+	color: map-get($colors, secondary);
 }
 
 .links {

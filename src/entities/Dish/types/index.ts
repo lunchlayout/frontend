@@ -1,6 +1,6 @@
 export type { IDish, IDishWithId, IDishWithCafeId } from "./dish";
-export type { IContent, IModel, IQuiz, IStory, IVideo } from "./content";
-
+export type { Entertainment, IQuiz, IStory, IVideo } from "./entertainment";
+export type { IModel } from "./model";
 export type { IGetDishByIdRes } from "./response";
 export type { IGetDishByIdReq } from "./request";
 

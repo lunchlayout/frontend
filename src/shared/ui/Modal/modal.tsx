@@ -14,7 +14,7 @@ export default function Modal({
 }: IModalProps) {
 	const dialogRef = useRef<HTMLDivElement>(null);
 	const containerRef = useRef<HTMLDivElement>(null);
-	console.log(1);
+
 	function closeDialogOnOutsideClick({ target }: MouseEvent) {
 		if (target instanceof HTMLElement) {
 			const isDialog = target === dialogRef.current;

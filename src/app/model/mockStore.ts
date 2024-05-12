@@ -8,8 +8,11 @@ const mockState: IRootState = {
 		isLoading: false,
 		errors: [],
 		modelLoadingProgress: {
-			value: 50,
-			max: 100,
+			value: 1,
+			max: 200,
+		},
+		entertainmentDetails: {
+			currentEntIdx: 0,
 		},
 		dish: {
 			name: "Клубничный торт",
@@ -27,30 +30,24 @@ const mockState: IRootState = {
 			amount: 1000,
 			unit: "г",
 			img: "https://rsute.ru/wp-content/uploads/2020/12/maxresdefault-59.jpg",
-			content: {
-				modelLink:
-					"/assets/models/2cf4a4a9644e33ea3954da77ae50ce92f41ce8623ed56c0ef8fcb3b71b507a72/model.gltf",
-				stories: [
-					{
-						description:
-							"Клубничный торт - самый любимый десерт Павла Дурова",
-						img: "/assets/images/c82cd98d0f0ab87cb72fd4526c738cfaf37d67ffe3a5a7a692d5cfa32f12da87.jpg",
-					},
-				],
-				videos: [
-					{
-						title: "Клубничный торт",
-						link: "https://www.youtube.com/embed/fXsnmqbgvYw",
-					},
-				],
-				quizzes: [
-					{
-						question: "Сколько выпекается клубничный торт",
-						answer: "40 минут",
-						options: ["40 минут", "30 минут", "20 минут"],
-					},
-				],
-			},
+			modelLink:
+				"http://localhost:5000/assets/models/2cf4a4a9644e33ea3954da77ae50ce92f41ce8623ed56c0ef8fcb3b71b507a72/model.gltf",
+			entertainment: [
+				{
+					description:
+						"Клубничный торт - самый любимый десерт Павла Дурова",
+					img: "https://rsute.ru/wp-content/uploads/2020/12/maxresdefault-59.jpg",
+				},
+				{
+					title: "Клубничный торт",
+					link: "https://www.youtube.com/embed/fXsnmqbgvYw",
+				},
+				{
+					question: "Сколько выпекается клубничный торт",
+					answer: "40 минут",
+					options: ["40 минут", "30 минут", "20 минут"],
+				},
+			],
 		},
 	},
 	cafes: {
@@ -91,7 +88,7 @@ const mockState: IRootState = {
 const mockStore = configureStore({
 	preloadedState: mockState,
 	reducer: mainReducer,
-	middleware: getDefaultMiddl => getDefaultMiddl().concat(logger),
+	// middleware: getDefaultMiddl => getDefaultMiddl().concat(logger),
 });
 
 export { mockStore };

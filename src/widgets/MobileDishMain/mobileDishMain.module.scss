@@ -1,0 +1,13 @@
+@import "../../app/styles/variables", "../../app/styles/mixins";
+
+.default {
+	@include flex(column) {
+		gap: map-get($gaps, primary);
+	}
+}
+
+.reviewLink {
+	position: absolute;
+	right: -10%;
+	top: 20%;
+}

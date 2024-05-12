@@ -1,4 +1,4 @@
-import { $api } from "../../../app";
+import { $api } from "@app/index";
 import { BASE_URL } from "../consts";
 import { IGetCafeByIdReq, IGetCafeByIdRes } from "../types";
 

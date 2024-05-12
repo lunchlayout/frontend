@@ -12,8 +12,10 @@ export default function TextArea({
 }: ITextAreaProps) {
 	function handleChange(e: ChangeEvent<HTMLTextAreaElement>) {
 		onChange && onChange(e);
+		const MAX_HEIGHT = 160;
 		const textArea = e.target;
-		if (textArea.clientHeight < 160) {
+
+		if (textArea.clientHeight < MAX_HEIGHT) {
 			textArea.style.height = textArea.scrollHeight + "px";
 		}
 	}

@@ -2,16 +2,31 @@ import { useSelector } from "react-redux";
 import styles from "./progressPanel.module.scss";
 import { selectors } from "@entities/Dish";
 import Progress, { IProgress } from "@shared/ui/Progress";
-import { LOADING_PHRASES, LOADING_STEP } from "./consts";
-import { convertProgressToPercent } from "@shared/lib";
+import { LOADING_PHRASES, TIME_OF_SHOWING_TEXT } from "./consts";
 import { IProgressPanelProps } from "./progressPanel.props";
+import { useEffect, useRef, useState } from "react";
 
 export default function ProgressPanel({ className = "" }: IProgressPanelProps) {
 	const { value, max } = useSelector(
 		selectors.modelLoadingProgress,
 	) as IProgress;
-	const perValue = convertProgressToPercent(value, max);
-	const currentStep = Math.floor(perValue / LOADING_STEP);
+	const [currentStep, setCurrentStep] = useState(0);
+	const timerRef = useRef<NodeJS.Timeout | null>(null);
+
+	useEffect(() => {
+		timerRef.current = setInterval(() => {
+			setCurrentStep(step => {
+				if (step === LOADING_PHRASES.length - 1) {
+					return 0;
+				} else {
+					return step + 1;
+				}
+			});
+		}, TIME_OF_SHOWING_TEXT);
+		return () => {
+			clearInterval(timerRef.current!);
+		};
+	}, []);
 
 	return (
 		<div className={[styles.default, className].join(" ")}>

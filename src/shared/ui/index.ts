@@ -19,6 +19,7 @@ import FormControl from "./FormControl";
 import CloseButton from "./CloseButton";
 import Modal from "./Modal";
 import NavLink from "./NavLink";
+import QRReader from "./QRReader";
 
 export {
 	BackLink,
@@ -42,4 +43,5 @@ export {
 	CloseButton,
 	Modal,
 	NavLink,
+	QRReader,
 };

@@ -14,14 +14,10 @@ interface IQuiz {
 	options: string[];
 }
 
-interface IModel {
-	modelLink: string;
+type Entertainment = (IStory | IVideo | IQuiz)[];
+
+interface IEntertainmentDetails {
+	currentEntIdx: number;
 }
 
-interface IContent extends IModel {
-	stories: IStory[];
-	videos: IVideo[];
-	quizzes: IQuiz[];
-}
-
-export type { IVideo, IStory, IQuiz, IModel, IContent };
+export type { IVideo, IStory, IQuiz, Entertainment, IEntertainmentDetails };

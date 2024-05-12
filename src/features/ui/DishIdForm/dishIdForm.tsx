@@ -5,6 +5,7 @@ import { actions } from "@entities/Dish";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "@app/index";
 import { IDishIdFormProps } from "./dishIdForm.props";
+import { BASE_URL } from "@entities/Dish/consts";
 
 export default function DishIdForm({ className = "" }: IDishIdFormProps) {
 	const [dishId, setDishId] = useState("");
@@ -15,7 +16,7 @@ export default function DishIdForm({ className = "" }: IDishIdFormProps) {
 		e.preventDefault();
 		const res = await dispatch(actions.getDishById({ dishId }));
 		if (res.meta.requestStatus === "fulfilled") {
-			return navigate(`/dishes/${dishId}`);
+			return navigate(`${BASE_URL}/${dishId}`);
 		}
 	}
 

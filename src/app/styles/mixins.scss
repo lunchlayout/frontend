@@ -89,3 +89,15 @@
 	border-bottom-right-radius: map-get($radius, m);
 	@content;
 }
+
+@mixin desktop {
+	@media only screen and (min-width: 768px) {
+		@content;
+	}
+}
+
+@mixin mobileOrTablet {
+	@media only screen and (max-width: 768px) {
+		@content;
+	}
+}

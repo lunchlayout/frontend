@@ -1,4 +1,5 @@
-import { IContent } from "./content";
+import { Entertainment } from "./entertainment";
+import { IModel } from "./model";
 
 type Unit = "мл" | "г";
 
@@ -9,7 +10,7 @@ interface INutritionalValue {
 	carbohydrates: number;
 }
 
-interface IDish {
+interface IDish extends IModel {
 	name: string;
 	description: string;
 	amount: number;
@@ -19,15 +20,15 @@ interface IDish {
 	allergens: string[];
 	nutritionalValue: INutritionalValue;
 }
-interface IDishWithContent extends IDish {
-	content: IContent;
+interface IDishWithEntertainment extends IDish {
+	entertainment: Entertainment;
 }
 
-interface IDishWithCafeId extends IDishWithContent {
+interface IDishWithCafeId extends IDishWithEntertainment {
 	cafeId: string;
 }
 
-interface IDishWithId extends IDishWithContent {
+interface IDishWithId extends IDishWithEntertainment {
 	dishId: string;
 }
 

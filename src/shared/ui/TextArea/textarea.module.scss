@@ -1,5 +1,7 @@
 @import "../../../app/styles/variables", "../../../app/styles/mixins";
 
+$maxHeight: 160px;
+
 .default {
 	padding: map-get($padding, input);
 	font-family: inherit;
@@ -9,6 +11,7 @@
 	transition: outline map-get($transitions, control);
 	border-radius: map-get($radius, s);
 	resize: vertical;
+	max-height: $maxHeight;
 	&::placeholder {
 		color: map-get($colors, primaryTextHover);
 	}

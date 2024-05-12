@@ -6,6 +6,7 @@ import DishStory from "./DishStory";
 import DishVideo from "./DishVideo";
 import DishLoadedPanel from "./DishLoadedPanel";
 import DishInfoModal from "./DishInfoModal";
+import EntertainmentSlider from "./EntertainmentSlider";
 
 export {
 	DishCard,
@@ -16,4 +17,5 @@ export {
 	DishVideo,
 	DishLoadedPanel,
 	DishInfoModal,
+	EntertainmentSlider,
 };

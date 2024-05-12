@@ -12,6 +12,9 @@ import DesktopReviewHeader from "./DesktopReviewHeader";
 import DesktopCafeHeader from "./DesktopCafeHeader";
 import MobileReviewControl from "./MobileReviewControl";
 import DesktopDishControl from "./DesktopDishControl";
+import DishIdQRReader from "./DishIdQRReader";
+import MobileDishMain from "./MobileDishMain";
+import DesktopDishMain from "./DesktopDishMain";
 
 export {
 	SendDishIdPanel,
@@ -28,4 +31,7 @@ export {
 	MobileEntryControl,
 	MobileReviewControl,
 	DesktopDishControl,
+	DishIdQRReader,
+	MobileDishMain,
+	DesktopDishMain,
 };

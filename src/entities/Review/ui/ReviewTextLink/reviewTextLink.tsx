@@ -6,7 +6,7 @@ export default function ReviewTextLink() {
 	return (
 		<div className={styles.default}>
 			<Link to="/reviews">Оставьте ваш отзыв</Link>
-			<ReviewLink />
+			<ReviewLink type="primary" />
 		</div>
 	);
 }
