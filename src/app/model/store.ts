@@ -10,7 +10,7 @@ const mainReducer = combineReducers({
 
 const Store = configureStore({
 	reducer: mainReducer,
-	middleware: getDefaultMiddl => getDefaultMiddl().concat(logger),
+	// middleware: getDefaultMiddl => getDefaultMiddl().concat(logger),
 });
 
 export { Store, mainReducer };

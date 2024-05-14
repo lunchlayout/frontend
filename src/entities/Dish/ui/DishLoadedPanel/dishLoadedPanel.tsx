@@ -2,7 +2,6 @@ import styles from "./dishLoadedPanel.module.scss";
 import { Button, Link } from "@shared/ui";
 import { useSelector } from "react-redux";
 import { selectors } from "@entities/Dish";
-import { IDishWithCafeId } from "@entities/Dish/types";
 import { ModelLink } from "@features/ui";
 
 import { IDishLoadedPanelProps } from "./dishLoadedPanel.props";
@@ -14,10 +13,10 @@ import { getCafePathById } from "@entities/Cafe/lib";
 export default function DishLoadedPanel({
 	className = "",
 }: IDishLoadedPanelProps) {
-	const { cafeId } = useSelector(selectors.dish) as IDishWithCafeId;
-	const cafePath = getCafePathById(cafeId);
-
+	const dishCafe = useSelector(selectors.dishCafe);
 	const { isShown, close, open } = useModal();
+	if (!dishCafe) return null;
+	const cafePath = getCafePathById(dishCafe.cafeId);
 
 	return (
 		<>

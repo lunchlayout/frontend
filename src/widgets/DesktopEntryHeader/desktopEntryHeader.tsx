@@ -5,9 +5,11 @@ import { ReviewTextLink } from "@entities/Review/ui";
 export default function DesktopEntryHeader() {
 	return (
 		<header className={styles.default}>
-			<MainLogo />
-			<DesktopEntryNav className={styles.nav} />
-			<ReviewTextLink />
+			<div className={styles.content}>
+				<MainLogo />
+				<DesktopEntryNav className={styles.nav} />
+				<ReviewTextLink />
+			</div>
 		</header>
 	);
 }

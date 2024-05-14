@@ -1,0 +1,33 @@
+@import "../../app/styles/variables", "../../app/styles/mixins";
+
+.content {
+	@include contentContainer;
+	padding-top: map-get($padding, default) * 4;
+	@include flex(column) {
+		align-items: flex-start;
+		gap: map-get($gaps, primary);
+	}
+}
+
+.decor {
+	position: absolute;
+}
+
+.food {
+	right: 0;
+	top: 15%;
+}
+
+.screen1 {
+	right: 45%;
+	bottom: 10%;
+}
+
+.screen2 {
+	right: 25%;
+	bottom: 0;
+}
+
+.formPanel {
+	z-index: map-get($zIndex, caption);
+}

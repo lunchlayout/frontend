@@ -5522,6 +5522,11 @@ p-try@^2.0.0:
   resolved "https://registry.yarnpkg.com/p-try/-/p-try-2.2.0.tgz#cb2868540e313d61de58fafbe35ce9004d5540e6"
   integrity sha512-R4nPAVTAU0B9D35/Gk3uJf/7XYbQcyohSKdvAxIRSNghFl4e71hVoGnBNQz9cWaXxO2I10KTC+3jMdvvoKw6dQ==
 
+pagination-wizard@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/pagination-wizard/-/pagination-wizard-1.0.3.tgz#25714bc00a35fef3eb1340666b79d90e6a0837cb"
+  integrity sha512-MlPhD5sCzZUUIutj9Kqj3plvre7cglddjg3vidbij2DWhnzu+shUlQQZR2NH95BMKg8gtocGCzJDunJCrdui5g==
+
 pako@~0.2.0:
   version "0.2.9"
   resolved "https://registry.yarnpkg.com/pako/-/pako-0.2.9.tgz#f3f7522f4ef782348da8161bad9ecfd51bf83a75"

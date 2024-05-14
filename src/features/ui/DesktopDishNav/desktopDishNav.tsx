@@ -2,7 +2,6 @@ import { Button, NavLink } from "@shared/ui";
 import styles from "./desktopDishNav.module.scss";
 import { useSelector } from "react-redux";
 import { selectors } from "@entities/Dish";
-import { IDishWithCafeId } from "@entities/Dish/types";
 import { useModal } from "@shared/hook";
 import { getCafePathById } from "@entities/Cafe/lib";
 import { DishInfoModal } from "@entities/Dish/ui";
@@ -11,9 +10,10 @@ import { IDesktopDishNavProps } from "./desktopDishNav.props";
 export default function DesktopDishNav({
 	className = "",
 }: IDesktopDishNavProps) {
-	const { cafeId } = useSelector(selectors.dish) as IDishWithCafeId;
-	const cafePath = getCafePathById(cafeId);
+	const dish = useSelector(selectors.dish);
 	const { isShown, open, close } = useModal();
+	if (!dish) return null;
+	const cafePath = getCafePathById(dish.cafe.cafeId);
 
 	return (
 		<>

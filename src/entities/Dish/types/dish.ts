@@ -1,3 +1,4 @@
+import { IDishCafe } from "./dishCafe";
 import { Entertainment } from "./entertainment";
 import { IModel } from "./model";
 
@@ -24,12 +25,12 @@ interface IDishWithEntertainment extends IDish {
 	entertainment: Entertainment;
 }
 
-interface IDishWithCafeId extends IDishWithEntertainment {
-	cafeId: string;
+interface IDishWithCafe extends IDishWithEntertainment {
+	cafe: IDishCafe;
 }
 
 interface IDishWithId extends IDishWithEntertainment {
 	dishId: string;
 }
 
-export type { IDish, INutritionalValue, IDishWithId, IDishWithCafeId };
+export type { IDish, INutritionalValue, IDishWithId, IDishWithCafe };

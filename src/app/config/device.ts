@@ -2,9 +2,9 @@ import { IDeviceConfig } from "@app/types";
 
 const DeviceConfig: IDeviceConfig = {
 	desktop: {
-		minWidth: "768px",
+		minWidth: "769px",
 	},
-	mobileOrTablet: {
+	mobile: {
 		maxWidth: "768px",
 	},
 };

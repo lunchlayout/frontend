@@ -8,30 +8,39 @@ import { Query } from "@features/context";
 import { ICafeParams } from "@app/types";
 import { useAppDispatch } from "@app/index";
 import styles from "./searchDishesPanel.module.scss";
+import { useCafeSearchParams } from "@features/hook";
 
 export default function SearchDishesPanel({
 	className = "",
 }: ISearchDishesPanelProps) {
-	const currentPage = useSelector(selectors.currentPage);
+	const { page, query, setCafeSearchParams } = useCafeSearchParams();
+	const isLoading = useSelector(selectors.isLoading);
 	const dispatch = useAppDispatch();
 	const { cafeId } = useParams<keyof ICafeParams>() as ICafeParams;
-	const [query, setQuery] = useState("");
+	const [tempQuery, setTempQuery] = useState(query);
 
 	async function searchDishes(e: FormEvent<HTMLFormElement>) {
 		e.preventDefault();
-		await dispatch(
-			actions.getCafeById({ cafeId, query, page: currentPage }),
-		);
+
+		const newSearchParams = {
+			tempQuery,
+			page,
+		};
+		await dispatch(actions.getCafeById({ cafeId, ...newSearchParams }));
+		setCafeSearchParams({
+			...newSearchParams,
+			page: newSearchParams.page.toString(),
+		});
 	}
 	return (
 		<Query.Context.Provider
 			value={{
-				value: query,
-				handleChange: e => setQuery(e.target.value),
+				value: tempQuery,
+				handleChange: e => setTempQuery(e.target.value),
 			}}
 		>
 			<SearchPanel
-				disabled={!currentPage}
+				disabled={isLoading}
 				onSubmit={searchDishes}
 				className={[styles.default, className].join(" ")}
 				placeholder="Найти блюдо"

@@ -51,7 +51,6 @@ const mockState: IRootState = {
 		},
 	},
 	cafes: {
-		currentPage: 1,
 		pageCnt: 5,
 		isLoading: false,
 		errors: [],

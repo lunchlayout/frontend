@@ -16,11 +16,22 @@ export default function ReviewForm({ hasControl = false }: IReviewFormProps) {
 		e.preventDefault();
 		if (rating) {
 			await api.sendReview({ rating, comment });
+			resetForm();
 		}
 	}
 
+	function resetForm() {
+		setRating(undefined);
+		SetComment("");
+	}
+
 	return (
-		<form id={FORM_ID} className={styles.default} onSubmit={sendReview}>
+		<form
+			id={FORM_ID}
+			className={styles.default}
+			onSubmit={sendReview}
+			onReset={resetForm}
+		>
 			<Rating.Context.Provider
 				value={{
 					value: rating,

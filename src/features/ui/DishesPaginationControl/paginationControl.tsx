@@ -4,28 +4,51 @@ import { useSelector } from "react-redux";
 import { actions, selectors } from "@entities/Cafe";
 import { useAppDispatch } from "@app/index";
 import styles from "./dishesPaginationControl.module.scss";
+import { useParams } from "react-router-dom";
+import { ICafeParams } from "@app/types";
+import { useCafeSearchParams } from "@features/hook";
 
 export default function DishesPaginationControl({
 	className = "",
 }: IDishesPaginationControlProps) {
-	const currentPage = useSelector(selectors.currentPage);
 	const pageCnt = useSelector(selectors.pageCnt);
+	const { cafeId } = useParams<keyof ICafeParams>() as ICafeParams;
 	const dispatch = useAppDispatch();
-
-	function nextPage() {
-		dispatch(actions.setCurrentPage(currentPage + 1));
+	const { page, query, setCafeSearchParams } = useCafeSearchParams();
+	async function nextPage() {
+		const newSearchParams = {
+			query,
+			page: page + 1,
+		};
+		await dispatch(actions.getCafeById({ cafeId, ...newSearchParams }));
+		setCafeSearchParams({
+			...newSearchParams,
+			page: newSearchParams.page.toString(),
+		});
 	}
-	function prevPage() {
-		dispatch(actions.setCurrentPage(currentPage - 1));
+	async function prevPage() {
+		const newSearchParams = {
+			query,
+			page: page - 1,
+		};
+		await dispatch(actions.getCafeById({ cafeId, ...newSearchParams }));
+		setCafeSearchParams({
+			...newSearchParams,
+			page: newSearchParams.page.toString(),
+		});
 	}
 
 	return (
-		<PaginationControl
-			currentPage={currentPage}
-			pageCnt={pageCnt}
-			onLeftClick={prevPage}
-			onRightClick={nextPage}
-			className={[styles.default, className].join(" ")}
-		/>
+		<>
+			{pageCnt && (
+				<PaginationControl
+					currentPage={page}
+					pageCnt={pageCnt}
+					onLeftClick={prevPage}
+					onRightClick={nextPage}
+					className={[styles.default, className].join(" ")}
+				/>
+			)}
+		</>
 	);
 }

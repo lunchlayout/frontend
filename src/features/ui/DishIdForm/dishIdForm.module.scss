@@ -6,7 +6,7 @@
 	@include flex(column) {
 		gap: map-get($gaps, secondary);
 	}
-	& * {
+	& :is(input, button) {
 		@include outline(false, secondary);
 	}
 }

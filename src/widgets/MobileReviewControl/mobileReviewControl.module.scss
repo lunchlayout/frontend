@@ -4,6 +4,10 @@
 	@include mobileBoundary(bottom);
 }
 
+.content {
+	@include contentContainer;
+}
+
 .formControl {
 	justify-content: space-between;
 }

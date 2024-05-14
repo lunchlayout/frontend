@@ -2,6 +2,10 @@
 
 .default {
 	@include desktopHeader;
+}
+
+.content {
+	@include contentContainer;
 	@include flex {
 		justify-content: space-between;
 		gap: map-get($gaps, primary);

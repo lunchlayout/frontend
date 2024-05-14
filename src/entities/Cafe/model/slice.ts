@@ -11,9 +11,6 @@ const CafesSlice = createSlice({
 		setIsLoading(state, action: PayloadAction<boolean>) {
 			state.isLoading = action.payload;
 		},
-		setCurrentPage(state, action: PayloadAction<number>) {
-			state.currentPage = action.payload;
-		},
 	},
 	extraReducers: builder => {
 		builder.addCase(

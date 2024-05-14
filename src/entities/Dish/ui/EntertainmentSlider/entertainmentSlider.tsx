@@ -1,50 +1,46 @@
 import { IEntertainmentSliderProps } from "./entertainmentSlider.props";
 import styles from "./entertainmentSlider.module.scss";
 import { actions, selectors } from "@entities/Dish";
-import { IDishWithCafeId } from "@entities/Dish/types";
 import { useSelector } from "react-redux";
-import { IEntertainmentDetails } from "@entities/Dish/types/entertainment";
 import React from "react";
 import DishStory from "../DishStory";
 import DishVideo from "../DishVideo";
 import DishQuiz from "../DishQuiz";
 import { ButtonController } from "@shared/ui";
 import { useAppDispatch } from "@app/index";
-import { Desktop, MobileOrTablet } from "@shared/hoc";
+import { Desktop, Mobile } from "@shared/hoc";
 
 export default function EntertainmentSlider({
 	className = "",
 }: IEntertainmentSliderProps) {
-	const { entertainment } = useSelector(selectors.dish) as IDishWithCafeId;
-	const { currentEntIdx } = useSelector(
-		selectors.dishEntDetails,
-	) as IEntertainmentDetails;
 	const dispatch = useAppDispatch();
-	const currentEnt = entertainment[currentEntIdx];
-	console.log(entertainment);
-	let EntComponentTag: React.JSX.Element;
+	const dish = useSelector(selectors.dish);
+	const dishEntDetails = useSelector(selectors.dishEntDetails);
+	if (!dish || !dishEntDetails) return null;
+	const currentEnt = dish.entertainment[dishEntDetails.currentEntIdx];
+	let EntComponent: React.JSX.Element;
 
 	if ("img" in currentEnt) {
-		EntComponentTag = (
+		EntComponent = (
 			<DishStory className={styles.entertainment} {...currentEnt} />
 		);
 	} else if ("link" in currentEnt) {
-		EntComponentTag = (
+		EntComponent = (
 			<DishVideo className={styles.entertainment} {...currentEnt} />
 		);
 	} else {
-		EntComponentTag = (
+		EntComponent = (
 			<DishQuiz className={styles.entertainment} {...currentEnt} />
 		);
 	}
 
-	function prevEnt() {
-		dispatch(actions.setCurrentEntIdx(currentEntIdx - 1));
-	}
+	const prevEnt = () => {
+		dispatch(actions.setCurrentEntIdx(dishEntDetails.currentEntIdx - 1));
+	};
 
-	function nextEnt() {
-		dispatch(actions.setCurrentEntIdx(currentEntIdx + 1));
-	}
+	const nextEnt = () => {
+		dispatch(actions.setCurrentEntIdx(dishEntDetails.currentEntIdx + 1));
+	};
 
 	const prevBtn = (
 		<ButtonController
@@ -64,14 +60,14 @@ export default function EntertainmentSlider({
 	return (
 		<section className={[styles.default, className].join(" ")}>
 			<Desktop>{prevBtn}</Desktop>
-			{EntComponentTag}
+			{EntComponent}
 			<Desktop>{nextBtn}</Desktop>
-			<MobileOrTablet>
+			<Mobile>
 				<div className={styles.sliderController}>
 					{prevBtn}
 					{nextBtn}
 				</div>
-			</MobileOrTablet>
+			</Mobile>
 		</section>
 	);
 }

@@ -11,6 +11,8 @@ import ProgressPanel from "./ProgressPanel";
 import MainLogo from "./MainLogo";
 import DesktopDishNav from "./DesktopDishNav";
 import DesktopEntryNav from "./DesktopEntryNav";
+import ScreenImage from "./ScreenImage";
+import ARQRLink from "./ARQRLink";
 
 export {
 	QuizOption,
@@ -26,4 +28,6 @@ export {
 	MainLogo,
 	DesktopDishNav,
 	DesktopEntryNav,
+	ScreenImage,
+	ARQRLink,
 };

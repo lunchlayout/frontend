@@ -9,17 +9,22 @@ import { selectors } from "@entities/Cafe";
 import styles from "./dishesPanel.module.scss";
 
 export default function DishesPanel() {
-	const pageCnt = useSelector(selectors.pageCnt);
+	const dishes = useSelector(selectors.dishes);
+
 	return (
 		<section className={styles.default}>
 			<SearchDishesPanel />
-			{!!pageCnt && (
+			{dishes && (
 				<>
-					<DishList />
-					<DishesPaginationControl />
+					{!!dishes.length && (
+						<>
+							<DishList />
+							<DishesPaginationControl />
+						</>
+					)}
+					{!dishes.length && <DishesNotFound />}
 				</>
 			)}
-			{!pageCnt && <DishesNotFound />}
 		</section>
 	);
 }

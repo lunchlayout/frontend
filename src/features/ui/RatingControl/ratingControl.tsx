@@ -10,12 +10,13 @@ export default function RatingControl() {
 
 	return (
 		<fieldset className={styles.default}>
-			{Object.keys(EmojiTypes).map(emojiType => {
+			{Object.keys(EmojiTypes).map((emojiType, idx) => {
 				return (
 					<EmojiRadio
 						emoji={emojiType as EmojiKeys}
 						checked={EmojiTypes[emojiType as EmojiKeys] === value}
 						onChange={handleChange}
+						key={idx}
 					/>
 				);
 			})}

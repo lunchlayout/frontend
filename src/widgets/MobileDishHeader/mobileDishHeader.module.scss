@@ -2,6 +2,10 @@
 
 .default {
 	@include mobileBoundary(top);
+}
+
+.content {
+	@include contentContainer;
 	@include flex {
 		justify-content: space-between;
 		gap: map-get($gaps, primary);

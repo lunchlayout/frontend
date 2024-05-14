@@ -1,14 +1,18 @@
-import { Link } from "@shared/ui";
+import { Button, Link, Modal } from "@shared/ui";
 import styles from "./modelLink.module.scss";
 import { useLocation } from "react-router-dom";
 import { ReactElement, SVGProps } from "react";
 import { IModelLinkProps } from "./modelLink.props";
+import { Desktop, Mobile } from "@shared/hoc";
+import { useModal } from "@shared/hook";
+import { ARQRLink } from "@features/ui";
 
 export default function ModelLink({ className = "" }: IModelLinkProps) {
-	let { pathname } = useLocation();
+	const { close, isShown, open } = useModal();
 
-	const lastIndex = pathname.lastIndexOf("/");
-	const mode = pathname.slice(lastIndex + 1);
+	let { pathname } = useLocation();
+	const lastIndex = pathname.lastIndexOf("/") + 1;
+	const mode = pathname.slice(lastIndex);
 
 	let linkSvg: ReactElement<SVGProps<SVGSVGElement>>;
 	let linkText: string;
@@ -33,7 +37,7 @@ export default function ModelLink({ className = "" }: IModelLinkProps) {
 		if (mode === "ar") {
 			pathname = pathname.slice(0, lastIndex);
 		}
-		pathname = pathname + "3d";
+		pathname = pathname + "/3d";
 		linkText = "Перейти в 3D";
 		linkSvg = (
 			<svg
@@ -54,11 +58,42 @@ export default function ModelLink({ className = "" }: IModelLinkProps) {
 	}
 
 	return (
-		<div className={[styles.default, className].join(" ")}>
-			<Link to={pathname} type="secondary" className={styles.modelLink}>
-				{linkSvg}
-			</Link>
-			<span>{linkText}</span>
-		</div>
+		<>
+			<div className={[styles.default, className].join(" ")}>
+				<Desktop>
+					{mode === "3d" && (
+						<Button
+							onClick={open}
+							customType="secondary"
+							className={styles.modelLink}
+						>
+							{linkSvg}
+						</Button>
+					)}
+					{mode !== "3d" && (
+						<Link
+							to={pathname}
+							type="secondary"
+							className={styles.modelLink}
+						>
+							{linkSvg}
+						</Link>
+					)}
+				</Desktop>
+				<Mobile>
+					<Link
+						to={pathname}
+						type="secondary"
+						className={styles.modelLink}
+					>
+						{linkSvg}
+					</Link>
+				</Mobile>
+				<span>{linkText}</span>
+			</div>
+			<Modal onClose={close} isOpen={isShown}>
+				<ARQRLink />
+			</Modal>
+		</>
 	);
 }

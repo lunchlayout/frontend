@@ -1,9 +1,12 @@
-import { IDishWithId } from "../../Dish/types";
+import { IDishWithId } from "@entities/Dish/types";
 import { ICafe } from "./cafe";
+
+interface IDishGetCafeByIdRes
+	extends Pick<IDishWithId, "dishId" | "name" | "img" | "amount" | "unit"> {}
 
 interface IGetCafeByIdRes extends ICafe {
 	pageCnt: number;
-	dishes: Pick<IDishWithId, "dishId" | "name" | "img" | "amount" | "unit">[];
+	dishes: IDishGetCafeByIdRes[];
 }
 
-export type { IGetCafeByIdRes };
+export type { IGetCafeByIdRes, IDishGetCafeByIdRes };

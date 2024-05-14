@@ -1,10 +1,10 @@
 import { IDefaultState } from "@shared/types";
-import { IDishWithCafeId } from "@entities/Dish/types";
+import { IDishWithCafe } from "@entities/Dish/types";
 import { IProgress } from "@shared/ui/Progress";
 import { IEntertainmentDetails } from "./entertainment";
 
 interface IDishesState extends IDefaultState {
-	dish?: IDishWithCafeId;
+	dish?: IDishWithCafe;
 	modelLoadingProgress?: IProgress;
 	entertainmentDetails?: IEntertainmentDetails;
 }

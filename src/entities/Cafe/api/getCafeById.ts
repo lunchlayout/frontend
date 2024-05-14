@@ -1,12 +1,12 @@
 import { $api } from "@app/index";
-import { BASE_URL } from "../consts";
 import { IGetCafeByIdReq, IGetCafeByIdRes } from "../types";
+import { getCafePathById } from "../lib";
 
 async function getCafeById(req: IGetCafeByIdReq) {
-	const cafe = await $api.get<IGetCafeByIdRes>(`${BASE_URL}/${req.cafeId}`, {
+	const cafe = await $api.get<IGetCafeByIdRes>(getCafePathById(req.cafeId), {
 		params: {
 			query: req.query,
-			page: req.page,
+			page: req.page && +req.page,
 		},
 	});
 	return cafe.data;

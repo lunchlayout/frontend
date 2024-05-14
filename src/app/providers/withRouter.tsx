@@ -2,19 +2,20 @@ import {
 	createBrowserRouter,
 	RouterProvider as ReactRouterProvider,
 } from "react-router-dom";
-import * as Pages from "@pages/index";
+import { Cafe, Dish, Entry, Review } from "@pages/index";
 
 const router = createBrowserRouter([
 	{
 		path: "/",
+		element: <Entry.Layout />,
 		children: [
 			{
 				index: true,
-				element: <Pages.HomePage />,
+				element: <Entry.MainPage />,
 			},
 			{
 				path: "scan",
-				element: <Pages.ScanPage />,
+				element: <Entry.ScanPage />,
 			},
 		],
 	},
@@ -23,18 +24,19 @@ const router = createBrowserRouter([
 		children: [
 			{
 				path: ":dishId",
+				element: <Dish.Layout />,
 				children: [
 					{
 						index: true,
-						element: <Pages.DishPage />,
+						element: <Dish.EntertainmentPage />,
 					},
 					{
 						path: "3d",
-						element: <Pages.Dish3DPage />,
+						element: <Dish.Model3DPage />,
 					},
 					{
 						path: "ar",
-						element: <Pages.DishARPage />,
+						element: <Dish.ModelARPage />,
 					},
 				],
 			},
@@ -42,16 +44,23 @@ const router = createBrowserRouter([
 	},
 	{
 		path: "/cafes",
+		element: <Cafe.Layout />,
 		children: [
 			{
 				path: ":cafeId",
-				element: <Pages.CafePage />,
+				element: <Cafe.DishesPage />,
 			},
 		],
 	},
 	{
 		path: "/reviews",
-		element: <Pages.ReviewPage />,
+		element: <Review.Layout />,
+		children: [
+			{
+				index: true,
+				element: <Review.SendingPage />,
+			},
+		],
 	},
 ]);
 

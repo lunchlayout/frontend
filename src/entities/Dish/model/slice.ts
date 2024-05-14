@@ -38,7 +38,8 @@ const DishesSlice = createSlice({
 		builder.addCase(
 			getDishById.fulfilled,
 			(state, action: PayloadAction<IGetDishByIdRes>) => {
-				delete state.modelLoadingProgress;
+				//TODO: вернуть после теста
+				// delete state.modelLoadingProgress;
 				state.entertainmentDetails = {
 					currentEntIdx: 0,
 				};

@@ -1,19 +1,25 @@
 import styles from "./mobileDishControl.module.scss";
 import { useSelector } from "react-redux";
 import { selectors } from "@entities/Dish";
-import { IProgress } from "@shared/ui/Progress";
+
 import { ProgressPanel } from "@features/ui";
 import { DishLoadedPanel } from "@entities/Dish/ui";
 
 export default function MobileDishControl() {
-	const { max, value } = useSelector(
-		selectors.modelLoadingProgress,
-	) as IProgress;
-	const modelLoaded = value >= max;
+	const modelLoadingProgress = useSelector(selectors.modelLoadingProgress);
+	const progressExist = modelLoadingProgress?.max;
+	const modelLoaded =
+		progressExist && modelLoadingProgress.value >= modelLoadingProgress.max;
 	return (
-		<div className={styles.default}>
-			{!modelLoaded && <ProgressPanel />}
-			{modelLoaded && <DishLoadedPanel />}
-		</div>
+		<>
+			{progressExist && (
+				<div className={styles.default}>
+					<div className={styles.content}>
+						{!modelLoaded && <ProgressPanel />}
+						{modelLoaded && <DishLoadedPanel />}
+					</div>
+				</div>
+			)}
+		</>
 	);
 }

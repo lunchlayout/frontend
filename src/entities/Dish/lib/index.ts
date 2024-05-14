@@ -1,0 +1,1 @@
+export { getDishPathById } from "./getDishPathById";

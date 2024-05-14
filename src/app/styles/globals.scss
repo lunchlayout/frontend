@@ -1,4 +1,4 @@
-@import "variables";
+@import "variables", "mixins";
 
 *,
 *::before,
@@ -27,6 +27,21 @@ body {
 }
 
 #root {
+	@include flex(column) {
+		align-items: stretch;
+		gap: map-get($gaps, primary);
+		justify-content: space-between;
+	}
+
 	position: relative;
 	min-height: inherit;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	@include desktop {
+		background-image: url("/desktopMainBg.png");
+	}
+	@include mobile {
+		background-image: url("/mobileMainBg.png");
+	}
 }

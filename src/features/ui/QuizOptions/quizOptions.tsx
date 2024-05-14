@@ -22,9 +22,10 @@ export default function QuizOptions({
 
 	return (
 		<fieldset className={[styles.default, className].join(" ")}>
-			{options.map(option => {
+			{options.map((option, idx) => {
 				return (
 					<QuizOption
+						key={idx}
 						disabled={disabled}
 						label={option}
 						onChange={handleChange}

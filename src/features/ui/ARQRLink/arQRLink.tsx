@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { IDishParams } from "@app/types";
 import { QRLink } from "@shared/ui";
 
-export default async function ARQRLink({ className = "" }: IARQRLinkProps) {
+export default function ARQRLink({ className = "" }: IARQRLinkProps) {
 	const { dishId } = useParams<keyof IDishParams>() as IDishParams;
 	return (
 		<QRLink

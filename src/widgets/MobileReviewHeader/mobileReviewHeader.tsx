@@ -6,9 +6,11 @@ import { MainLogo } from "@features/ui";
 export default function MobileReviewHeader() {
 	return (
 		<header className={styles.default}>
-			<BackLink />
-			<Title level={1}>Обратная связь</Title>
-			<MainLogo />
+			<div className={styles.content}>
+				<BackLink />
+				<Title level={1}>Обратная связь</Title>
+				<MainLogo />
+			</div>
 		</header>
 	);
 }

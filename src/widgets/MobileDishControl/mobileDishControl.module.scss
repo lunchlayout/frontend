@@ -3,3 +3,7 @@
 .default {
 	@include mobileBoundary(bottom);
 }
+
+.content {
+	@include contentContainer;
+}

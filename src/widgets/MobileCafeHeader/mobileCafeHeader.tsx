@@ -10,9 +10,11 @@ export default function MobileCafeHeader() {
 
 	return (
 		<header className={styles.default}>
-			<BackLink />
-			<Title level={2}>{name}</Title>
-			<CafeLogo />
+			<div className={styles.content}>
+				<BackLink />
+				<Title level={2}>{name}</Title>
+				<CafeLogo />
+			</div>
 		</header>
 	);
 }

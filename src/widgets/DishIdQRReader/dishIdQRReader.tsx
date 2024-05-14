@@ -1,6 +1,6 @@
 import { useAppDispatch } from "@app/index";
 import { actions } from "@entities/Dish";
-import { BASE_URL } from "@entities/Dish/consts";
+import { getDishPathById } from "@entities/Dish/lib";
 import { QRReader } from "@shared/ui";
 import { useNavigate } from "react-router-dom";
 
@@ -13,7 +13,7 @@ export default function DishIdQRReader() {
 			actions.getDishById({ dishId: decodedText }),
 		);
 		if (res.meta.requestStatus === "fulfilled") {
-			return navigate(`${BASE_URL}/${decodedText}`);
+			return navigate(getDishPathById(decodedText));
 		}
 	}
 

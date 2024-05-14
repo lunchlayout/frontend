@@ -1,4 +1,4 @@
-import { IDishWithCafeId, IQuiz, IStory, IVideo } from "@entities/Dish/types";
+import { IDishWithCafe, IQuiz, IStory, IVideo } from "@entities/Dish/types";
 
 interface IEntertainmentRes {
 	stories: IStory[];
@@ -6,7 +6,7 @@ interface IEntertainmentRes {
 	quizzes: IQuiz[];
 }
 
-interface IGetDishByIdRes extends Omit<IDishWithCafeId, "entertainment"> {
+interface IGetDishByIdRes extends Omit<IDishWithCafe, "entertainment"> {
 	entertainment: IEntertainmentRes;
 }
 

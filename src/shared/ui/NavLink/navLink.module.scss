@@ -1,9 +1,9 @@
 @import "../../../app/styles/variables", "../../../app/styles/mixins";
 
 .active {
-	color: map-get($colors, primary);
+	opacity: 1;
 }
 
 .inactive {
-	color: inherit;
+	opacity: 0.7;
 }

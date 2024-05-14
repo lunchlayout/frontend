@@ -5,6 +5,10 @@
 	color: map-get($colors, secondary);
 }
 
+.content {
+	@include contentContainer;
+}
+
 .links {
 	@include resetList;
 	@include grid {

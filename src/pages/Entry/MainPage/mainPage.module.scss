@@ -1,0 +1,13 @@
+@import "../../../app/styles/variables", "../../../app/styles/mixins";
+
+.main {
+	@include mainContent;
+}
+
+.content {
+	@include contentContainer;
+}
+
+.desktopMain {
+	align-self: inherit;
+}

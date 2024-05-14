@@ -1,4 +1,4 @@
 import Desktop from "./Desktop";
-import MobileOrTablet from "./MobileOrTablet";
+import Mobile from "./Mobile";
 
-export { Desktop, MobileOrTablet };
+export { Desktop, Mobile };

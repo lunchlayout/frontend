@@ -75,15 +75,15 @@
 	} @else if ($type == bottom) {
 		$type: top;
 	}
-	padding: map-get($padding, default) map-get($padding, default) * 1.5;
+	// padding: map-get($padding, default) map-get($padding, default) * 1.5;
 	background: map-get($colors, secondary);
 	border-#{$type}-left-radius: map-get($radius, m);
 	border-#{$type}-right-radius: map-get($radius, m);
 	@content;
 }
 
-@mixin desktopHeader() {
-	padding: map-get($padding, default) map-get($padding, default) * 1.5;
+@mixin desktopHeader {
+	// padding: map-get($padding, default) map-get($padding, default) * 1.5;
 	background: map-get($colors, secondary);
 	border-bottom-left-radius: map-get($radius, m);
 	border-bottom-right-radius: map-get($radius, m);
@@ -91,13 +91,36 @@
 }
 
 @mixin desktop {
-	@media only screen and (min-width: 768px) {
+	@media only screen and (min-width: 769px) {
 		@content;
 	}
 }
 
-@mixin mobileOrTablet {
+@mixin mobile {
 	@media only screen and (max-width: 768px) {
 		@content;
 	}
+}
+
+@mixin caption {
+	z-index: map-get($zIndex, caption);
+	padding: map-get($padding, button);
+	text-align: center;
+	border-radius: map-get($radius, m);
+
+	color: map-get($colors, secondary);
+	background: map-get($colors, primary);
+	@content;
+}
+
+@mixin mainContent {
+	flex: 1;
+	@content;
+}
+
+@mixin contentContainer {
+	margin: 0 auto;
+	max-width: 1400px;
+	padding: map-get($padding, default);
+	@content;
 }
