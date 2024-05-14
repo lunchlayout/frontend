@@ -1,10 +1,7 @@
 @import "../../../app/styles/variables", "../../../app/styles/mixins";
 
-.default {
-	@include flex;
+.default.default {
 	@include icon(map-get($colors, primaryText), 30px);
-	text-decoration: none;
-	@include outline;
 }
 .arrow {
 	transition: fill map-get($transitions, link);

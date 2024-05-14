@@ -23,7 +23,7 @@ export default function SearchDishesPanel({
 		e.preventDefault();
 
 		const newSearchParams = {
-			tempQuery,
+			query: tempQuery,
 			page,
 		};
 		await dispatch(actions.getCafeById({ cafeId, ...newSearchParams }));

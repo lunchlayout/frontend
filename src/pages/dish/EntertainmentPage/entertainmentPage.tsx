@@ -12,6 +12,7 @@ export default function EntertainmentPage() {
 	const dish = useSelector(selectors.dish);
 	const { dishId } = useParams<keyof IDishParams>() as IDishParams;
 	const dispatch = useAppDispatch();
+
 	useEffect(() => {
 		async function getDishById() {
 			await dispatch(actions.getDishById({ dishId }));

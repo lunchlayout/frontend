@@ -1,9 +1,16 @@
-import { Link } from "react-router-dom";
+import { Button } from "@shared/ui";
 import styles from "./backLink.module.scss";
+import { useNavigate } from "react-router-dom";
 
 export default function BackLink() {
+	const navigate = useNavigate();
+
+	function goBack() {
+		return navigate(-1);
+	}
+
 	return (
-		<Link to=".." className={styles.default}>
+		<Button onClick={goBack} className={styles.default}>
 			<svg
 				aria-label="Вернуться назад"
 				className={styles.arrow}
@@ -24,6 +31,6 @@ export default function BackLink() {
                          10.7132 24.4044 10.9013 24.6857 11.2361C24.967 11.5709 25.125 12.025 25.125 12.4985Z"
 				/>
 			</svg>
-		</Link>
+		</Button>
 	);
 }

@@ -19,7 +19,11 @@ export default function Modal({
 		if (target instanceof HTMLElement) {
 			const isDialog = target === dialogRef.current;
 			const isDialogChildren = dialogRef.current?.contains(target);
-			const isOutsideOfDialog = !(isDialog || isDialogChildren);
+			const isOutsideOfDialog = !(
+				isDialog ||
+				isDialogChildren ||
+				target.tagName === "BUTTON"
+			);
 
 			if (isOutsideOfDialog && onClose) {
 				onClose();

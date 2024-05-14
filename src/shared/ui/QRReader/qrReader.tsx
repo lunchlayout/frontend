@@ -22,6 +22,11 @@ export default function QRReader({
 				onError,
 			);
 		}
+		return () => {
+			if (qrReaderRef.current && qrReaderRef.current.isScanning) {
+				qrReaderRef.current.stop();
+			}
+		};
 	}, [onSuccess, onError]);
 
 	return (

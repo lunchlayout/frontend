@@ -15,13 +15,6 @@ const meta = {
 type Story = StoryObj<typeof BackLink>;
 
 export const BackLinkSimple: Story = {
-	parameters: {
-		docs: {
-			description: {
-				story: "simple back link",
-			},
-		},
-	},
 	args: {},
 };
 
