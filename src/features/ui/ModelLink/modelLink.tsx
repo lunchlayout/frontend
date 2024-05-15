@@ -35,7 +35,7 @@ export default function ModelLink({ className = "" }: IModelLinkProps) {
 		);
 	} else {
 		if (mode === "ar") {
-			pathname = pathname.slice(0, lastIndex);
+			pathname = pathname.slice(0, lastIndex - 1);
 		}
 		pathname = pathname + "/3d";
 		linkText = "Перейти в 3D";

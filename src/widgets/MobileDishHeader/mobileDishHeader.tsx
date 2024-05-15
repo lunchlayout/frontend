@@ -7,7 +7,7 @@ import { CafeLogo } from "@entities/Cafe/ui";
 
 export default function MobileDishHeader() {
 	const dish = useSelector(selectors.dish);
-	console.log(1);
+
 	return (
 		<>
 			{dish && (

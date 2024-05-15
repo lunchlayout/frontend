@@ -29,7 +29,6 @@ body {
 #root {
 	@include flex(column) {
 		align-items: stretch;
-		gap: map-get($gaps, primary);
 		justify-content: space-between;
 	}
 

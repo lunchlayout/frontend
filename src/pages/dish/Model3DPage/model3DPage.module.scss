@@ -1,13 +1,14 @@
 @import "../../../app/styles/variables", "../../../app/styles/mixins";
 
-.main {
-	@include mainContent {
-		padding-top: map-get($padding, default);
-	}
+.default {
+	position: relative;
+	@include mainContent;
 }
 
 .content {
 	@include contentContainer {
-		max-width: 1000px;
+		position: absolute;
+		height: 100%;
+		width: 100%;
 	}
 }

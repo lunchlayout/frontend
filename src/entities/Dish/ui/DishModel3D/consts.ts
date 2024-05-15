@@ -1,0 +1,3 @@
+const REQUIRED_AXIS_LENGTH = 2;
+
+export { REQUIRED_AXIS_LENGTH };

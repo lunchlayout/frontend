@@ -7,7 +7,7 @@
 }
 
 .modelLink {
-	padding: map-get($padding, rounded);
+	padding: map-get($padding, rounded) * 1.5;
 	border: 0.1rem solid map-get($colors, secondary);
 	& svg {
 		stroke: map-get($colors, secondary);

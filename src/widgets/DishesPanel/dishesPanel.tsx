@@ -18,11 +18,13 @@ export default function DishesPanel() {
 				<>
 					{!!dishes.length && (
 						<>
-							<DishList />
+							<DishList className={styles.dishList} />
 							<DishesPaginationControl />
 						</>
 					)}
-					{!dishes.length && <DishesNotFound />}
+					{!dishes.length && (
+						<DishesNotFound className={styles.notFound} />
+					)}
 				</>
 			)}
 		</section>
