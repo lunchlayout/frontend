@@ -6,6 +6,7 @@
 		gap: map-get($gaps, secondary);
 		flex-wrap: wrap;
 		justify-content: flex-start;
+		align-items: flex-start;
 	}
 	border-radius: map-get($radius, m);
 }

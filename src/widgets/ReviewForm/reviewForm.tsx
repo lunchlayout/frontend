@@ -10,7 +10,7 @@ import { FormControl } from "@shared/ui";
 
 export default function ReviewForm({ hasControl = false }: IReviewFormProps) {
 	const [rating, setRating] = useState<IRating>();
-	const [comment, SetComment] = useState("");
+	const [comment, setComment] = useState("");
 
 	async function sendReview(e: FormEvent<HTMLFormElement>) {
 		e.preventDefault();
@@ -22,7 +22,7 @@ export default function ReviewForm({ hasControl = false }: IReviewFormProps) {
 
 	function resetForm() {
 		setRating(undefined);
-		SetComment("");
+		setComment("");
 	}
 
 	return (
@@ -43,7 +43,7 @@ export default function ReviewForm({ hasControl = false }: IReviewFormProps) {
 			<Comment.Context.Provider
 				value={{
 					value: comment,
-					handleChange: e => SetComment(e.target.value),
+					handleChange: e => setComment(e.target.value),
 				}}
 			>
 				<CommentSection />

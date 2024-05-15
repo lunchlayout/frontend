@@ -1,14 +1,21 @@
 import { selectors } from "@entities/Dish";
-import { IDishWithCafeId } from "@entities/Dish/types";
 import { SEO } from "@shared/ui";
+import Dish3DCanvas from "@widgets/Dish3DCanvas";
 import { useSelector } from "react-redux";
+import { IModel3DPageProps } from "./model3DPage.props";
+import styles from "./model3DPage.module.scss";
 
-export default function Model3DPage() {
-	const { name } = useSelector(selectors.dish) as IDishWithCafeId;
-
+export default function Model3DPage({ className = "" }: IModel3DPageProps) {
+	const dish = useSelector(selectors.dish);
+	const scene = useSelector(selectors.scene);
 	return (
-		<>
-			<SEO title={`3D модель — ${name} — Lunch Layout`} />;
-		</>
+		<main className={[styles.default, className].join(" ")}>
+			<div className={styles.content}>
+				{scene && <Dish3DCanvas />}
+				{dish && (
+					<SEO title={`3D модель — ${dish.name} — Lunch Layout`} />
+				)}
+			</div>
+		</main>
 	);
 }

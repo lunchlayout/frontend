@@ -6,6 +6,8 @@ const dishCafe = (state: IRootState) => state.dishes.dish?.cafe;
 
 const dishEntDetails = (state: IRootState) => state.dishes.entertainmentDetails;
 
+const scene = (state: IRootState) => state.dishes.scene;
+
 const modelLoadingProgress = (state: IRootState) =>
 	state.dishes.modelLoadingProgress;
 
@@ -18,6 +20,7 @@ export {
 	dishCafe,
 	modelLoadingProgress,
 	dishEntDetails,
+	scene,
 	isLoading,
 	errors,
 };

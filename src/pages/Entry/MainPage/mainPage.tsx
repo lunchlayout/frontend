@@ -18,7 +18,7 @@ export default function MainPage() {
 					</div>
 				</main>
 			</Mobile>
-			<SEO title={`Lunch Layout`} />;
+			<SEO title={`Lunch Layout`} />
 		</>
 	);
 }

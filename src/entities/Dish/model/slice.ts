@@ -4,6 +4,7 @@ import { isPending, isRejected, shuffle } from "@shared/lib";
 import { getDishById } from "./thunks";
 import { IGetDishByIdRes } from "../types";
 import { IProgress } from "@shared/ui/Progress";
+import { Group, Object3DEventMap } from "three";
 
 const DishesSlice = createSlice({
 	name: "dishes",
@@ -19,6 +20,9 @@ const DishesSlice = createSlice({
 		},
 		setModelLoadingInit(state, action: PayloadAction<IProgress>) {
 			state.modelLoadingProgress = action.payload;
+		},
+		setScene(state, action: PayloadAction<Group<Object3DEventMap>>) {
+			state.scene = action.payload;
 		},
 		setCurrentEntIdx(state, action: PayloadAction<number>) {
 			const { dish, entertainmentDetails: entDetails } = state;
@@ -38,8 +42,7 @@ const DishesSlice = createSlice({
 		builder.addCase(
 			getDishById.fulfilled,
 			(state, action: PayloadAction<IGetDishByIdRes>) => {
-				//TODO: вернуть после теста
-				// delete state.modelLoadingProgress;
+				delete state.modelLoadingProgress;
 				state.entertainmentDetails = {
 					currentEntIdx: 0,
 				};

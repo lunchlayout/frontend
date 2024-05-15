@@ -20,6 +20,7 @@ import CloseButton from "./CloseButton";
 import Modal from "./Modal";
 import NavLink from "./NavLink";
 import QRReader from "./QRReader";
+import Model3D from "./Model3D";
 
 export {
 	BackLink,
@@ -44,4 +45,5 @@ export {
 	Modal,
 	NavLink,
 	QRReader,
+	Model3D,
 };
