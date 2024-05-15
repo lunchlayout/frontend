@@ -7,14 +7,18 @@ import { CafeLogo } from "@entities/Cafe/ui";
 
 export default function MobileDishHeader() {
 	const dish = useSelector(selectors.dish);
-	if (!dish) return null;
+	console.log(1);
 	return (
-		<header className={styles.default}>
-			<div className={styles.content}>
-				<BackLink />
-				<Title level={2}>{dish.name}</Title>
-				<CafeLogo />
-			</div>
-		</header>
+		<>
+			{dish && (
+				<header className={styles.default}>
+					<div className={styles.content}>
+						<BackLink />
+						<Title level={2}>{dish.name}</Title>
+						<CafeLogo />
+					</div>
+				</header>
+			)}
+		</>
 	);
 }

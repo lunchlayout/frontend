@@ -12,7 +12,7 @@ export default function SendingPage() {
 			<Mobile>
 				<ReviewForm />
 			</Mobile>
-			<SEO title={`Обратная связь — Lunch Layout`} />;
+			<SEO title={`Обратная связь — Lunch Layout`} />
 		</main>
 	);
 }

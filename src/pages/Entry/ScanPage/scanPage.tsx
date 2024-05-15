@@ -6,7 +6,7 @@ export default function ScanPage() {
 	return (
 		<main className={styles.main}>
 			<DishIdQRReader />
-			<SEO title={`Сканер QR-кода блюда — Lunch Layout`} />;
+			<SEO title={`Сканер QR-кода блюда — Lunch Layout`} />
 		</main>
 	);
 }

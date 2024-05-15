@@ -28,7 +28,7 @@ export default function DishesPage() {
 				<main className={styles.main}>
 					<div className={styles.content}>
 						<DishesPanel />
-						<SEO title={`${cafe.name} — Lunch Layout`} />;
+						<SEO title={`${cafe.name} — Lunch Layout`} />
 					</div>
 				</main>
 			)}

@@ -8,6 +8,7 @@ export default function DesktopDishControl() {
 	const progressExist = modelLoadingProgress?.max;
 	const modelLoaded =
 		progressExist && modelLoadingProgress.value >= modelLoadingProgress.max;
+
 	return (
 		<>
 			{progressExist && (
