@@ -13,6 +13,7 @@ import DesktopDishNav from "./DesktopDishNav";
 import DesktopEntryNav from "./DesktopEntryNav";
 import ScreenImage from "./ScreenImage";
 import ARQRLink from "./ARQRLink";
+import WoodPlane3D from "./WoodPlane3D";
 
 export {
 	QuizOption,
@@ -30,4 +31,5 @@ export {
 	DesktopEntryNav,
 	ScreenImage,
 	ARQRLink,
+	WoodPlane3D,
 };

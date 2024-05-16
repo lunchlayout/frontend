@@ -19,7 +19,6 @@ export default function DishModel3D() {
 			setScale(requiredScale);
 		}
 	}, [scene]);
-
 	return (
 		<>
 			{scene && (

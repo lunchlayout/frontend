@@ -2,4 +2,5 @@
 
 .default {
 	cursor: move;
+	border-radius: map-get($radius, m);
 }
