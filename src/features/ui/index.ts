@@ -14,6 +14,7 @@ import DesktopEntryNav from "./DesktopEntryNav";
 import ScreenImage from "./ScreenImage";
 import ARQRLink from "./ARQRLink";
 import WoodPlane3D from "./WoodPlane3D";
+import SceneSetup from "./SceneSetup";
 
 export {
 	QuizOption,
@@ -32,4 +33,5 @@ export {
 	ScreenImage,
 	ARQRLink,
 	WoodPlane3D,
+	SceneSetup,
 };
