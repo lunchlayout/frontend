@@ -14,7 +14,9 @@
 .label {
 	@include flex;
 	@include outline;
-	@include icon;
+	@include icon {
+		max-width: 50px;
+	}
 	cursor: pointer;
 	transition: map-get($transitions, control);
 }

@@ -9,5 +9,5 @@
 }
 
 .formControl {
-	justify-content: space-between;
+	@include mobileControl;
 }

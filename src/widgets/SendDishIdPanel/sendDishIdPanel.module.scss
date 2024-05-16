@@ -10,4 +10,8 @@
 	padding: map-get($padding, default) * 2;
 	border-radius: map-get($radius, m);
 	text-align: center;
+
+	@include mobile {
+		padding: map-get($padding, default) * 1.5;
+	}
 }

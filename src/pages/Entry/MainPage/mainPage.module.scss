@@ -5,7 +5,9 @@
 }
 
 .content {
-	@include contentContainer;
+	@include contentContainer {
+		max-width: 600px;
+	}
 }
 
 .desktopMain {

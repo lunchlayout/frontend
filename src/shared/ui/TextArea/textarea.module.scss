@@ -17,6 +17,7 @@ $minHeight: 100px;
 	&::placeholder {
 		color: map-get($colors, primaryTextHover);
 	}
+	@include scrollbar;
 }
 .outline {
 	@include outline;

@@ -11,15 +11,14 @@
 
 .links {
 	@include resetList;
-	@include grid {
-		grid-template-columns: repeat(2, minmax(50px, 180px));
-		gap: map-get($gaps, primary);
-		justify-content: space-between;
-		align-items: stretch;
-	}
+	@include mobileControl;
+}
+
+.linkItem {
+	flex: 1;
 }
 
 .link {
+	min-width: 165px;
 	width: 100%;
-	height: 100%;
 }

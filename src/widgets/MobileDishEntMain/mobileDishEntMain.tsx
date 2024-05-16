@@ -8,7 +8,7 @@ export default function MobileDishEntMain({
 	className = "",
 }: IMobileDishEntMainProps) {
 	return (
-		<main className={[styles.default, className].join(" ")}>
+		<main className={className}>
 			<div className={styles.content}>
 				<EntertainmentSlider />
 				<ReviewLink className={styles.reviewLink} type="secondary" />

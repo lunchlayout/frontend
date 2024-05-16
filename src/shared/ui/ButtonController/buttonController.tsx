@@ -5,12 +5,13 @@ export default function ButtonController({
 	direction = "right",
 	onClick,
 	disabled = false,
+	customType,
 	className = "",
 }: IButtonControllerProps) {
 	return (
 		<Button
 			disabled={disabled}
-			customType="simple"
+			customType={customType}
 			onClick={onClick}
 			className={[styles.button, className].join(" ")}
 		>

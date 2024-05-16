@@ -20,6 +20,16 @@
 	@content;
 }
 
+@mixin mobileControl {
+	@include flex {
+		justify-content: space-between;
+		gap: map-get($gaps, secondary);
+		align-items: stretch;
+		flex-wrap: wrap;
+		@content;
+	}
+}
+
 @mixin glass(
 	$background:
 		linear-gradient(
@@ -49,6 +59,7 @@
 	& svg {
 		fill: $fill;
 	}
+	@content;
 }
 
 @mixin logo {
@@ -123,4 +134,21 @@
 	max-width: 1400px;
 	padding: map-get($padding, default);
 	@content;
+}
+
+@mixin scrollbar($width: 10px) {
+	scroll-behavior: smooth;
+	&::-webkit-scrollbar {
+		width: $width;
+		border-radius: map-get($radius, m);
+		background: map-get($colors, secondary);
+	}
+	&::-webkit-scrollbar-thumb {
+		border-radius: map-get($radius, m);
+		background: map-get($colors, primary);
+		cursor: pointer;
+	}
+	&::-webkit-scrollbar-button {
+		display: none;
+	}
 }

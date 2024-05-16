@@ -9,6 +9,9 @@
 	& :is(input, button) {
 		@include outline(false, secondary);
 	}
+	@include mobile {
+		padding: 0;
+	}
 }
 
 .input {

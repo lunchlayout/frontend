@@ -2,6 +2,11 @@
 
 .main {
 	@include mainContent {
-		padding-top: map-get($padding, default) * 3;
+		@include desktop {
+			padding-top: map-get($padding, default) * 4;
+		}
+		@include mobile {
+			padding-top: map-get($padding, default) * 2;
+		}
 	}
 }

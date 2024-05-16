@@ -1,14 +1,16 @@
 @import "../../app/styles/variables", "../../app/styles/mixins";
 
-.content {
+.contentContainer {
 	@include contentContainer;
 	padding-top: map-get($padding, default) * 4;
+}
+.content {
+	max-width: 1000px;
 	@include flex(column) {
 		align-items: flex-start;
 		gap: map-get($gaps, primary);
 	}
 }
-
 .decor {
 	position: absolute;
 }

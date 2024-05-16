@@ -43,7 +43,12 @@ export default function DishQuiz({
 					/>
 				</Quiz.Context.Provider>
 			</QuizResult.Context.Provider>
-			<Button customType="primary" type="submit" disabled={isFinish}>
+			<Button
+				className={styles.btn}
+				customType="primary"
+				type="submit"
+				disabled={isFinish}
+			>
 				Ответить
 			</Button>
 		</form>

@@ -7,7 +7,7 @@ export default function MobileEntryControl() {
 			<div className={styles.content}>
 				<nav>
 					<ul className={styles.links}>
-						<li>
+						<li className={styles.linkItem}>
 							<NavLink
 								className={styles.link}
 								to="/scan"
@@ -16,7 +16,7 @@ export default function MobileEntryControl() {
 								QR код
 							</NavLink>
 						</li>
-						<li>
+						<li className={styles.linkItem}>
 							<NavLink
 								className={styles.link}
 								to="/"
