@@ -4,7 +4,7 @@ import styles from "./dishIcon.module.scss";
 
 export default function DishIcon({ className = "" }: IDishIconProps) {
 	return (
-		<Icon className={[styles.default, className].join(' ')} type="primary">
+		<Icon className={[styles.default, className].join(" ")} type="primary">
 			{
 				<svg
 					width="56"

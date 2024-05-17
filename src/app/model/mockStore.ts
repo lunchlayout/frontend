@@ -16,7 +16,11 @@ const mockState: IRootState = {
 		},
 		dish: {
 			name: "Клубничный торт",
-			cafeId: "123456",
+			cafe: {
+				cafeId: "123456",
+				logo: "https://img.hhcdn.ru/employer-logo/2422482.jpeg",
+				name: "Кекс и крендель",
+			},
 			description:
 				"Нежный клубничный торт - сладкая симфония ароматной клубники",
 			allergens: ["Сахар"],
@@ -87,7 +91,7 @@ const mockState: IRootState = {
 const mockStore = configureStore({
 	preloadedState: mockState,
 	reducer: mainReducer,
-	// middleware: getDefaultMiddl => getDefaultMiddl().concat(logger),
+	middleware: getDefaultMiddl => getDefaultMiddl().concat(logger),
 });
 
 export { mockStore };

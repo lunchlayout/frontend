@@ -2,7 +2,6 @@ import { IVideoFrameProps } from "./videoFrame.props";
 import styles from "./videoFrame.module.scss";
 import ReactPlayer from "react-player";
 import { ButtonController } from "@shared/ui";
-import React from "react";
 
 export default function VideoFrame({
 	src,
