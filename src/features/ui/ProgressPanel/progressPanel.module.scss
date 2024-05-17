@@ -1,4 +1,5 @@
-@import "../../../app/styles/variables", "../../../app/styles/mixins";
+@import "../../../app/styles/variables", "../../../app/styles/mixins",
+	"../../../app/styles/keyframes";
 
 .default {
 	@include flex(column) {
@@ -7,17 +8,8 @@
 }
 
 .text {
-	animation: show 1s;
+	animation: showUp 1s;
 }
 .progress {
 	width: 100%;
-}
-
-@keyframes show {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
 }

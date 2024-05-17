@@ -7,6 +7,9 @@
 		align-items: stretch;
 	}
 	padding: map-get($padding, default) * 2;
+	@include mobile {
+		padding: map-get($padding, default);
+	}
 	border-radius: map-get($radius, m);
 	background: map-get($colors, secondary);
 }

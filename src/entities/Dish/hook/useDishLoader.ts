@@ -10,8 +10,11 @@ function useDishLoader() {
 
 	useEffect(() => {
 		async function getDishById() {
+			dispatch(actions.setIsLoading(true));
 			await dispatch(actions.getDishById({ dishId }));
+			dispatch(actions.setIsLoading(false));
 		}
+
 		getDishById();
 	}, [dishId, dispatch]);
 }

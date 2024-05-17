@@ -39,8 +39,6 @@
 		)
 ) {
 	background: $background;
-	-webkit-backdrop-filter: blur(10px);
-	backdrop-filter: blur(10px);
 	@content;
 }
 
@@ -86,7 +84,6 @@
 	} @else if ($type == bottom) {
 		$type: top;
 	}
-	// padding: map-get($padding, default) map-get($padding, default) * 1.5;
 	background: map-get($colors, secondary);
 	border-#{$type}-left-radius: map-get($radius, m);
 	border-#{$type}-right-radius: map-get($radius, m);
@@ -94,7 +91,6 @@
 }
 
 @mixin desktopHeader {
-	// padding: map-get($padding, default) map-get($padding, default) * 1.5;
 	background: map-get($colors, secondary);
 	border-bottom-left-radius: map-get($radius, m);
 	border-bottom-right-radius: map-get($radius, m);
@@ -146,7 +142,6 @@
 	&::-webkit-scrollbar-thumb {
 		border-radius: map-get($radius, m);
 		background: map-get($colors, primary);
-		cursor: pointer;
 	}
 	&::-webkit-scrollbar-button {
 		display: none;

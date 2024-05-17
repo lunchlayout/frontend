@@ -7,6 +7,9 @@
 		justify-content: flex-start;
 	}
 	padding: map-get($padding, default) * 2;
+	@include mobile {
+		padding: map-get($padding, default);
+	}
 	border-radius: map-get($radius, m);
 
 	background: map-get($colors, secondary);
@@ -16,4 +19,5 @@
 	max-width: 100%;
 	align-self: flex-start;
 	font-weight: 600;
+	font-size: map-get(map-get($fonts, sizes), h2);
 }

@@ -1,4 +1,5 @@
-@import "../../../../app/styles/variables", "../../../../app/styles/mixins";
+@import "../../../../app/styles/variables", "../../../../app/styles/mixins",
+	"../../../../app/styles/keyframes";
 
 .default {
 	position: relative;
@@ -8,6 +9,7 @@
 }
 
 .controller {
+	z-index: map-get($zIndex, caption);
 	@include desktop {
 		position: absolute;
 		top: 50%;
@@ -37,6 +39,7 @@
 .entertainment {
 	width: 100%;
 	overflow: auto;
+	animation: showUp 1s;
 	@include scrollbar;
 	@include desktop {
 		height: 450px;
