@@ -13,13 +13,7 @@ const meta = {
 type Story = StoryObj<typeof MainTitle>;
 
 export const MainTitleSimple: Story = {
-	parameters: {
-		docs: {
-			description: {
-				story: "simple main title",
-			},
-		},
-	},
+
 	args: {},
 };
 

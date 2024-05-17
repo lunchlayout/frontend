@@ -17,26 +17,14 @@ const meta = {
 type Story = StoryObj<typeof Input>;
 
 export const InputPrimary: Story = {
-	parameters: {
-		docs: {
-			description: {
-				story: "primary input",
-			},
-		},
-	},
+
 	args: {
 		placeholder: "Введите код",
 		customType: "primary",
 	},
 };
 export const InputSecondary: Story = {
-	parameters: {
-		docs: {
-			description: {
-				story: "secondary input",
-			},
-		},
-	},
+
 	args: {
 		placeholder: "Найти блюдо",
 		customType: "secondary",

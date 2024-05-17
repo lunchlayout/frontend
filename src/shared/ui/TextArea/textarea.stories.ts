@@ -17,13 +17,7 @@ const meta = {
 type Story = StoryObj<typeof TextArea>;
 
 export const TextAreaSimple: Story = {
-	parameters: {
-		docs: {
-			description: {
-				story: "text area simple",
-			},
-		},
-	},
+
 	args: {
 		placeholder: "Что-то еще?",
 	},

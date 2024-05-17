@@ -13,13 +13,7 @@ const meta = {
 type Story = StoryObj<typeof ReviewLink>;
 
 export const ReviewLinkSimple: Story = {
-	parameters: {
-		docs: {
-			description: {
-				story: "simple review link",
-			},
-		},
-	},
+
 	args: {},
 };
 

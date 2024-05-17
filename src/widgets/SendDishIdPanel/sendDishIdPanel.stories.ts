@@ -15,13 +15,6 @@ const meta = {
 type Story = StoryObj<typeof SendDishIdPanel>;
 
 export const SendDishIdPanelSimple: Story = {
-	parameters: {
-		docs: {
-			description: {
-				story: "simple send dishId panel",
-			},
-		},
-	},
 	args: {},
 };
 

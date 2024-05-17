@@ -13,13 +13,7 @@ const meta = {
 type Story = StoryObj<typeof Progress>;
 
 export const ProgressSimple: Story = {
-	parameters: {
-		docs: {
-			description: {
-				story: "progress simple",
-			},
-		},
-	},
+
 	args: {
 		value: 50,
 		max: 100,

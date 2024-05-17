@@ -17,65 +17,35 @@ const meta = {
 type Story = StoryObj<typeof Button>;
 
 export const ButtonPrimary: Story = {
-	parameters: {
-		docs: {
-			description: {
-				story: "primary button",
-			},
-		},
-	},
+
 	args: {
 		children: "Продолжить",
 		customType: "primary",
 	},
 };
 export const ButtonSecondary: Story = {
-	parameters: {
-		docs: {
-			description: {
-				story: "secondary button",
-			},
-		},
-	},
+
 	args: {
 		children: "Продолжить",
 		customType: "secondary",
 	},
 };
 export const ButtonTertiary: Story = {
-	parameters: {
-		docs: {
-			description: {
-				story: "tertiary button",
-			},
-		},
-	},
+
 	args: {
 		children: "Продолжить",
 		customType: "tertiary",
 	},
 };
 export const ButtonSimple: Story = {
-	parameters: {
-		docs: {
-			description: {
-				story: "simple button",
-			},
-		},
-	},
+
 	args: {
 		children: "Продолжить",
 		customType: "simple",
 	},
 };
 export const ButtonDisabled: Story = {
-	parameters: {
-		docs: {
-			description: {
-				story: "disabled button",
-			},
-		},
-	},
+
 	args: {
 		children: "Продолжить",
 		customType: "primary",

@@ -13,13 +13,7 @@ const meta = {
 type Story = StoryObj<typeof DishesNotFound>;
 
 export const DishesNotFoundSimple: Story = {
-	parameters: {
-		docs: {
-			description: {
-				story: "simple dishes not found",
-			},
-		},
-	},
+
 	args: {},
 };
 
