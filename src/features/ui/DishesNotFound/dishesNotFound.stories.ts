@@ -13,7 +13,6 @@ const meta = {
 type Story = StoryObj<typeof DishesNotFound>;
 
 export const DishesNotFoundSimple: Story = {
-
 	args: {},
 };
 

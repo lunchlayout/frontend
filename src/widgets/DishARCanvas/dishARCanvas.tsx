@@ -4,6 +4,7 @@ import { ARButton, XR } from "@react-three/xr";
 import { DishModel3D } from "@entities/Dish/ui";
 import { SceneSetup } from "@features/ui";
 
+//! Компонент не используется, так как webXR не поддерживается на многих устройствах
 export default function DishARCanvas() {
 	return (
 		<>

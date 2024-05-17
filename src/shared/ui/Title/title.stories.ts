@@ -12,21 +12,18 @@ const meta = {
 type Story = StoryObj<typeof Title>;
 
 export const Title1: Story = {
-
 	args: {
 		level: 1,
 		children: "Lunch Layout",
 	},
 };
 export const Title2: Story = {
-
 	args: {
 		level: 2,
 		children: "Lunch Layout",
 	},
 };
 export const Title3: Story = {
-
 	args: {
 		level: 3,
 		children: "Lunch Layout",

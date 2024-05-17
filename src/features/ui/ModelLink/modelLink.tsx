@@ -6,18 +6,18 @@ import { IModelLinkProps } from "./modelLink.props";
 import { Desktop, Mobile } from "@shared/hoc";
 import { useModal } from "@shared/hook";
 import { ARQRLink } from "@features/ui";
+import { DishModelAR } from "@entities/Dish/ui";
 
 export default function ModelLink({ className = "" }: IModelLinkProps) {
 	const { close, isShown, open } = useModal();
 
 	let { pathname } = useLocation();
 	const lastIndex = pathname.lastIndexOf("/") + 1;
-	const mode = pathname.slice(lastIndex);
+	const location = pathname.slice(lastIndex);
 
 	let linkSvg: ReactElement<SVGProps<SVGSVGElement>>;
 	let linkText: string;
-	if (mode === "3d") {
-		pathname = pathname.slice(0, lastIndex) + "ar";
+	if (location === "model") {
 		linkText = "Перейти в AR";
 		linkSvg = (
 			<svg
@@ -34,10 +34,7 @@ export default function ModelLink({ className = "" }: IModelLinkProps) {
 			</svg>
 		);
 	} else {
-		if (mode === "ar") {
-			pathname = pathname.slice(0, lastIndex - 1);
-		}
-		pathname = pathname + "/3d";
+		pathname = pathname + "/model";
 		linkText = "Перейти в 3D";
 		linkSvg = (
 			<svg
@@ -61,7 +58,7 @@ export default function ModelLink({ className = "" }: IModelLinkProps) {
 		<>
 			<div className={[styles.default, className].join(" ")}>
 				<Desktop>
-					{mode === "3d" && (
+					{location === "model" && (
 						<Button
 							onClick={open}
 							customType="secondary"
@@ -70,7 +67,7 @@ export default function ModelLink({ className = "" }: IModelLinkProps) {
 							{linkSvg}
 						</Button>
 					)}
-					{mode !== "3d" && (
+					{location !== "model" && (
 						<Link
 							to={pathname}
 							type="secondary"
@@ -81,13 +78,26 @@ export default function ModelLink({ className = "" }: IModelLinkProps) {
 					)}
 				</Desktop>
 				<Mobile>
-					<Link
-						to={pathname}
-						type="secondary"
-						className={styles.modelLink}
-					>
-						{linkSvg}
-					</Link>
+					{location === "model" && (
+						<DishModelAR>
+							<Button
+								slot="ar-button"
+								customType="secondary"
+								className={styles.modelLink}
+							>
+								{linkSvg}
+							</Button>
+						</DishModelAR>
+					)}
+					{location !== "model" && (
+						<Link
+							to={pathname}
+							type="secondary"
+							className={styles.modelLink}
+						>
+							{linkSvg}
+						</Link>
+					)}
 				</Mobile>
 				<span>{linkText}</span>
 			</div>

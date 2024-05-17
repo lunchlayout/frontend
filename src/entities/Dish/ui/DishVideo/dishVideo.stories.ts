@@ -13,7 +13,6 @@ const meta = {
 type Story = StoryObj<typeof DishVideo>;
 
 export const DishVideoSimple: Story = {
-
 	args: {
 		title: "Мясная пицца от шеф-повара Дмитрия Иванова",
 		link: "https://www.youtube.com/embed/6w00hjyIIQQ",

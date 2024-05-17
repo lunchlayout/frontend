@@ -13,7 +13,6 @@ const meta = {
 type Story = StoryObj<typeof SearchDishesPanel>;
 
 export const SearchDishesPanelSimple: Story = {
-
 	args: {},
 };
 

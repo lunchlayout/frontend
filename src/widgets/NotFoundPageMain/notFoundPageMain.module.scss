@@ -1,0 +1,35 @@
+@import "../../app/styles/variables", "../../app/styles/mixins";
+
+.content {
+	@include contentContainer {
+		margin: auto;
+	}
+	@include flex(column) {
+		gap: map-get($gaps, primary);
+	}
+	@include glass(map-get($colors, primaryHover));
+	padding: map-get($padding, default);
+	border-radius: map-get($radius, m);
+	color: map-get($colors, secondary);
+}
+
+.info {
+	@include flex(column) {
+		gap: map-get($gaps, secondary);
+	}
+	text-align: center;
+}
+
+
+.title {
+	font-size: map-get(map-get($fonts, sizes), h1) * 1.5;
+}
+
+.description {
+	@include content;
+	font-size: map-get(map-get($fonts, sizes), h1);
+}
+
+.link {
+	color: map-get($colors, secondaryHover);
+}

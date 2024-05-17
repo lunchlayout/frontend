@@ -13,7 +13,6 @@ const meta = {
 type Story = StoryObj<typeof DishCard>;
 
 export const DishCardSimple: Story = {
-
 	args: {
 		name: "Клубничный торт",
 		amount: 1000,

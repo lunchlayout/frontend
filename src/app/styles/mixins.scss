@@ -132,16 +132,20 @@
 	@content;
 }
 
-@mixin scrollbar($width: 10px) {
+@mixin scrollbar(
+	$width: 10px,
+	$thumbBg: map-get($colors, primary),
+	$trackBg: map-get($colors, secondary)
+) {
 	scroll-behavior: smooth;
 	&::-webkit-scrollbar {
 		width: $width;
 		border-radius: map-get($radius, m);
-		background: map-get($colors, secondary);
+		background: $trackBg;
 	}
 	&::-webkit-scrollbar-thumb {
 		border-radius: map-get($radius, m);
-		background: map-get($colors, primary);
+		background: $thumbBg;
 	}
 	&::-webkit-scrollbar-button {
 		display: none;

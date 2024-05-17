@@ -13,7 +13,6 @@ const meta = {
 type Story = StoryObj<typeof ProgressPanel>;
 
 export const ProgressPanelSimple: Story = {
-
 	args: {},
 };
 
