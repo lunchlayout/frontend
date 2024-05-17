@@ -13,13 +13,7 @@ const meta = {
 type Story = StoryObj<typeof MockProvider>;
 
 export const RatingControlSimple: Story = {
-	parameters: {
-		docs: {
-			description: {
-				story: "simple comment section",
-			},
-		},
-	},
+
 	args: {},
 };
 

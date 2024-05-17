@@ -16,13 +16,7 @@ const meta = {
 type Story = StoryObj<typeof ModelLink>;
 
 export const ModelLink3D: Story = {
-	parameters: {
-		docs: {
-			description: {
-				story: "model link 3D",
-			},
-		},
-	},
+
 	args: {},
 };
 

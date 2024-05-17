@@ -13,13 +13,7 @@ const meta = {
 type Story = StoryObj<typeof PaginationControl>;
 
 export const PaginationControlSimple: Story = {
-	parameters: {
-		docs: {
-			description: {
-				story: "simple pagination control",
-			},
-		},
-	},
+
 	args: {},
 };
 

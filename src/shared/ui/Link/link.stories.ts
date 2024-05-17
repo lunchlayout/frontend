@@ -13,65 +13,35 @@ const meta = {
 type Story = StoryObj<typeof Link>;
 
 export const LinkPrimary: Story = {
-	parameters: {
-		docs: {
-			description: {
-				story: "primary link",
-			},
-		},
-	},
+
 	args: {
 		type: "primary",
 		children: "Ввести код",
 	},
 };
 export const LinkSecondary: Story = {
-	parameters: {
-		docs: {
-			description: {
-				story: "secondary link",
-			},
-		},
-	},
+
 	args: {
 		type: "secondary",
 		children: "Ввести код",
 	},
 };
 export const LinkTertiary: Story = {
-	parameters: {
-		docs: {
-			description: {
-				story: "tertiary link",
-			},
-		},
-	},
+
 	args: {
 		type: "tertiary",
 		children: "Ввести код",
 	},
 };
 export const LinkSimple: Story = {
-	parameters: {
-		docs: {
-			description: {
-				story: "simple link",
-			},
-		},
-	},
+
 	args: {
 		type: "simple",
 		children: "Ввести код",
 	},
 };
 export const LinkText: Story = {
-	parameters: {
-		docs: {
-			description: {
-				story: "text link",
-			},
-		},
-	},
+
 	args: {
 		type: "text",
 		children: "Ввести код",

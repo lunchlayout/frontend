@@ -13,13 +13,6 @@ const meta = {
 type Story = StoryObj<typeof DishesPanel>;
 
 export const DishesPanelSimple: Story = {
-	parameters: {
-		docs: {
-			description: {
-				story: "simple dishes panel",
-			},
-		},
-	},
 	args: {},
 };
 

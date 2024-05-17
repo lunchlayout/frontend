@@ -13,13 +13,7 @@ const meta = {
 type Story = StoryObj<typeof Image>;
 
 export const ImageSimple: Story = {
-	parameters: {
-		docs: {
-			description: {
-				story: "simple image",
-			},
-		},
-	},
+
 	args: {
 		src: "https://nutstime.ru/wp-content/uploads/2020/01/coffee-kofe-kapuchino-penka-zerna-chashka.jpg",
 		height: 200,

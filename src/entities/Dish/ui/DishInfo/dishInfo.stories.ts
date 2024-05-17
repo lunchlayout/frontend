@@ -13,13 +13,7 @@ const meta = {
 type Story = StoryObj<typeof DishInfo>;
 
 export const DishInfoSimple: Story = {
-	parameters: {
-		docs: {
-			description: {
-				story: "simple dish info",
-			},
-		},
-	},
+
 	args: {},
 };
 
