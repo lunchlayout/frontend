@@ -1,10 +1,8 @@
-import { MouseEventHandler } from "react";
-import { IDefaultProps } from "@shared/types";
+import { IButtonProps } from "../Button/button.props";
 
 type DirectionType = "left" | "right";
 
-export interface IButtonControllerProps extends IDefaultProps {
+export interface IButtonControllerProps
+	extends Partial<Omit<IButtonProps, "type" | "formId">> {
 	direction?: DirectionType;
-	onClick?: MouseEventHandler<HTMLButtonElement>;
-	disabled?: boolean;
 }

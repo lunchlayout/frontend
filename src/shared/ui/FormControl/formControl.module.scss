@@ -1,8 +1,15 @@
 @import "../../../app/styles/variables", "../../../app/styles/mixins";
 
 .default {
-	@include grid {
-		grid-template-columns: repeat(2, minmax(50px, 150px));
+	@include flex {
 		gap: map-get($gaps, primary);
+	}
+}
+
+.control {
+	min-width: 150px;
+
+	@include mobile {
+		flex: 1;
 	}
 }

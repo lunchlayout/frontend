@@ -1,1 +1,1 @@
-export { default } from "./Model3DPage";
+export { default } from "./model3DPage";

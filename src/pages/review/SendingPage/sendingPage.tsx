@@ -6,12 +6,14 @@ import styles from "./sendingPage.module.scss";
 export default function SendingPage() {
 	return (
 		<main className={styles.main}>
-			<Desktop>
-				<ReviewForm hasControl />
-			</Desktop>
-			<Mobile>
-				<ReviewForm />
-			</Mobile>
+			<div className={styles.content}>
+				<Desktop>
+					<ReviewForm hasControl />
+				</Desktop>
+				<Mobile>
+					<ReviewForm />
+				</Mobile>
+			</div>
 			<SEO title={`Обратная связь — Lunch Layout`} />
 		</main>
 	);

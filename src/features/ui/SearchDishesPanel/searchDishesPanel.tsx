@@ -26,11 +26,17 @@ export default function SearchDishesPanel({
 			query: tempQuery,
 			page,
 		};
-		await dispatch(actions.getCafeById({ cafeId, ...newSearchParams }));
-		setCafeSearchParams({
-			...newSearchParams,
-			page: newSearchParams.page.toString(),
-		});
+		dispatch(actions.setIsLoading(true));
+		const res = await dispatch(
+			actions.getCafeById({ cafeId, ...newSearchParams }),
+		);
+		if (res.meta.requestStatus === "fulfilled") {
+			setCafeSearchParams({
+				...newSearchParams,
+				page: newSearchParams.page.toString(),
+			});
+		}
+		dispatch(actions.setIsLoading(false));
 	}
 	return (
 		<Query.Context.Provider

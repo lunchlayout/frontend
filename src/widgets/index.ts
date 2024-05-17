@@ -17,6 +17,7 @@ import MobileDishEntMain from "./MobileDishEntMain";
 import DesktopDishEntMain from "./DesktopDishEntMain";
 import DesktopMain from "./DesktopMain";
 import Dish3DCanvas from "./Dish3DCanvas";
+import DishARCanvas from "./DishARCanvas";
 
 export {
 	SendDishIdPanel,
@@ -38,4 +39,5 @@ export {
 	DesktopDishEntMain,
 	DesktopMain,
 	Dish3DCanvas,
+	DishARCanvas,
 };

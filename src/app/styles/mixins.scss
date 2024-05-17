@@ -20,6 +20,16 @@
 	@content;
 }
 
+@mixin mobileControl {
+	@include flex {
+		justify-content: space-between;
+		gap: map-get($gaps, secondary);
+		align-items: stretch;
+		flex-wrap: wrap;
+		@content;
+	}
+}
+
 @mixin glass(
 	$background:
 		linear-gradient(
@@ -29,8 +39,6 @@
 		)
 ) {
 	background: $background;
-	-webkit-backdrop-filter: blur(10px);
-	backdrop-filter: blur(10px);
 	@content;
 }
 
@@ -49,6 +57,7 @@
 	& svg {
 		fill: $fill;
 	}
+	@content;
 }
 
 @mixin logo {
@@ -75,7 +84,6 @@
 	} @else if ($type == bottom) {
 		$type: top;
 	}
-	// padding: map-get($padding, default) map-get($padding, default) * 1.5;
 	background: map-get($colors, secondary);
 	border-#{$type}-left-radius: map-get($radius, m);
 	border-#{$type}-right-radius: map-get($radius, m);
@@ -83,7 +91,6 @@
 }
 
 @mixin desktopHeader {
-	// padding: map-get($padding, default) map-get($padding, default) * 1.5;
 	background: map-get($colors, secondary);
 	border-bottom-left-radius: map-get($radius, m);
 	border-bottom-right-radius: map-get($radius, m);
@@ -123,4 +130,20 @@
 	max-width: 1400px;
 	padding: map-get($padding, default);
 	@content;
+}
+
+@mixin scrollbar($width: 10px) {
+	scroll-behavior: smooth;
+	&::-webkit-scrollbar {
+		width: $width;
+		border-radius: map-get($radius, m);
+		background: map-get($colors, secondary);
+	}
+	&::-webkit-scrollbar-thumb {
+		border-radius: map-get($radius, m);
+		background: map-get($colors, primary);
+	}
+	&::-webkit-scrollbar-button {
+		display: none;
+	}
 }

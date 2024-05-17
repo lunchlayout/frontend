@@ -1,1 +1,1 @@
-export { default } from "./ModelARPage";
+export { default } from "./modelARPage";

@@ -13,6 +13,9 @@ import DesktopDishNav from "./DesktopDishNav";
 import DesktopEntryNav from "./DesktopEntryNav";
 import ScreenImage from "./ScreenImage";
 import ARQRLink from "./ARQRLink";
+import WoodPlane3D from "./WoodPlane3D";
+import SceneSetup from "./SceneSetup";
+import SnackbarNotices from "./SnackbarNotices";
 
 export {
 	QuizOption,
@@ -30,4 +33,7 @@ export {
 	DesktopEntryNav,
 	ScreenImage,
 	ARQRLink,
+	WoodPlane3D,
+	SceneSetup,
+	SnackbarNotices,
 };

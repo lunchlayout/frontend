@@ -13,7 +13,7 @@ export default function DesktopDishEntMain({
 	const dish = useSelector(selectors.dish);
 
 	return (
-		<main className={[styles.default, className].join(" ")}>
+		<main className={className}>
 			<div className={styles.content}>
 				{dish && (
 					<Title className={styles.dishName} level={1}>

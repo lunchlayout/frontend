@@ -44,6 +44,7 @@ export default function EntertainmentSlider({
 
 	const prevBtn = (
 		<ButtonController
+			customType="primary"
 			className={[styles.controller, styles.leftController].join(" ")}
 			direction="left"
 			onClick={prevEnt}
@@ -51,6 +52,7 @@ export default function EntertainmentSlider({
 	);
 	const nextBtn = (
 		<ButtonController
+			customType="primary"
 			className={[styles.controller, styles.rightController].join(" ")}
 			direction="right"
 			onClick={nextEnt}

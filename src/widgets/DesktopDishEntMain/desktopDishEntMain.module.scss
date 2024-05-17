@@ -1,21 +1,15 @@
 @import "../../app/styles/variables", "../../app/styles/mixins";
 
-.default {
-	margin: 0 auto;
-}
-
 .content {
 	position: relative;
-	@include flex(column) {
-		display: inline-flex;
-		gap: map-get($gaps, primary);
+	@include contentContainer {
+		max-width: 1000px;
 	}
-	@include contentContainer;
 }
 
 .dishName {
 	position: absolute;
 	top: -5%;
-	left: -10%;
+	left: 0;
 	@include caption;
 }

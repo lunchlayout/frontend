@@ -8,6 +8,10 @@
 	}
 	@include glass(map-get($colors, primaryHover));
 	padding: map-get($padding, default) * 2;
+	@include mobile {
+		padding: map-get($padding, default)
+			calc(map-get($padding, default) / 1.5);
+	}
 	border-radius: map-get($radius, m);
 	min-height: 400px;
 }

@@ -11,6 +11,7 @@ export default function FormControl({
 	return (
 		<div className={[styles.default, className].join(" ")}>
 			<Button
+				className={styles.control}
 				formId={formId}
 				customType="primary"
 				type="reset"
@@ -19,6 +20,7 @@ export default function FormControl({
 				Сбросить
 			</Button>
 			<Button
+				className={styles.control}
 				formId={formId}
 				customType="primary"
 				type="submit"
