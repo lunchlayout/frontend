@@ -9,6 +9,7 @@ export default function Button({
 	className = "",
 	formId,
 	disabled = false,
+	slot,
 }: IButtonProps) {
 	return (
 		<button
@@ -19,6 +20,7 @@ export default function Button({
 			onClick={onClick}
 			form={formId}
 			disabled={disabled}
+			slot={slot}
 		>
 			{children}
 		</button>

@@ -12,4 +12,5 @@ export interface IButtonProps extends IDefaultProps {
 	onClick?: MouseEventHandler<HTMLButtonElement>;
 	disabled?: boolean;
 	formId?: string;
+	slot?: string;
 }

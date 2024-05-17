@@ -2,9 +2,13 @@ import {
 	createBrowserRouter,
 	RouterProvider as ReactRouterProvider,
 } from "react-router-dom";
-import { Cafe, Dish, Entry, Review } from "@pages/index";
+import { Cafe, Dish, Entry, Review, NotFound } from "@pages/index";
 
 const router = createBrowserRouter([
+	{
+		path: "*",
+		element: <NotFound.NotFoundPage />,
+	},
 	{
 		path: "/",
 		element: <Entry.Layout />,
@@ -31,12 +35,8 @@ const router = createBrowserRouter([
 						element: <Dish.EntertainmentPage />,
 					},
 					{
-						path: "3d",
-						element: <Dish.Model3DPage />,
-					},
-					{
-						path: "ar",
-						element: <Dish.ModelARPage />,
+						path: "model",
+						element: <Dish.ModelPage />,
 					},
 				],
 			},

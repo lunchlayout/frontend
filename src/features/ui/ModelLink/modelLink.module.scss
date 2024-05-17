@@ -12,4 +12,10 @@
 	& svg {
 		stroke: map-get($colors, secondary);
 	}
+	@include mobile {
+		position: absolute;
+		left: 50%;
+		bottom: 0;
+		transform: translateX(-50%);
+	}
 }

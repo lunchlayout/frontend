@@ -9,16 +9,21 @@ export default function DishModel3D() {
 	const scene = useSelector(selectors.scene);
 
 	const [scale, setScale] = useState<number>();
+
+	//? После второго рендера модель уменьшается в размерах. isFirstRender - проверка на первый рендер
+	const [isFirstRender, setIsFirstRender] = useState(false);
+
 	useEffect(() => {
-		if (scene) {
+		if (scene && !isFirstRender) {
 			const modelBox = new Box3().setFromObject(scene);
 			const modelSize = modelBox.getSize(new Vector3(0, 0, 0));
 			let requiredScale = 1;
 			while (modelSize.z * requiredScale < REQUIRED_AXIS_LENGTH)
 				requiredScale++;
 			setScale(requiredScale);
+			setIsFirstRender(true);
 		}
-	}, [scene]);
+	}, [scene, isFirstRender]);
 	return (
 		<>
 			{scene && (
