@@ -1,0 +1,12 @@
+@import "../../../app/styles/variables", "../../../app/styles/mixins";
+
+.main {
+	@include mainContent {
+		@include desktop {
+			padding-top: map-get($padding, default) * 4;
+		}
+		@include mobile {
+			padding-top: map-get($padding, default) * 2;
+		}
+	}
+}
