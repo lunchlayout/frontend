@@ -13,7 +13,6 @@ const meta = {
 type Story = StoryObj<typeof ReviewLink>;
 
 export const ReviewLinkSimple: Story = {
-
 	args: {},
 };
 

@@ -21,10 +21,9 @@ export default function DishInfo({ className = "" }: IDishInfoProps) {
 			{dish && (
 				<article className={[styles.default, className].join(" ")}>
 					<Image
-						width={544}
-						height={240}
 						className={styles.image}
 						src={dish.img}
+						alt={`Изображение ${dish.name}`}
 					/>
 					<div className={styles.info}>
 						<DishInfoSection label="Описание">

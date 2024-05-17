@@ -1,14 +1,18 @@
 @import "../../../../app/styles/variables", "../../../../app/styles/mixins";
 
 .default {
-	max-width: 38rem;
-	@include flex(column) {
-		gap: map-get($gaps, primary);
-	}
-	padding: map-get($padding, default) * 2;
+	padding: map-get($padding, default) * 1.5;
 	border-radius: map-get($radius, m);
-
 	background: map-get($colors, primary);
+	gap: map-get($gaps, secondary);
+
+	@include desktop {
+		@include flex;
+	}
+	@include mobile {
+		@include flex(column);
+		padding: map-get($padding, default);
+	}
 }
 .info {
 	max-width: 100%;
@@ -20,5 +24,9 @@
 	color: map-get($colors, secondary);
 }
 .image {
-	max-height: 15rem;
+	align-self: stretch;
+	width: 15rem;
+	@include mobile {
+		width: 100%;
+	}
 }

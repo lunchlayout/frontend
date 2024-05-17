@@ -17,7 +17,6 @@ const meta = {
 type Story = StoryObj<typeof TextArea>;
 
 export const TextAreaSimple: Story = {
-
 	args: {
 		placeholder: "Что-то еще?",
 	},

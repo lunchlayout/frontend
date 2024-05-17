@@ -13,7 +13,6 @@ const meta = {
 type Story = StoryObj<typeof MainTitle>;
 
 export const MainTitleSimple: Story = {
-
 	args: {},
 };
 

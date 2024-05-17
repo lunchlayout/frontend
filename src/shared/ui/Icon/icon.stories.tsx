@@ -35,28 +35,24 @@ const meta = {
 type Story = StoryObj<typeof Icon>;
 
 export const IconPrimary: Story = {
-
 	args: {
 		type: "primary",
 		children: Envelope,
 	},
 };
 export const IconSecondary: Story = {
-
 	args: {
 		type: "secondary",
 		children: Envelope,
 	},
 };
 export const IconTertiary: Story = {
-
 	args: {
 		type: "tertiary",
 		children: Envelope,
 	},
 };
 export const IconSimple: Story = {
-
 	args: {
 		type: "simple",
 		children: Envelope,

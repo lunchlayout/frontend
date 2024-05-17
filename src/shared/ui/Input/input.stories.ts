@@ -17,14 +17,12 @@ const meta = {
 type Story = StoryObj<typeof Input>;
 
 export const InputPrimary: Story = {
-
 	args: {
 		placeholder: "Введите код",
 		customType: "primary",
 	},
 };
 export const InputSecondary: Story = {
-
 	args: {
 		placeholder: "Найти блюдо",
 		customType: "secondary",

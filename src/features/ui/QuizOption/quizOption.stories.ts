@@ -17,27 +17,23 @@ const meta = {
 type Story = StoryObj<typeof QuizOption>;
 
 export const QuizOptionDefault: Story = {
-	
 	args: {
 		children: "Наполеoн",
 	},
 };
 export const QuizOptionSelected: Story = {
-
 	args: {
 		children: "Наполеoн",
 		checked: true,
 	},
 };
 export const QuizOptionCorrect: Story = {
-
 	args: {
 		children: "Наполеoн",
 		type: "correct",
 	},
 };
 export const QuizOptionWrong: Story = {
-
 	args: {
 		children: "Наполеoн",
 		type: "wrong",

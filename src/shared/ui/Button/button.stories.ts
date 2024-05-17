@@ -17,35 +17,30 @@ const meta = {
 type Story = StoryObj<typeof Button>;
 
 export const ButtonPrimary: Story = {
-
 	args: {
 		children: "Продолжить",
 		customType: "primary",
 	},
 };
 export const ButtonSecondary: Story = {
-
 	args: {
 		children: "Продолжить",
 		customType: "secondary",
 	},
 };
 export const ButtonTertiary: Story = {
-
 	args: {
 		children: "Продолжить",
 		customType: "tertiary",
 	},
 };
 export const ButtonSimple: Story = {
-
 	args: {
 		children: "Продолжить",
 		customType: "simple",
 	},
 };
 export const ButtonDisabled: Story = {
-
 	args: {
 		children: "Продолжить",
 		customType: "primary",
