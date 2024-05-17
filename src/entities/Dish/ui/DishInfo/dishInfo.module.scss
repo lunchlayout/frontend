@@ -5,7 +5,7 @@
 	border-radius: map-get($radius, m);
 	background: map-get($colors, primary);
 	gap: map-get($gaps, secondary);
-
+	justify-content: space-between;
 	@include desktop {
 		@include flex;
 	}
@@ -26,6 +26,7 @@
 .image {
 	align-self: stretch;
 	width: 15rem;
+	flex: 1;
 	@include mobile {
 		width: 100%;
 	}

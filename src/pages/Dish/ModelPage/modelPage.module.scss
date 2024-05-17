@@ -1,0 +1,15 @@
+@import "../../../app/styles/variables", "../../../app/styles/mixins";
+
+.default {
+	position: relative;
+	@include mainContent;
+}
+
+.content {
+	@include contentContainer {
+		max-width: none;
+		position: absolute;
+		height: 100%;
+		width: 100%;
+	}
+}

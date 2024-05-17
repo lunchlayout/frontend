@@ -1,0 +1,12 @@
+@import "../../../app/styles/variables", "../../../app/styles/mixins";
+
+.main {
+	@include mainContent {
+		padding-top: map-get($padding, default) * 3;
+	}
+}
+.content {
+	@include contentContainer {
+		max-width: 800px;
+	}
+}

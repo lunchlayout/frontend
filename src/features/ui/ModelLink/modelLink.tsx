@@ -83,7 +83,10 @@ export default function ModelLink({ className = "" }: IModelLinkProps) {
 							<Button
 								slot="ar-button"
 								customType="secondary"
-								className={styles.modelLink}
+								className={[
+									styles.modelLink,
+									styles.arLink,
+								].join(" ")}
 							>
 								{linkSvg}
 							</Button>
