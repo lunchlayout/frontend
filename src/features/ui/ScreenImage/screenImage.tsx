@@ -6,7 +6,7 @@ export default function ScreenImage({ className = "" }: IScreenImageProps) {
 	return (
 		<Image
 			src="/desktopPhoneScreen.png"
-			alt="Скриншот использования мобильной версии приложения"
+			alt=""
 			height={330}
 			className={className}
 		/>

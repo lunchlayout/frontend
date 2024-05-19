@@ -30,7 +30,7 @@
 	@include content;
 }
 .image {
-	flex: 0;
+	align-self: stretch;
 	@include outline;
 	transition: map-get($transitions, link);
 }

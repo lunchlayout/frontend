@@ -83,10 +83,14 @@
 		$type: bottom;
 	} @else if ($type == bottom) {
 		$type: top;
+		position: fixed;
+		bottom: 0;
+		width: 100%;
 	}
 	background: map-get($colors, secondary);
 	border-#{$type}-left-radius: map-get($radius, m);
 	border-#{$type}-right-radius: map-get($radius, m);
+
 	@content;
 }
 

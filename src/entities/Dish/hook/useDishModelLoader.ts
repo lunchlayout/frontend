@@ -8,6 +8,7 @@ function useDishModelLoader() {
 	const dispatch = useAppDispatch();
 	const dish = useSelector(selectors.dish);
 	const modelLoadingProgress = useSelector(selectors.modelLoadingProgress);
+	const scene = useSelector(selectors.scene);
 
 	function handleProgress(progress: ProgressEvent<EventTarget>) {
 		if (!modelLoadingProgress) {
@@ -26,11 +27,11 @@ function useDishModelLoader() {
 		dispatch(actions.setScene(gltf.scene));
 	}
 	useEffect(() => {
-		if (dish) {
+		if (dish && !scene) {
 			const gltfLoader = new GLTFLoader();
 			gltfLoader.load(dish.modelLink, handleLoad, handleProgress);
 		}
-	}, [dish]);
+	}, [dish, scene]);
 }
 
 export { useDishModelLoader };

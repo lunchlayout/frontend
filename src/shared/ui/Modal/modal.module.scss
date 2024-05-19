@@ -18,10 +18,8 @@
 		map-get($colors, secondary),
 		map-get($colors, primary)
 	);
-	@include mobile {
-		max-height: 90vh;
-		overflow: auto;
-	}
+	max-height: 90vh;
+	overflow: auto;
 }
 
 .overlay {

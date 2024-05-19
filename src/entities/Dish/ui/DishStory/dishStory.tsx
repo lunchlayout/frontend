@@ -9,7 +9,7 @@ export default function DishStory({
 }: IDishStoryProps) {
 	return (
 		<article className={[styles.default, className].join(" ")}>
-			<Image src={img} />
+			<Image src={img} alt="Фотография, связанная с описанием блюда" />
 			<p className={styles.text}>{description}</p>
 		</article>
 	);
