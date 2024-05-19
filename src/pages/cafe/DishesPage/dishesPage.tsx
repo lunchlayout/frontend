@@ -9,7 +9,7 @@ export default function DishesPage() {
 
 	return (
 		<>
-			{cafe && (
+			{cafe.name && (
 				<main className={styles.main}>
 					<div className={styles.content}>
 						<DishesPanel />

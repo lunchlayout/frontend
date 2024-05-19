@@ -5,13 +5,14 @@ import { ModelLink, ProgressPanel } from "@features/ui";
 
 export default function DesktopDishControl() {
 	const modelLoadingProgress = useSelector(selectors.modelLoadingProgress);
-	const progressExist = modelLoadingProgress?.max;
+	const dish = useSelector(selectors.dish);
 	const modelLoaded =
-		progressExist && modelLoadingProgress.value >= modelLoadingProgress.max;
+		modelLoadingProgress &&
+		modelLoadingProgress.value >= modelLoadingProgress.max;
 
 	return (
 		<>
-			{progressExist && (
+			{dish && (
 				<div className={styles.default}>
 					<div className={styles.content}>
 						{!modelLoaded && <ProgressPanel />}

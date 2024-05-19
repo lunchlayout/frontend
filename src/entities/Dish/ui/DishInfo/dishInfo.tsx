@@ -23,7 +23,7 @@ export default function DishInfo({ className = "" }: IDishInfoProps) {
 					<Image
 						className={styles.image}
 						src={dish.img}
-						alt={`Изображение ${dish.name}`}
+						alt={`${dish.name} - фотография блюда`}
 					/>
 					<div className={styles.info}>
 						<DishInfoSection label="Описание">

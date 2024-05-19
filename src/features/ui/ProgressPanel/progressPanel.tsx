@@ -10,7 +10,6 @@ export default function ProgressPanel({ className = "" }: IProgressPanelProps) {
 	const modelLoadingProgress = useSelector(selectors.modelLoadingProgress);
 	const [currentStep, setCurrentStep] = useState(0);
 	const timerRef = useRef<NodeJS.Timeout | null>(null);
-	const progressExist = modelLoadingProgress?.max;
 	useEffect(() => {
 		timerRef.current = setInterval(() => {
 			setCurrentStep(step => {
@@ -28,7 +27,7 @@ export default function ProgressPanel({ className = "" }: IProgressPanelProps) {
 
 	return (
 		<>
-			{progressExist && (
+			{modelLoadingProgress && (
 				<div className={[styles.default, className].join(" ")}>
 					<Progress
 						label="Индикатор загрузки 3D модели"

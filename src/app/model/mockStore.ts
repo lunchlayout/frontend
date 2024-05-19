@@ -1,7 +1,6 @@
 import { IRootState } from "@app/types";
 import { configureStore } from "@reduxjs/toolkit";
 import { mainReducer } from "./store";
-import logger from "redux-logger";
 
 const mockState: IRootState = {
 	dishes: {
@@ -91,7 +90,6 @@ const mockState: IRootState = {
 const mockStore = configureStore({
 	preloadedState: mockState,
 	reducer: mainReducer,
-	middleware: getDefaultMiddl => getDefaultMiddl().concat(logger),
 });
 
 export { mockStore };

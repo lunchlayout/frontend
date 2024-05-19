@@ -11,7 +11,12 @@ export default function DishCard({
 }: IDishCardProps) {
 	return (
 		<article className={[styles.default, className].join(" ")}>
-			<Image width={160} height={90} className={styles.image} src={img} />
+			<Image
+				width={160}
+				className={styles.image}
+				src={img}
+				alt={`${name} - фотография блюда`}
+			/>
 			<div className={styles.info}>
 				<span>{name}</span>
 				<span>{`${amount} ${unit}.`}</span>

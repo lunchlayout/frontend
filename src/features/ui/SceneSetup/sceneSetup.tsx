@@ -10,9 +10,10 @@ export default function SceneSetup({ children }: ISceneSetupProps) {
 			<OrbitControls
 				minDistance={1.5}
 				maxDistance={4.5}
-				zoomSpeed={0.6}
-				rotateSpeed={0.6}
+				zoomSpeed={0.5}
+				rotateSpeed={0.5}
 				autoRotate
+				maxPolarAngle={Math.PI / 2}
 			/>
 			{children}
 		</>
