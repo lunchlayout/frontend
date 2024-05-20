@@ -9,5 +9,8 @@
 .content {
 	@include contentContainer {
 		max-width: 1000px;
+		@include mobile {
+			padding-bottom: 6rem;
+		}
 	}
 }
