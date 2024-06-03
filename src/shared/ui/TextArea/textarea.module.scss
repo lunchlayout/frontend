@@ -4,21 +4,50 @@ $maxHeight: 160px;
 $minHeight: 100px;
 
 .default {
-	padding: map-get($padding, input);
-	font-family: inherit;
-	color: map-get($colors, primaryText);
-	border: none;
-	background: map-get($colors, secondary);
-	transition: outline map-get($transitions, control);
-	border-radius: map-get($radius, s);
+	width: 100%;
+	padding: map-get($padding, control);
+
 	resize: vertical;
 	min-height: $minHeight;
 	max-height: $maxHeight;
-	&::placeholder {
-		color: map-get($colors, primaryTextHover);
-	}
 	@include scrollbar;
+
+	font-family: inherit;
+	color: inherit;
+	transition: inherit;
+	border-radius: map-get($radius, sm);
+	border: 0.1rem solid currentColor;
+	outline: none;
+
+	&::placeholder {
+		color: map-get($colors, white2);
+	}
 }
-.outline {
-	@include outline;
+
+.container {
+	position: relative;
+	color: map-get($colors, black1);
+	@include transition(
+		$duration: map-get($transitions, control),
+		$properties: (
+			color,
+			outline,
+			border,
+		)
+	);
+	@include outline($type: colorChange, $within: true);
+}
+
+.hasContent {
+	color: map-get($colors, black1);
+}
+
+.label {
+	position: absolute;
+	top: 0;
+	left: 5%;
+	transform: translateY(-65%);
+	padding-inline: calc(map-get($padding, default) / 1.5);
+	transition: inherit;
+	background: map-get($colors, white1);
 }

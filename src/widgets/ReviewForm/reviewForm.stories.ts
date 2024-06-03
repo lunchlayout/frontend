@@ -15,9 +15,9 @@ type Story = StoryObj<typeof ReviewForm>;
 export const ReviewFormSimple: Story = {
 	args: {},
 };
-export const ReviewFormWithControl: Story = {
+export const ReviewFormWithoutControl: Story = {
 	args: {
-		hasControl: true,
+		hasControl: false,
 	},
 };
 

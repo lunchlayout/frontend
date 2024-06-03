@@ -5,7 +5,6 @@ interface IVideo {
 
 interface IStory {
 	description: string;
-	img: string;
 }
 
 interface IQuiz {

@@ -1,53 +1,48 @@
 @import "../../../app/styles/variables", "../../../app/styles/mixins";
 
 .default {
-	padding: map-get($padding, button);
-	border-radius: map-get($radius, m);
-	border: none;
+	padding: map-get($padding, control);
+
+	border: 0.1rem solid map-get($colors, black1);
+	border-radius: map-get($radius, md);
+
 	cursor: pointer;
 
 	font-family: inherit;
-	color: map-get($colors, secondary);
-	transition: background map-get($transitions, control);
+	@include transition(
+		$duration: map-get($transitions, control),
+		$properties: (
+			background,
+			color,
+			border,
+		)
+	);
+
+	@include flex;
+	@include outline($type: rounded);
 
 	&:disabled {
+		background: map-get($colors, gray2);
+		border: 0.1rem solid map-get($colors, gray2);
+		color: map-get($colors, white1);
 		cursor: not-allowed;
 	}
+}
 
-	@include flex {
-		display: inline-flex;
-	}
-	@include outline;
-}
-.simple {
-	background: map-get($colors, secondary);
-	color: map-get($colors, primaryText);
-	&:hover,
-	&:disabled {
-		background: map-get($colors, secondaryHover);
-	}
-}
-.primary {
-	background: map-get($colors, primary);
-	&:hover,
-	&:disabled {
-		background: map-get($colors, primaryHover);
+.filled {
+	background: map-get($colors, black1);
+	color: map-get($colors, white1);
+	&.hasHover:hover:not(:disabled) {
+		background: map-get($colors, white1);
+		color: map-get($colors, black1);
 	}
 }
 
-.secondary {
-	background: map-get($colors, tertiary);
-	&:hover,
-	&:disabled {
-		background: map-get($colors, tertiaryHover);
-	}
-}
-
-.tertiary {
-	background: map-get($colors, track);
-	color: map-get($colors, primaryText);
-	&:hover,
-	&:disabled {
-		background: map-get($colors, trackHover);
+.outlined {
+	background: map-get($colors, white1);
+	color: map-get($colors, black1);
+	&.hasHover:hover:not(:disabled) {
+		background: map-get($colors, black1);
+		color: map-get($colors, white1);
 	}
 }

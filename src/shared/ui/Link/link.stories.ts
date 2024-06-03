@@ -1,9 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import Link from "./link";
+import { withRouter } from "storybook-addon-remix-react-router";
 
 const meta = {
 	component: Link,
 	title: "Shared/Link",
+	decorators: [withRouter()],
 	tags: ["autodocs"],
 	parameters: {
 		layout: "centered",
@@ -12,34 +14,23 @@ const meta = {
 
 type Story = StoryObj<typeof Link>;
 
-export const LinkPrimary: Story = {
+export const LinkOutlined: Story = {
 	args: {
-		type: "primary",
-		children: "Ввести код",
-	},
-};
-export const LinkSecondary: Story = {
-	args: {
-		type: "secondary",
-		children: "Ввести код",
-	},
-};
-export const LinkTertiary: Story = {
-	args: {
-		type: "tertiary",
-		children: "Ввести код",
-	},
-};
-export const LinkSimple: Story = {
-	args: {
-		type: "simple",
-		children: "Ввести код",
+		type: "outlined",
+		children: "Найти блюдо",
 	},
 };
 export const LinkText: Story = {
 	args: {
 		type: "text",
-		children: "Ввести код",
+		children: "Найти блюдо",
 	},
 };
+export const LinkUnderlined: Story = {
+	args: {
+		type: "underlined",
+		children: "Найти блюдо",
+	},
+};
+
 export default meta;

@@ -1,0 +1,8 @@
+@import "../../../app/styles/variables", "../../../app/styles/mixins";
+
+.links {
+	@include flex {
+		gap: map-get($gaps, primary);
+		justify-content: flex-start;
+	}
+}

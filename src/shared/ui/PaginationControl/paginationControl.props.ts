@@ -4,6 +4,6 @@ import { MouseEventHandler } from "react";
 export interface IPaginationControlProps extends IDefaultProps {
 	currentPage: number;
 	pageCnt: number;
-	onLeftClick: MouseEventHandler<HTMLButtonElement>;
-	onRightClick: MouseEventHandler<HTMLButtonElement>;
+	onLeftClick?: MouseEventHandler<HTMLButtonElement>;
+	onRightClick?: MouseEventHandler<HTMLButtonElement>;
 }

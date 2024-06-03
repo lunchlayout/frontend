@@ -1,7 +1,7 @@
 @import "../../../app/styles/variables", "../../../app/styles/mixins";
 
 .default {
-	color: map-get($colors, secondary);
+	position: relative;
 }
 
 .reader {
@@ -16,8 +16,13 @@
 .hint {
 	position: absolute;
 	left: 50%;
-	top: 20%;
+	top: 10%;
 	transform: translate(-50%, -50%);
+	@include semiBold($size: map-get($fontSizes, h3));
+	@include mobile {
+		font-size: map-get($fontSizes, h4);
+	}
+
+	color: map-get($colors, white1);
 	text-align: center;
-	font-size: map-get(map-get($fonts, sizes), h2);
 }

@@ -8,3 +8,7 @@ export { createGenericContext } from "./createGenericContext";
 export { convertProgressToPercent } from "./convertProgressToPercent";
 
 export { shuffle } from "./shuffle";
+
+export { capitalize } from "./capitalize";
+
+export { getClippedText } from "./getClippedText";

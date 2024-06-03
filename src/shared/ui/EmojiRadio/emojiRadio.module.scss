@@ -1,25 +1,61 @@
 @import "../../../app/styles/variables", "../../../app/styles/mixins";
 
-.ratio {
+.radio {
 	appearance: none;
 }
-.emoji {
-	width: 70%;
-	stroke: map-get($colors, primaryText);
-	transition: map-get($transitions, control);
+.default {
+	@include flex(column) {
+		gap: calc(map-get($gaps, default) / 2);
+	}
+	@include transition(
+		$duration: map-get($transitions, control),
+		$properties: (
+			background,
+			color,
+			fill,
+			stroke,
+		)
+	);
 }
-.ratio:checked ~ .emoji {
-	stroke: map-get($colors, rate);
+
+.emojiContainer {
+	@include flex($hasGap: false);
+	@include outline($type: rounded);
+	@include icon;
+	cursor: pointer;
+	background: map-get($colors, gray2);
+	transition: inherit;
 }
-.label {
-	@include flex;
-	@include outline;
-	@include icon {
-		max-width: 50px;
+
+.emoji.emoji {
+	stroke: map-get($colors, black1);
+	fill: map-get($colors, gray2);
+}
+
+.description {
+	@include flex {
+		gap: calc(map-get($gaps, default) / 3);
 	}
 	cursor: pointer;
-	transition: map-get($transitions, control);
+	color: map-get($colors, gray2);
+	transition: inherit;
 }
-.label:has(.ratio:checked) {
-	background: map-get($colors, rateBg);
+
+@each $emojiType, $color in $rateColors {
+	.#{$emojiType}:has(.radio:checked) {
+		& .emojiContainer {
+			background: $color;
+		}
+		& .description {
+			color: map-get($colors, black1);
+		}
+		& .emoji {
+			fill: $color;
+		}
+		@if ($emojiType == bad or $emojiType == happy) {
+			& .emoji {
+				stroke: map-get($colors, white1);
+			}
+		}
+	}
 }

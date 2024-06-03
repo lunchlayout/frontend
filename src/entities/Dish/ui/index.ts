@@ -9,7 +9,6 @@ import DishInfoModal from "./DishInfoModal";
 import EntertainmentSlider from "./EntertainmentSlider";
 import DishModel3D from "./DishModel3D";
 import DishModelAR from "./DishModelAR";
-import DishIcon from "./DishIcon";
 
 export {
 	DishCard,
@@ -23,5 +22,4 @@ export {
 	EntertainmentSlider,
 	DishModel3D,
 	DishModelAR,
-	DishIcon,
 };

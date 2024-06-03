@@ -1,30 +1,18 @@
 @import "../../../../app/styles/variables", "../../../../app/styles/mixins";
 
 .default {
-	@include resetList;
-	@include flex {
-		gap: map-get($gaps, secondary);
-		flex-wrap: wrap;
+	@include grid {
+		grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+		gap: map-get($gaps, primary);
 		justify-content: flex-start;
 		align-items: flex-start;
 	}
-	border-radius: map-get($radius, m);
 }
 
-.dishItem {
-	flex-grow: 1;
-}
-
-.dishLink {
+.dishLink.dishLink {
 	padding: 0;
+	border: none;
 	width: 100%;
-	@include outline(false, secondary);
-	transition:
-		background,
-		outline map-get($transitions, link);
-	&:hover {
-		outline: 0.1rem solid map-get($colors, secondary);
-	}
 }
 
 .dish {

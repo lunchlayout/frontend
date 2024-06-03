@@ -3,8 +3,11 @@
 
 .default {
 	position: relative;
-	@include flex(column) {
-		gap: map-get($gaps, secondary) * 1.5;
+	@include mobile {
+		@include flex(column) {
+			gap: map-get($gaps, default) * 1.5;
+			align-items: stretch;
+		}
 	}
 }
 
@@ -15,18 +18,17 @@
 		top: 50%;
 		transform: translateY(-50%);
 	}
-	@include icon(map-get($colors, secondary));
 }
 
 .leftController {
 	@include desktop {
-		left: -3%;
+		left: -5%;
 	}
 }
 
 .rightController {
 	@include desktop {
-		right: -3%;
+		right: -5%;
 	}
 }
 
@@ -37,17 +39,5 @@
 }
 
 .entertainment {
-	width: 100%;
-	overflow: auto;
 	animation: showUp 1s;
-	@include scrollbar;
-	@include desktop {
-		height: 450px;
-	}
-	@include mobile {
-		height: 350px;
-	}
-	& img {
-		max-height: 350px;
-	}
 }

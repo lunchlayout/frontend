@@ -2,18 +2,25 @@
 
 .default {
 	@include flex(column) {
-		gap: map-get($gaps, primary);
-		justify-content: space-between;
 		align-items: stretch;
+		gap: map-get($gaps, primary);
 	}
-	@include glass(map-get($colors, primaryHover));
-	padding: map-get($padding, default) * 2;
+	padding: map-get($padding, card) * 2;
+
 	@include mobile {
-		padding: map-get($padding, default)
-			calc(map-get($padding, default) / 1.5);
+		padding: map-get($padding, card);
 	}
-	border-radius: map-get($radius, m);
-	min-height: 400px;
+	border: 0.1rem solid map-get($colors, gray2);
+	border-radius: map-get($radius, md);
+	min-height: 500px;
+}
+
+.searchContainer {
+	@include flex;
+}
+
+.search {
+	flex-grow: 1;
 }
 
 .dishList,

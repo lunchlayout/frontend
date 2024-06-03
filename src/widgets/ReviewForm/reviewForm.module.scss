@@ -6,3 +6,53 @@
 		align-items: stretch;
 	}
 }
+
+.titleContainer {
+	align-self: flex-start;
+	@include flex(column) {
+		gap: calc(map-get($gaps, default) / 2);
+		align-items: flex-start;
+	}
+}
+
+.title {
+	@include semiBold($size: map-get($fontSizes, h2));
+
+	@include mobile {
+		font-size: map-get($fontSizes, h3);
+	}
+}
+
+.description {
+	@include desktop {
+		font-size: map-get($fontSizes, h4);
+	}
+}
+
+.form {
+	@include flex(column) {
+		gap: map-get($gaps, primary);
+		align-items: stretch;
+	}
+}
+
+.inputContainer {
+	@include flex(column) {
+		gap: map-get($gaps, primary);
+		align-items: inherit;
+	}
+	@include desktop {
+		padding: map-get($padding, card) * 2;
+	}
+	@include mobile {
+		padding: map-get($padding, default);
+	}
+	border-radius: map-get($radius, md);
+	border: 0.1rem solid map-get($colors, gray2);
+}
+
+.controller.controller {
+	@include mobile {
+		justify-content: space-between;
+	}
+}

@@ -1,6 +1,0 @@
-@import "../../../../app/styles/variables", "../../../../app/styles/mixins";
-
-.reviewLink {
-	padding: map-get($padding, rounded);
-	@include icon;
-}

@@ -12,11 +12,7 @@ export default function QRLink({
 	const [QRSrc, setQRSrc] = useState("");
 
 	useEffect(() => {
-		async function getQRSrc() {
-			const QrSrc = await qr.toDataURL(src);
-			setQRSrc(QrSrc);
-		}
-		getQRSrc();
+		qr.toDataURL(src).then(setQRSrc);
 	}, [src]);
 
 	return (
@@ -26,7 +22,7 @@ export default function QRLink({
 				alt={`qrcode link to ${src}`}
 				className={styles.qr}
 			/>
-			<p className={styles.text}>{label}</p>
+			<p className={styles.description}>{label}</p>
 		</div>
 	);
 }

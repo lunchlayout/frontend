@@ -1,25 +1,34 @@
 @import "../../../app/styles/variables", "../../../app/styles/mixins";
 
 .default {
-	padding: map-get($padding, input);
+	padding: map-get($padding, control);
+	border-radius: map-get($radius, lg);
 	font-family: inherit;
-	color: inherit;
+
 	border: none;
 	outline: none;
-	background: map-get($colors, secondary);
-	transition: map-get($transitions, control);
+	background: inherit;
+	@include transition(
+		$duration: map-get($transitions, control),
+		$properties: (
+			color,
+			border,
+		)
+	);
 	&::placeholder {
-		color: map-get($colors, primaryTextHover);
+		color: map-get($colors, white2);
+	}
+	&::-webkit-search-cancel-button {
+		cursor: pointer;
+		margin-left: map-get($padding, default);
 	}
 }
 .outline {
-	@include outline;
+	color: map-get($colors, gray1);
+	border: 0.1rem solid currentColor;
+	@include outline($type: colorChange);
 }
 
-.primary {
-	border-radius: map-get($radius, m);
-}
-
-.secondary {
-	border-radius: map-get($radius, s);
+.hasContent {
+	color: map-get($colors, black1);
 }

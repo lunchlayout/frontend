@@ -1,0 +1,22 @@
+@import "../../../app/styles/variables", "../../../app/styles/mixins";
+
+.main {
+	@include mainContent;
+}
+
+.title {
+	@include semiBold($size: map-get($fontSizes, h2));
+}
+
+.content {
+	@include container($maxWidth: 1400px) {
+	}
+}
+
+.cafesPanel {
+	@include container($maxWidth: 1000px) {
+		@include desktop {
+			margin-top: map-get($padding, default) * 3;
+		}
+	}
+}

@@ -1,10 +1,11 @@
-import { ChangeEventHandler } from "react";
+import { TextareaHTMLAttributes } from "react";
 import { IDefaultProps } from "@shared/types";
 
-export interface ITextAreaProps extends IDefaultProps {
-	placeholder?: string;
-	value?: string;
-	hasOutline?: boolean;
-	required?: boolean;
-	onChange?: ChangeEventHandler<HTMLTextAreaElement>;
+export interface ITextAreaProps
+	extends IDefaultProps,
+		Pick<
+			TextareaHTMLAttributes<HTMLTextAreaElement>,
+			"onChange" | "value" | "placeholder" | "disabled" | "required"
+		> {
+	label?: string;
 }

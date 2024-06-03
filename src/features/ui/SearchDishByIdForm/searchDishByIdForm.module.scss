@@ -1,0 +1,33 @@
+@import "../../../app/styles/variables", "../../../app/styles/mixins";
+
+.default {
+	border-radius: map-get($radius, lg);
+	padding-right: 0;
+	@include flex {
+		gap: 0;
+		align-items: stretch;
+	}
+	@include transition(
+		$duration: map-get($transitions, control),
+		$properties: (
+			color,
+			border,
+			outline,
+		)
+	);
+	@include outline($type: colorChange, $within: true);
+	border: 0.1rem solid map-get($colors, black1);
+}
+
+.input.input {
+	flex-grow: 1;
+	padding-left: map-get($padding, default);
+	padding-right: calc(map-get($padding, default) / 2);
+	border-radius: 0;
+}
+
+.btn.btn {
+	border: none;
+	@include icon($fill: currentColor);
+	padding-right: map-get($padding, default);
+}

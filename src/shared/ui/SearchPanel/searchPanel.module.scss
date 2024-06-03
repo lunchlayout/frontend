@@ -1,26 +1,30 @@
 @import "../../../app/styles/variables", "../../../app/styles/mixins";
 
 .default {
-	border-radius: map-get($radius, m);
-	background: map-get($colors, secondary);
+	border-radius: map-get($radius, lg);
 	transition: map-get($transitions, control);
-	@include outline(true);
+	@include outline($type: colorChange, $within: true);
+	border: 0.1rem solid currentColor;
 }
 
 .label {
-	@include flex;
-
-	padding: map-get($padding, rounded);
+	@include flex {
+		gap: calc(map-get($gaps, default) / 2);
+	}
+	padding: calc(map-get($padding, default) / 2);
 	cursor: pointer;
 }
 
-.input {
-	border-radius: map-get($radius, s);
-	padding: map-get($padding, rounded);
+.hasContent {
+	color: map-get($colors, black1);
+}
 
+.magnifier {
+	stroke: currentColor;
+}
+
+.input {
+	padding: 0;
+	border-radius: 0;
 	flex-grow: 1;
-	&::-webkit-search-cancel-button {
-		cursor: pointer;
-		margin-left: map-get($padding, default);
-	}
 }

@@ -1,28 +1,27 @@
 @import "../../../../app/styles/variables", "../../../../app/styles/mixins";
 
 .default {
+	@include flex;
+	@include mobile {
+		display: block;
+	}
+}
+
+.form {
 	@include flex(column) {
 		gap: map-get($gaps, primary);
-		justify-content: space-between;
 	}
-	padding: map-get($padding, default) * 2;
-	@include mobile {
-		padding: map-get($padding, default);
-	}
-	border-radius: map-get($radius, m);
-
-	background: map-get($colors, secondary);
+	flex-basis: 50%;
 }
 .question {
-	@include content;
+	@include semiBold;
 	max-width: 100%;
 	align-self: flex-start;
 }
 .options {
 	flex: 1;
 	align-self: stretch;
-	justify-content: flex-start;
 }
 .btn {
-	min-width: 180px;
+	min-width: 60%;
 }

@@ -1,0 +1,17 @@
+@import "../../../app/styles/variables", "../../../app/styles/mixins";
+
+.link {
+	@include outline($type: rounded);
+	outline-offset: 0.5rem;
+	border-radius: map-get($radius, sm);
+}
+
+.title {
+	fill: map-get($colors, black1);
+	@include desktop {
+		width: 260px;
+	}
+	@include mobile {
+		width: 150px;
+	}
+}

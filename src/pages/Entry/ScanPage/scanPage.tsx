@@ -4,7 +4,7 @@ import styles from "./scanPage.module.scss";
 
 export default function ScanPage() {
 	return (
-		<main className={styles.main}>
+		<main className={styles.default}>
 			<DishIdQRReader />
 			<SEO title={`Сканер QR-кода блюда — Lunch Layout`} />
 		</main>

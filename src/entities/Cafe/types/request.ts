@@ -4,4 +4,9 @@ interface IGetCafeByIdReq {
 	page?: number;
 }
 
-export type { IGetCafeByIdReq };
+interface IGetCafesReq {
+	query?: string;
+	page?: number;
+}
+
+export type { IGetCafeByIdReq, IGetCafesReq };

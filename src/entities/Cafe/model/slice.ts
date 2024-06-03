@@ -1,8 +1,8 @@
 import { createSlice, isFulfilled, PayloadAction } from "@reduxjs/toolkit";
 import { initialState } from "./initState";
 import { isPending, isRejected } from "@shared/lib";
-import { IGetCafeByIdRes } from "../types";
-import { getCafeById } from "./thunks";
+import { IGetCafeByIdRes, IGetCafesRes } from "../types";
+import { getCafeById, getCafes } from "./thunks";
 
 const CafesSlice = createSlice({
 	name: "cafes",
@@ -16,11 +16,13 @@ const CafesSlice = createSlice({
 		builder.addCase(
 			getCafeById.fulfilled,
 			(state, action: PayloadAction<IGetCafeByIdRes>) => {
-				state.pageCnt = action.payload.pageCnt;
-				state.cafe = { ...action.payload, pageCnt: undefined } as Omit<
-					IGetCafeByIdRes,
-					"pageCnt"
-				>;
+				state.currentCafe = action.payload;
+			},
+		);
+		builder.addCase(
+			getCafes.fulfilled,
+			(state, action: PayloadAction<IGetCafesRes>) => {
+				state.currentCafes = action.payload;
 			},
 		);
 		builder.addMatcher(isFulfilled, state => {
@@ -45,6 +47,7 @@ const { reducer } = CafesSlice;
 const actions = {
 	...CafesSlice.actions,
 	getCafeById,
+	getCafes,
 };
 
 export { reducer, actions };

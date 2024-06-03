@@ -18,24 +18,24 @@ type Story = StoryObj<typeof QuizOption>;
 
 export const QuizOptionDefault: Story = {
 	args: {
-		children: "Наполеoн",
+		option: "Кофевар",
 	},
 };
 export const QuizOptionSelected: Story = {
 	args: {
-		children: "Наполеoн",
+		option: "Кофе-мастер",
 		checked: true,
 	},
 };
 export const QuizOptionCorrect: Story = {
 	args: {
-		children: "Наполеoн",
+		option: "Бариста",
 		type: "correct",
 	},
 };
 export const QuizOptionWrong: Story = {
 	args: {
-		children: "Наполеoн",
+		option: "Молокосос",
 		type: "wrong",
 	},
 };

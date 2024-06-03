@@ -1,16 +1,22 @@
 @import "../../../app/styles/variables", "../../../app/styles/mixins";
 
 .main {
-	@include mainContent {
-		padding-top: map-get($padding, default);
-	}
+	@include mainContent;
+}
+
+.title {
+	@include semiBold($size: map-get($fontSizes, h2));
 }
 
 .content {
-	@include contentContainer {
-		max-width: 1000px;
-		@include mobile {
-			padding-bottom: 6rem;
+	@include container($maxWidth: 1400px) {
+	}
+}
+
+.dishesPanel {
+	@include container($maxWidth: 1000px) {
+		@include desktop {
+			margin-top: map-get($padding, default) * 3;
 		}
 	}
 }

@@ -1,16 +1,15 @@
 import { IDishVideoProps } from "./dishVideo.props";
 import styles from "./dishVideo.module.scss";
-import { VideoFrame } from "@shared/ui";
+import { VideoPlayer } from "@shared/ui";
 
 export default function DishVideo({
-	title,
 	link,
+	title,
 	className = "",
 }: IDishVideoProps) {
 	return (
 		<article className={[styles.default, className].join(" ")}>
-			<VideoFrame src={link} title={title} height={300} />
-			<p className={styles.text}>{title}</p>
+			<VideoPlayer src={link} title={title} className={styles.player} />
 		</article>
 	);
 }

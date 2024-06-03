@@ -47,6 +47,10 @@ const router = createBrowserRouter([
 		element: <Cafe.Layout />,
 		children: [
 			{
+				index: true,
+				element: <Cafe.CafesPage />,
+			},
+			{
 				path: ":cafeId",
 				element: <Cafe.DishesPage />,
 			},

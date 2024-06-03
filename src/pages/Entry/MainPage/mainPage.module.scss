@@ -1,15 +1,27 @@
 @import "../../../app/styles/variables", "../../../app/styles/mixins";
 
-.main {
+.default {
 	@include mainContent;
-}
+	@include container;
+	@include grid {
+		grid-template-areas:
+			"searchById image image"
+			"benefits benefits benefits";
+		row-gap: map-get($gaps, primary);
+	}
 
-.content {
-	@include contentContainer {
-		max-width: 600px;
+	@include mobile {
+		grid-template-areas:
+			"image"
+			"searchById"
+			"benefits";
 	}
 }
 
-.desktopMain {
-	align-self: inherit;
+$parts: searchById, image, benefits;
+
+@each $part in $parts {
+	.#{$part} {
+		grid-area: $part;
+	}
 }

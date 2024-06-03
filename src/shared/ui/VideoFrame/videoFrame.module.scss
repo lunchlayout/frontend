@@ -1,9 +1,0 @@
-@import "../../../app/styles/variables", "../../../app/styles/mixins";
-
-.default {
-	/* React-player при показе обложки содержит div, а после старта - iframe */
-	& iframe,
-	div {
-		border-radius: map-get($radius, m);
-	}
-}

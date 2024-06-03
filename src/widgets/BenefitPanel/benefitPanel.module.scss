@@ -1,0 +1,15 @@
+@import "../../app/styles/variables", "../../app/styles/mixins";
+
+.default {
+	@include flex {
+		gap: map-get($gaps, primary) * 4;
+	}
+	padding: map-get($padding, panel) map-get($padding, panel) * 1.5;
+	@include mobile {
+		flex-direction: column;
+		gap: map-get($gaps, primary);
+		padding: map-get($padding, panel) calc(map-get($padding, panel) / 1.5);
+	}
+	border-radius: map-get($radius, md) * 1.5;
+	background: map-get($colors, black1);
+}

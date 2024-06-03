@@ -27,7 +27,7 @@ export default function QuizOptions({
 					<QuizOption
 						key={idx}
 						disabled={disabled}
-						label={option}
+						option={option}
 						onChange={handleChange}
 						checked={!isFinish && value === option}
 						type={getOptionType(option)}

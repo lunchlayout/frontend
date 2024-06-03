@@ -9,17 +9,10 @@
 	position: absolute;
 	left: 50%;
 	top: 50%;
+	padding: map-get($padding, card) * 2;
 	transform: translate(-50%, -50%);
-}
-
-.content {
-	@include scrollbar(
-		8px,
-		map-get($colors, secondary),
-		map-get($colors, primary)
-	);
-	max-height: 90vh;
-	overflow: auto;
+	background: map-get($colors, white1);
+	border-radius: map-get($radius, sm);
 }
 
 .overlay {
@@ -27,12 +20,12 @@
 	inset: 0;
 	cursor: pointer;
 
-	@include glass(map-get($colors, primaryTextHover));
+	background: map-get($colors, overlay);
 }
 
-.close {
+.close.close {
 	position: absolute;
-	right: -1rem;
-	top: -1rem;
-	border: 0.1rem solid map-get($colors, secondary);
+	right: 0;
+	top: 0;
+	border-radius: map-get($radius, sm);
 }

@@ -21,7 +21,7 @@ export default function SnackbarNotice({
 		<Snackbar
 			open={open}
 			onClose={handleClose}
-			anchorOrigin={{ horizontal: "right", vertical: "top" }}
+			anchorOrigin={{ horizontal: "left", vertical: "bottom" }}
 			autoHideDuration={4000}
 			TransitionComponent={SlideTransition}
 			transitionDuration={800}
@@ -35,5 +35,5 @@ export default function SnackbarNotice({
 }
 
 function SlideTransition(props: SlideProps) {
-	return <Slide {...props} direction="down" />;
+	return <Slide {...props} direction="right" />;
 }

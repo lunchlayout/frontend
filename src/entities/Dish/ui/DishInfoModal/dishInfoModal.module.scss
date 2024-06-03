@@ -2,9 +2,11 @@
 
 .modal {
 	@include desktop {
-		width: 70vw;
+		padding: map-get($padding, card) * 2;
+		width: 70%;
 	}
 	@include mobile {
-		width: 90vw;
+		padding: map-get($padding, default);
+		width: 60%;
 	}
 }

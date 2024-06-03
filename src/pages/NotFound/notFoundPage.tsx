@@ -1,12 +1,12 @@
 import { SEO } from "@shared/ui";
-import { NotFoundPageMain } from "@widgets/index";
+import { NotFoundPageContent } from "@widgets/index";
 import styles from "./notFoundPage.module.scss";
 
 export default function NotFoundPage() {
 	return (
-		<>
-			<NotFoundPageMain className={styles.main} />
+		<main className={styles.default}>
+			<NotFoundPageContent />
 			<SEO title={`Страница не найдена — Lunch Layout`} />
-		</>
+		</main>
 	);
 }

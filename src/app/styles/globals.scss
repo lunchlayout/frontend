@@ -8,7 +8,10 @@
 	box-sizing: border-box;
 }
 
-ul,
+ul {
+	list-style: none;
+}
+
 ol {
 	padding-left: map-get($padding, default);
 }
@@ -17,13 +20,26 @@ fieldset {
 	border: none;
 }
 
+html {
+	@include mobile {
+		font-size: 14px;
+	}
+}
+
 body {
 	min-height: 100vh;
-	line-height: 1.5;
+	line-height: 1.3;
 	font: {
-		family: map-get($fonts, family), sans-serif;
+		family: map-get($fonts, family1);
 	}
-	color: map-get($colors, primaryText);
+	background: map-get($colors, white1);
+	color: map-get($colors, black1);
+}
+
+@each $header, $size in $fontSizes {
+	#{$header} {
+		font-size: $size;
+	}
 }
 
 #root {
@@ -37,10 +53,4 @@ body {
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	@include desktop {
-		background-image: url("/desktopMainBg.png");
-	}
-	@include mobile {
-		background-image: url("/mobileMainBg.png");
-	}
 }
