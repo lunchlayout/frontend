@@ -6,6 +6,7 @@ import { Group, Object3DEventMap } from "three";
 
 interface IDishesState extends IDefaultState {
 	dish?: IDishWithCafe;
+	dishId?: string;
 	scene?: Group<Object3DEventMap>;
 	modelLoadingProgress?: IProgress;
 	entertainmentDetails?: IEntertainmentDetails;

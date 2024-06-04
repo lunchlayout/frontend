@@ -1,0 +1,21 @@
+@import "../../../app/styles/variables", "../../../app/styles/mixins";
+
+.links {
+	@include flex {
+		gap: map-get($gaps, primary);
+		justify-content: flex-start;
+	}
+	@include tablet {
+		gap: map-get($gaps, default) * 1.5;
+	}
+	@include mobile {
+		flex-direction: column;
+		align-items: flex-end;
+	}
+}
+
+.navLink {
+	@include mobile {
+		font-size: map-get($fontSizes, h4);
+	}
+}

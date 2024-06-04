@@ -4,19 +4,20 @@ import { useSelector } from "react-redux";
 import { selectors } from "@entities/Cafe";
 import DishCard from "../DishCard";
 import { Link } from "@shared/ui";
+import { getDishPathById } from "@entities/Dish/lib";
 
 export default function DishList({ className = "" }: IDishListProps) {
-	const dishes = useSelector(selectors.dishes);
+	const currentDishes = useSelector(selectors.currentDishes);
 
 	return (
 		<ul className={[styles.default, className].join(" ")}>
-			{dishes?.map(dish => {
+			{currentDishes?.dishes.map(dish => {
 				return (
-					<li className={styles.dishItem} key={dish.dishId}>
+					<li key={dish.dishId}>
 						<Link
-							type="simple"
+							type="outlined"
 							className={styles.dishLink}
-							to={`/dishes/${dish.dishId}`}
+							to={getDishPathById(dish.dishId)}
 						>
 							<DishCard className={styles.dish} {...dish} />
 						</Link>

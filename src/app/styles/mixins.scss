@@ -1,33 +1,75 @@
-@mixin outline($within: false, $color: primary) {
-	outline-offset: 0.1rem;
-	outline: 0.1rem solid transparent;
-	transition: map-get($transitions, link);
-	&:focus-visible {
-		outline: 0.1rem solid map-get($colors, $color);
-	}
-	@if $within {
-		&:focus-within {
-			outline: 0.1rem solid map-get($colors, $color);
+@mixin outline($type: text, $within: false, $hasHover: false) {
+	@if ($type == text) {
+		outline: none;
+		position: relative;
+
+		&::after {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			transition: inherit;
+
+			border-radius: map-get($radius, md);
+			border: 0.05rem solid map-get($colors, black1);
+
+			@if $hasHover {
+				transform-origin: center;
+				transform: scaleX(0);
+			}
 		}
+		@if $hasHover {
+			&:hover::after {
+				transform: scaleX(1);
+			}
+			@if $within {
+				&:focus-within::after {
+					transform: scaleX(1);
+				}
+			} @else {
+				&:focus-visible::after {
+					transform: scaleX(1);
+				}
+			}
+		}
+	} @else if ($type == rounded) {
+		outline-offset: 0.1rem;
+		outline: 0.1rem solid transparent;
+
+		@if $within {
+			&:focus-within {
+				outline: 0.1rem solid map-get($colors, black1);
+			}
+		} @else {
+			&:focus-visible {
+				outline: 0.1rem solid map-get($colors, black1);
+			}
+		}
+	} @else if ($type == colorChange) {
+		color: map-get($colors, gray2);
+		@if $within {
+			&:focus-within {
+				color: map-get($colors, black1);
+			}
+		} @else {
+			&:focus-visible {
+				color: map-get($colors, black1);
+			}
+		}
+	} @else {
+		@warn "Обводки типа #{$type} не существует";
 	}
 }
 
-@mixin flex($dir: row) {
+@mixin flex($dir: row, $hasGap: true) {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	@if $hasGap {
+		gap: map-get($gaps, default);
+	}
 	flex-direction: $dir;
 	@content;
-}
-
-@mixin mobileControl {
-	@include flex {
-		justify-content: space-between;
-		gap: map-get($gaps, secondary);
-		align-items: stretch;
-		flex-wrap: wrap;
-		@content;
-	}
 }
 
 @mixin glass(
@@ -42,20 +84,34 @@
 	@content;
 }
 
-@mixin content {
+@mixin textContent {
 	text-align: justify;
 	overflow-wrap: break-word;
-	font-weight: 500;
 	@content;
 }
 
-@mixin icon($fill: map-get($colors, secondary), $width: 50px) {
-	border-radius: map-get($radius, rounded);
+@mixin icon(
+	$fill: map-get($colors, white1),
+	$hasHover: false,
+	$fillHover: map-get($colors, black1),
+	$width: 3rem
+) {
 	padding: 0;
 	width: $width;
 	aspect-ratio: 1 / 1;
+	border-radius: map-get($radius, lg);
+
 	& svg {
+		transition: inherit;
 		fill: $fill;
+	}
+
+	@if $hasHover {
+		&:hover:not(:disabled) {
+			& svg {
+				fill: $fillHover;
+			}
+		}
 	}
 	@content;
 }
@@ -65,40 +121,22 @@
 	@content;
 }
 
-@mixin resetList {
-	list-style: none;
-	padding: 0;
-	@content;
-}
-
 @mixin grid {
 	display: grid;
 	justify-content: center;
 	align-items: center;
+	gap: map-get($gaps, default);
 	@content;
 }
 
-@mixin mobileBoundary($type) {
-	@if ($type == top) {
-		$type: bottom;
-	} @else if ($type == bottom) {
-		$type: top;
-		position: fixed;
-		bottom: 0;
-		width: 100%;
-	}
-	background: map-get($colors, secondary);
-	border-#{$type}-left-radius: map-get($radius, m);
-	border-#{$type}-right-radius: map-get($radius, m);
-
-	@content;
-}
-
-@mixin desktopHeader {
-	background: map-get($colors, secondary);
-	border-bottom-left-radius: map-get($radius, m);
-	border-bottom-right-radius: map-get($radius, m);
-	@content;
+@mixin transition(
+	$duration: map-get($transitions, link),
+	$properties: (
+		all,
+	)
+) {
+	transition-property: $properties;
+	transition-duration: $duration;
 }
 
 @mixin desktop {
@@ -113,15 +151,10 @@
 	}
 }
 
-@mixin caption {
-	z-index: map-get($zIndex, caption);
-	padding: map-get($padding, button);
-	text-align: center;
-	border-radius: map-get($radius, m);
-
-	color: map-get($colors, secondary);
-	background: map-get($colors, primary);
-	@content;
+@mixin tablet {
+	@media only screen and (max-width: 1080px) {
+		@content;
+	}
 }
 
 @mixin mainContent {
@@ -129,29 +162,45 @@
 	@content;
 }
 
-@mixin contentContainer {
+@mixin container($maxWidth: 1400px) {
 	margin: 0 auto;
-	max-width: 1400px;
+	max-width: $maxWidth;
 	padding: map-get($padding, default);
 	@content;
 }
 
 @mixin scrollbar(
 	$width: 10px,
-	$thumbBg: map-get($colors, primary),
-	$trackBg: map-get($colors, secondary)
+	$thumbBg: map-get($colors, black1),
+	$trackBg: map-get($colors, white1)
 ) {
 	scroll-behavior: smooth;
 	&::-webkit-scrollbar {
 		width: $width;
-		border-radius: map-get($radius, m);
+		border-radius: map-get($radius, sm);
 		background: $trackBg;
 	}
 	&::-webkit-scrollbar-thumb {
-		border-radius: map-get($radius, m);
+		border-radius: map-get($radius, sm);
 		background: $thumbBg;
 	}
 	&::-webkit-scrollbar-button {
 		display: none;
 	}
+}
+
+@mixin semiBold($size: map-get($fontSizes, h4)) {
+	font-size: $size;
+	font-weight: 600;
+	@content;
+}
+
+@mixin hidden {
+	opacity: 0;
+	visibility: hidden;
+}
+
+@mixin visible {
+	opacity: 1;
+	visibility: visible;
 }

@@ -1,6 +1,10 @@
-export type { IGetCafeByIdReq } from "./request";
-export type { IGetCafeByIdRes, IDishGetCafeByIdRes } from "./response";
+export type { IGetCafeByIdReq, IGetCafesReq } from "./request";
+export type {
+	IGetCafeByIdRes,
+	IDishGetCafeByIdRes,
+	IGetCafesRes,
+} from "./response";
 
 export type { ICafesState } from "./defaultState";
 
-export type { ICafe } from "./cafe";
+export type { ICafe, ICafeWithId } from "./cafe";

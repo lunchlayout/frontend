@@ -2,7 +2,6 @@
 
 .default {
 	@include flex(column) {
-		gap: map-get($gaps, primary);
 		align-items: stretch;
 	}
 }

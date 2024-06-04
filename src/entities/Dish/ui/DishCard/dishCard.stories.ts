@@ -14,10 +14,12 @@ type Story = StoryObj<typeof DishCard>;
 
 export const DishCardSimple: Story = {
 	args: {
-		name: "Клубничный торт",
-		amount: 1000,
+		name: "Греческий салат с авокадо и тунцом",
+		amount: 400,
 		unit: "г",
-		img: "https://rsute.ru/wp-content/uploads/2020/12/maxresdefault-59.jpg",
+		description:
+			"Изумительный салат, в состав которого входят самые свежие продукты",
+		img: "https://bye-bye-calories.ru/wp-content/uploads/1/c/1/1c14a5995fbf1b48e341e5fee35c1d55.jpeg",
 	},
 };
 

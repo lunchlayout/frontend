@@ -1,9 +1,9 @@
 import { IDefaultState } from "@shared/types";
-import { IGetCafeByIdRes } from "./response";
+import { IGetCafeByIdRes, IGetCafesRes } from "./response";
 
 interface ICafesState extends IDefaultState {
-	cafe?: Omit<IGetCafeByIdRes, "pageCnt">;
-	pageCnt?: number;
+	currentCafe?: IGetCafeByIdRes;
+	currentCafes?: IGetCafesRes;
 }
 
 export type { ICafesState };

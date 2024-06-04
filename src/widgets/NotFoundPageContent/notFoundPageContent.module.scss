@@ -1,0 +1,34 @@
+@import "../../app/styles/variables", "../../app/styles/mixins";
+
+.default {
+	@include flex(column) {
+		gap: map-get($gaps, default) * 2;
+	}
+}
+
+.image {
+	//* Главный элемент изображения уходит вправо. При смене изображения - удалить
+	transform: translate(-10%);
+}
+
+.content {
+	@include flex(column) {
+		gap: map-get($gaps, default) * 2;
+	}
+	text-align: center;
+}
+
+.description {
+	font-size: map-get($fontSizes, h2);
+	@include flex(column) {
+		gap: calc(map-get($gaps, default) / 2);
+	}
+}
+
+.oops {
+	@include semiBold($size: map-get($fontSizes, h2));
+}
+
+.link {
+	min-width: 70%;
+}

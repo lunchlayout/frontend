@@ -3,12 +3,11 @@ import styles from "./textarea.module.scss";
 import { ChangeEvent } from "react";
 
 export default function TextArea({
-	placeholder,
-	value,
-	onChange,
-	hasOutline = true,
-	required = false,
+	label,
 	className = "",
+	onChange,
+	value,
+	...props
 }: ITextAreaProps) {
 	function handleChange(e: ChangeEvent<HTMLTextAreaElement>) {
 		onChange && onChange(e);
@@ -20,16 +19,20 @@ export default function TextArea({
 		}
 	}
 	return (
-		<textarea
+		<div
 			className={[
-				styles.default,
-				hasOutline ? styles.outline : "",
+				styles.container,
+				value && styles.hasContent,
 				className,
 			].join(" ")}
-			onChange={handleChange}
-			value={value}
-			placeholder={placeholder}
-			required={required}
-		/>
+		>
+			<textarea
+				className={styles.default}
+				onChange={handleChange}
+				value={value}
+				{...props}
+			/>
+			{label && <span className={styles.label}>{label}</span>}
+		</div>
 	);
 }

@@ -17,10 +17,8 @@ export default function Model3D({
 	});
 
 	return (
-		<>
-			<mesh position={position} scale={scale} ref={meshRef}>
-				<primitive object={scene} />
-			</mesh>
-		</>
+		<mesh position={position} scale={scale} ref={meshRef}>
+			<primitive object={scene} />
+		</mesh>
 	);
 }

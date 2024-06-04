@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import Input from "./input";
+import Input from "./mockProvider";
 import { fn } from "@storybook/test";
 
 const meta = {
@@ -16,16 +16,15 @@ const meta = {
 
 type Story = StoryObj<typeof Input>;
 
-export const InputPrimary: Story = {
+export const InputSimple: Story = {
 	args: {
-		placeholder: "Введите код",
-		customType: "primary",
+		placeholder: "Введите код блюда",
 	},
 };
-export const InputSecondary: Story = {
+export const InputWithoutOuline: Story = {
 	args: {
-		placeholder: "Найти блюдо",
-		customType: "secondary",
+		placeholder: "Введите код блюда",
+		hasOutline: false,
 	},
 };
 

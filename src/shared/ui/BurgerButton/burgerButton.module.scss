@@ -1,0 +1,11 @@
+@import "../../../app/styles/variables", "../../../app/styles/mixins";
+
+.default.default {
+	@include icon(
+		$fill: map-get($colors, black1),
+		$hasHover: true,
+		$fillHover: map-get($colors, white1)
+	);
+	border: none;
+	border-radius: map-get($radius, sm);
+}

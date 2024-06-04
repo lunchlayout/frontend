@@ -1,5 +1,6 @@
 @import "../../../../app/styles/variables", "../../../../app/styles/mixins";
 
 .logo {
-	@include logo;
+	border: 0.1rem solid map-get($colors, gray2);
+	@include icon($width: 4rem);
 }

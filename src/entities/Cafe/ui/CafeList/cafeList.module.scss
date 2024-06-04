@@ -1,0 +1,21 @@
+@import "../../../../app/styles/variables", "../../../../app/styles/mixins";
+
+.default {
+	@include grid {
+		grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+		gap: map-get($gaps, primary);
+		justify-content: flex-start;
+		align-items: flex-start;
+	}
+}
+
+.cafeLink.cafeLink {
+	padding: 0;
+	border: none;
+	width: 100%;
+}
+
+.cafe {
+	border-radius: inherit;
+	width: inherit;
+}

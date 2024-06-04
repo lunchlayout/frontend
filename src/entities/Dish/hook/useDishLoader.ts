@@ -6,20 +6,20 @@ import { actions, selectors } from "@entities/Dish";
 import { useSelector } from "react-redux";
 
 function useDishLoader() {
-	const { dishId } = useParams<keyof IDishParams>() as IDishParams;
-	const dish = useSelector(selectors.dish);
+	const { dishId: dishIdParam } = useParams<keyof IDishParams>();
+	const dishId = useSelector(selectors.dishId);
 	const dispatch = useAppDispatch();
 
 	useEffect(() => {
 		async function getDishById() {
-			if (!dish) {
+			if (dishIdParam !== dishId && dishIdParam) {
 				dispatch(actions.setIsLoading(true));
-				await dispatch(actions.getDishById({ dishId }));
+				await dispatch(actions.getDishById({ dishId: dishIdParam }));
 				dispatch(actions.setIsLoading(false));
 			}
 		}
 		getDishById();
-	}, [dishId, dispatch, dish]);
+	}, [dishId, dispatch, dishIdParam]);
 }
 
 export { useDishLoader };

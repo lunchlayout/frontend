@@ -1,15 +1,16 @@
-import { ChangeEventHandler, HTMLInputTypeAttribute } from "react";
+import { InputHTMLAttributes } from "react";
 import { IDefaultProps } from "@shared/types";
 
-type InputCustomType = "primary" | "secondary";
-
-export interface IInputProps extends IDefaultProps {
-	placeholder?: string;
-	type?: HTMLInputTypeAttribute;
-	customType?: InputCustomType;
-	value?: string;
+export interface IInputProps
+	extends IDefaultProps,
+		Pick<
+			InputHTMLAttributes<HTMLInputElement>,
+			| "type"
+			| "placeholder"
+			| "value"
+			| "required"
+			| "disabled"
+			| "onChange"
+		> {
 	hasOutline?: boolean;
-	required?: boolean;
-	disabled?: boolean;
-	onChange?: ChangeEventHandler<HTMLInputElement>;
 }

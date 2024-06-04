@@ -2,25 +2,23 @@ import { IButtonProps } from "./button.props";
 import styles from "./button.module.scss";
 
 export default function Button({
-	customType = "simple",
+	customType = "filled",
 	type = "button",
+	hasHover = true,
 	children,
-	onClick,
 	className = "",
-	formId,
-	disabled = false,
-	slot,
+	...props
 }: IButtonProps) {
 	return (
 		<button
 			type={type}
-			className={[styles.default, styles[customType], className].join(
-				" ",
-			)}
-			onClick={onClick}
-			form={formId}
-			disabled={disabled}
-			slot={slot}
+			className={[
+				styles.default,
+				hasHover && styles.hasHover,
+				styles[customType],
+				className,
+			].join(" ")}
+			{...props}
 		>
 			{children}
 		</button>

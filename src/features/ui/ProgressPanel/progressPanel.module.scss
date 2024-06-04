@@ -2,13 +2,12 @@
 	"../../../app/styles/keyframes";
 
 .default {
-	@include flex(column) {
-		gap: map-get($gaps, secondary);
-	}
+	@include flex(column);
 }
 
 .text {
 	animation: showUp 1s;
+	font-size: map-get($fontSizes, h4);
 }
 .progress {
 	width: 100%;

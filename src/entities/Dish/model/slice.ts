@@ -24,6 +24,9 @@ const DishesSlice = createSlice({
 		setScene(state, action: PayloadAction<Group<Object3DEventMap>>) {
 			state.scene = action.payload;
 		},
+		setDishId(state, action: PayloadAction<string>) {
+			state.dishId = action.payload;
+		},
 		setCurrentEntIdx(state, action: PayloadAction<number>) {
 			const { dish, entertainmentDetails: entDetails } = state;
 			if (entDetails && dish) {
@@ -43,6 +46,7 @@ const DishesSlice = createSlice({
 			getDishById.fulfilled,
 			(state, action: PayloadAction<IGetDishByIdRes>) => {
 				delete state.modelLoadingProgress;
+				delete state.scene;
 				state.entertainmentDetails = {
 					currentEntIdx: 0,
 				};

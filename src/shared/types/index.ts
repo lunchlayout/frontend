@@ -8,6 +8,6 @@ export type { IFormControlContext } from "./formControlContext";
 
 export type { IntRange } from "./intRange";
 
-export { EmojiTypes } from "./emojiTypes";
-
 export type { ValueOf } from "./valueOf";
+
+export type { WithOptional } from "./withOptional";

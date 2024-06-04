@@ -3,4 +3,8 @@ interface ICafe {
 	logo: string;
 }
 
-export type { ICafe };
+interface ICafeWithId extends ICafe {
+	cafeId: string;
+}
+
+export type { ICafe, ICafeWithId };

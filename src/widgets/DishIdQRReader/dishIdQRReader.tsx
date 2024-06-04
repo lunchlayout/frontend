@@ -21,5 +21,9 @@ export default function DishIdQRReader() {
 		console.log(errorMessage);
 	}
 
-	return <QRReader onSuccess={handleSuccess} onError={handleError} />;
+	return (
+		<section>
+			<QRReader onSuccess={handleSuccess} onError={handleError} />
+		</section>
+	);
 }

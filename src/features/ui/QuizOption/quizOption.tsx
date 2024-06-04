@@ -4,7 +4,7 @@ import styles from "./quizOption.module.scss";
 export default function QuizOption({
 	type = "default",
 	checked = false,
-	label,
+	option,
 	onChange,
 	disabled = false,
 }: IQuizOptionProps) {
@@ -20,10 +20,10 @@ export default function QuizOption({
 				className={styles.ratio}
 				aria-hidden="true"
 				tabIndex={-1}
-				name={label}
+				name={option}
 				disabled={disabled}
 			/>
-			{label}
+			{option}
 		</label>
 	);
 }

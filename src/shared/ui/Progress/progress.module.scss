@@ -3,10 +3,11 @@
 .default {
 	position: relative;
 	@include flex;
-	border-radius: map-get($radius, m);
-	background: map-get($colors, track);
 	min-width: 15rem;
 	height: 1.5rem;
+
+	border-radius: map-get($radius, lg);
+	background: map-get($colors, gray2);
 
 	&::before {
 		content: "";
@@ -15,23 +16,29 @@
 		height: 100%;
 		position: absolute;
 		left: 0;
-		background: map-get($colors, primary);
+		background: map-get($colors, black1);
 		border-radius: inherit;
 	}
 }
 
-.spinner {
+.slider {
 	position: absolute;
 	left: 0;
+	transform: translate(-50%);
+
+	//* Изображения не должны сжиматься при увеличении прогресса
+	& img {
+		max-width: none;
+	}
 }
+
 @for $i from 0 through 100 {
 	.progress-#{$i} {
 		&::before {
 			width: $i * 1%;
 		}
-		& .spinner {
+		& .slider {
 			left: $i * 1%;
-			transform: translate(-50%) rotate(($i * 18 % 360) * 1deg);
 		}
 	}
 }

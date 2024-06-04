@@ -27,12 +27,11 @@ export default function DishModel3D() {
 	return (
 		<>
 			{scene && (
-				<>
-					<Model3D
-						scene={scene}
-						scale={new Vector3(scale, scale, scale)}
-					/>
-				</>
+				<Model3D
+					scene={scene}
+					position={new Vector3(0, 0, 0)}
+					scale={new Vector3(scale, scale, scale)}
+				/>
 			)}
 		</>
 	);

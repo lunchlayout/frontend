@@ -1,18 +1,28 @@
 import { IRootState } from "@app/types";
+import { ICafe } from "../types";
 
-const сafe = (state: IRootState) => {
-	return {
-		logo: state.cafes.cafe?.logo,
-		name: state.cafes.cafe?.name,
-	};
+const currentCafe = (state: IRootState): ICafe | undefined => {
+	if (state.cafesSlice.currentCafe) {
+		return {
+			logo: state.cafesSlice.currentCafe.logo,
+			name: state.cafesSlice.currentCafe.name,
+		};
+	}
 };
 
-const dishes = (state: IRootState) => state.cafes.cafe?.dishes;
+const currentDishes = (state: IRootState) => {
+	if (state.cafesSlice.currentCafe) {
+		return {
+			dishes: state.cafesSlice.currentCafe?.dishes,
+			pageCnt: state.cafesSlice.currentCafe?.pageCnt,
+		};
+	}
+};
 
-const pageCnt = (state: IRootState) => state.cafes.pageCnt;
+const currentCafes = (state: IRootState) => state.cafesSlice.currentCafes;
 
-const isLoading = (state: IRootState) => state.cafes.isLoading;
+const isLoading = (state: IRootState) => state.cafesSlice.isLoading;
 
-const errors = (state: IRootState) => state.cafes.errors;
+const errors = (state: IRootState) => state.cafesSlice.errors;
 
-export { сafe, pageCnt, dishes, isLoading, errors };
+export { currentCafe, currentCafes, currentDishes, isLoading, errors };

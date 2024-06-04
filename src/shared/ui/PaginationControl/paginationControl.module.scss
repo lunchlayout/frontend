@@ -1,11 +1,13 @@
 @import "../../../app/styles/variables", "../../../app/styles/mixins";
 
 .default {
-	@include flex {
-		gap: map-get($gaps, secondary);
-	}
+	@include flex;
 }
 
 .control {
-	@include outline(false, secondary);
+	@include outline($type: rounded);
+}
+
+.label {
+	font-weight: 600;
 }

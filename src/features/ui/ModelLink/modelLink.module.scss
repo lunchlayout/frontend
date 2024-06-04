@@ -1,25 +1,27 @@
 @import "../../../app/styles/variables", "../../../app/styles/mixins";
 
 .default {
-	@include flex(column) {
-		gap: map-get($gaps, secondary);
-	}
+	@include flex(column);
 }
 
 .modelLink {
-	padding: map-get($padding, rounded) * 1.5;
-	border: 0.1rem solid map-get($colors, secondary);
-	& svg {
-		stroke: map-get($colors, secondary);
-	}
-	@include mobile {
-		position: absolute;
-		left: 50%;
-		bottom: 0;
-		transform: translate(-50%, -50%);
-	}
+	padding: map-get($padding, card);
+	border: 0.1rem solid map-get($colors, white1);
+	border-radius: map-get($radius, sm) * 1.25;
+	background: map-get($colors, yellow);
+}
+
+.link3DSvg {
+	stroke: map-get($colors, white1);
+}
+.linkARSvg {
+	fill: map-get($colors, white1);
 }
 
 .arLink {
-	transform: translateX(-50%);
+}
+
+.label {
+	font-size: map-get($fontSizes, h4);
+	text-align: center;
 }

@@ -1,36 +1,54 @@
 @import "../../../../app/styles/variables", "../../../../app/styles/mixins";
 
 .default {
-	@include flex {
-		gap: map-get($gaps, secondary);
-		justify-content: flex-start;
+	@include flex(column) {
 		align-items: flex-start;
 	}
-	padding: map-get($padding, default);
-	padding-right: calc(map-get($padding, default) * 3);
-	border-radius: map-get($radius, m);
+	padding: map-get($padding, card);
 
-	background: map-get($colors, secondary);
-	transition: map-get($transitions, link);
+	border-radius: map-get($radius, sm);
+	background: map-get($colors, gray1);
+	@include transition(
+		$properties: (
+			background,
+			color,
+			outline,
+		)
+	);
 
 	&:hover {
-		color: map-get($colors, secondary);
-		background: map-get($colors, primaryHover);
+		background: map-get($colors, black1);
+		& * {
+			color: map-get($colors, white1);
+		}
 		& .image {
-			outline: 0.1rem solid map-get($colors, secondary);
+			outline: 0.1rem solid map-get($colors, white1);
 		}
 	}
 }
+
+.image {
+	align-self: stretch;
+	@include outline($type: rounded);
+	transition: inherit;
+}
+
 .info {
 	@include flex(column) {
 		align-items: flex-start;
-		gap: calc(map-get($gaps, secondary) / 4);
+		gap: calc(map-get($gaps, default) / 4);
 	}
-	padding-top: calc(map-get($gaps, secondary) / 3);
-	@include content;
+	text-align: start;
 }
-.image {
-	align-self: stretch;
-	@include outline;
-	transition: map-get($transitions, link);
+
+.amount {
+	color: map-get($colors, white2);
+}
+
+.name {
+	font-size: map-get($fontSizes, h4);
+}
+
+.description {
+	color: map-get($colors, black2);
 }

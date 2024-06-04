@@ -1,9 +1,9 @@
-import { INoticeState } from "@shared/ui/SnackbarNotice";
+import { INotice } from "@shared/ui/SnackbarNotice";
 import { Updater } from "use-immer";
 
 interface INoticeContext {
-	notices: INoticeState[];
-	setNotices: Updater<INoticeState[]>;
+	notices: INotice[];
+	setNotices: Updater<INotice[]>;
 }
 
 export type { INoticeContext };

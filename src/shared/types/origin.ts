@@ -1,6 +1,6 @@
 interface IOrigin {
 	host: string;
-	port: number;
+	port?: number;
 	protocol: string;
 }
 

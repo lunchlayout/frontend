@@ -4,13 +4,20 @@ import { Image } from "@shared/ui";
 
 export default function DishStory({
 	description,
-	img,
 	className = "",
 }: IDishStoryProps) {
 	return (
 		<article className={[styles.default, className].join(" ")}>
-			<Image src={img} alt="Фотография, связанная с описанием блюда" />
-			<p className={styles.text}>{description}</p>
+			<Image
+				className={styles.img}
+				src="/images/storyGirl.png"
+				alt=""
+				width={250}
+			/>
+			<div className={styles.textContent}>
+				<span className={styles.title}>Интересные факты</span>
+				<p className={styles.story}>{description}</p>
+			</div>
 		</article>
 	);
 }

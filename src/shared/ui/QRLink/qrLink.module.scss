@@ -1,21 +1,19 @@
 @import "../../../app/styles/variables", "../../../app/styles/mixins";
 
 .default {
-	max-width: 20rem;
+	max-width: 15rem;
 	@include flex(column) {
-		gap: map-get($gaps, secondary);
+		gap: 0;
 	}
-	padding: map-get($padding, default) * 1.5;
-	background: map-get($colors, secondary);
-	border-radius: map-get($radius, m);
 }
 
 .qr {
-	background: map-get($colors, secondary);
-	min-width: 15rem;
+	width: 15rem;
 }
 
-.text {
-	max-width: 100%;
-	@include content;
+.description {
+	@include desktop {
+		font-size: map-get($fontSizes, h4);
+	}
+	text-align: justify;
 }

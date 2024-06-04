@@ -36,5 +36,5 @@
       }
     ]
   },
-  "include": ["src", "vite-env.d.ts", "vite.config.ts", "src/features/ui/DishesNotFound/.props.ts", "src/widgets/DishesPanel/.props.ts"]
+  "include": ["src", "vite-env.d.ts", "vite.config.ts", "src/shared/ui/NoResultsFound/.props.ts", "src/widgets/DishesPanel/.props.ts"]
 }

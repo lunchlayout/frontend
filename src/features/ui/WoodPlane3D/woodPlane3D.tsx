@@ -1,6 +1,6 @@
 import { useLoader } from "@react-three/fiber";
 import { TextureLoader, Vector3 } from "three";
-import woodTexture from "/woodTexture.jpg";
+import woodTexture from "/images/woodTexture.jpg";
 import { Plane3D } from "@shared/ui";
 
 export default function WoodPlane3D() {

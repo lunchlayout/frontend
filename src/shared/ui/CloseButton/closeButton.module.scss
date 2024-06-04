@@ -1,9 +1,27 @@
 @import "../../../app/styles/variables", "../../../app/styles/mixins";
 
-.default.default:where(.primary, .secondary) {
-	@include icon;
-}
+.default.default {
+	@include transition(
+		$properties: (
+			fill,
+			stroke,
+			outline,
+		)
+	);
+	@include icon {
+		& svg {
+			fill: none;
+			stroke: map-get($colors, gray2);
+		}
+	}
 
-.default.default:where(.tertiary, .simple) {
-	@include icon(map-get($colors, primaryText));
+	background: map-get($colors, white1);
+	border: none;
+
+	&:hover {
+		& svg {
+			fill: none;
+			stroke: map-get($colors, black1);
+		}
+	}
 }

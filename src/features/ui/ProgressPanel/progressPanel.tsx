@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import styles from "./progressPanel.module.scss";
 import { selectors } from "@entities/Dish";
-import Progress from "@shared/ui/Progress";
+import { Progress, Image } from "@shared/ui";
 import { LOADING_PHRASES, TIME_OF_SHOWING_TEXT } from "./consts";
 import { IProgressPanelProps } from "./progressPanel.props";
 import { useEffect, useRef, useState } from "react";
@@ -10,6 +10,7 @@ export default function ProgressPanel({ className = "" }: IProgressPanelProps) {
 	const modelLoadingProgress = useSelector(selectors.modelLoadingProgress);
 	const [currentStep, setCurrentStep] = useState(0);
 	const timerRef = useRef<NodeJS.Timeout | null>(null);
+
 	useEffect(() => {
 		timerRef.current = setInterval(() => {
 			setCurrentStep(step => {
@@ -27,13 +28,16 @@ export default function ProgressPanel({ className = "" }: IProgressPanelProps) {
 
 	return (
 		<>
-			{modelLoadingProgress && (
+			{modelLoadingProgress?.max && (
 				<div className={[styles.default, className].join(" ")}>
 					<Progress
 						label="Индикатор загрузки 3D модели"
 						value={modelLoadingProgress.value}
 						max={modelLoadingProgress.max}
 						className={styles.progress}
+						slider={
+							<Image src="/images/progressCar.png" width={120} />
+						}
 					/>
 					<span key={currentStep} className={styles.text}>
 						{LOADING_PHRASES[currentStep] + "..."}
