@@ -1,8 +1,8 @@
 import { selectors } from "@entities/Dish";
-import { SEO } from "@shared/ui";
 import { DishEntertainmentPanel } from "@widgets/index";
 import { useSelector } from "react-redux";
 import styles from "./entertainmentPage.module.scss";
+import { Helmet } from "react-helmet";
 export default function EntertainmentPage() {
 	const dish = useSelector(selectors.dish);
 	return (
@@ -12,7 +12,17 @@ export default function EntertainmentPage() {
 					<DishEntertainmentPanel />
 				</div>
 			</main>
-			{dish && <SEO title={`${dish.name} — Lunch Layout`} />}
+			{dish && (
+				<Helmet
+					title={`${dish.name} — Lunch Layout`}
+					meta={[
+						{
+							name: "description",
+							content: "Главная страница блюда",
+						},
+					]}
+				/>
+			)}
 		</>
 	);
 }

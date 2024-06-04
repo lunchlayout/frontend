@@ -11,7 +11,6 @@ import SearchPanel from "./SearchPanel";
 import VideoPlayer from "./VideoPlayer";
 import PaginationControl from "./PaginationControl";
 import QRLink from "./QRLink";
-import SEO from "./SEO";
 import FormControl from "./FormControl";
 import CloseButton from "./CloseButton";
 import Modal from "./Modal";
@@ -41,7 +40,6 @@ export {
 	VideoPlayer,
 	PaginationControl,
 	QRLink,
-	SEO,
 	FormControl,
 	CloseButton,
 	BurgerButton,

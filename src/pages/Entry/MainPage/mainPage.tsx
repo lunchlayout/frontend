@@ -1,6 +1,7 @@
-import { SEO, Image } from "@shared/ui";
+import { Image } from "@shared/ui";
 import { BenefitPanel, SearchPanelByDishId } from "@widgets/index";
 import styles from "./mainPage.module.scss";
+import { Helmet } from "react-helmet";
 
 export default function MainPage() {
 	return (
@@ -10,7 +11,15 @@ export default function MainPage() {
 				<Image src="/images/entryGirl.png" className={styles.image} />
 				<BenefitPanel className={styles.benefits} />
 			</main>
-			<SEO title={`Главная — Lunch Layout`} />
+			<Helmet
+				title={`Главная — Lunch Layout`}
+				meta={[
+					{
+						name: "description",
+						content: "Главная страница",
+					},
+				]}
+			/>
 		</>
 	);
 }

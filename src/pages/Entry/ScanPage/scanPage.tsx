@@ -1,12 +1,20 @@
-import { SEO } from "@shared/ui";
 import { DishIdQRReader } from "@widgets/index";
 import styles from "./scanPage.module.scss";
+import { Helmet } from "react-helmet";
 
 export default function ScanPage() {
 	return (
 		<main className={styles.default}>
 			<DishIdQRReader />
-			<SEO title={`Сканер QR-кода блюда — Lunch Layout`} />
+			<Helmet
+				title={`Сканер QR-кода блюда — Lunch Layout`}
+				meta={[
+					{
+						name: "description",
+						content: "Страница сканирования QR-кода блюда",
+					},
+				]}
+			/>
 		</main>
 	);
 }

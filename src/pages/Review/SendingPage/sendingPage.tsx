@@ -1,6 +1,6 @@
-import { SEO } from "@shared/ui";
 import { ReviewForm } from "@widgets/index";
 import styles from "./sendingPage.module.scss";
+import { Helmet } from "react-helmet";
 
 export default function SendingPage() {
 	return (
@@ -8,7 +8,15 @@ export default function SendingPage() {
 			<div className={styles.container}>
 				<ReviewForm />
 			</div>
-			<SEO title={`Обратная связь — Lunch Layout`} />
+			<Helmet
+				title={`Обратная связь — Lunch Layout`}
+				meta={[
+					{
+						name: "description",
+						content: "Страница отправки отзыва о приложении",
+					},
+				]}
+			/>
 		</main>
 	);
 }

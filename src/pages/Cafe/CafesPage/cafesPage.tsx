@@ -1,8 +1,8 @@
-import { SEO } from "@shared/ui";
 import { CafesPanel } from "@widgets/index";
 import styles from "./cafesPage.module.scss";
 import { Desktop } from "@shared/hoc";
 import { useCafesLoader } from "@entities/Cafe/hook";
+import { Helmet } from "react-helmet";
 
 export default function CafesPage() {
 	useCafesLoader();
@@ -14,7 +14,15 @@ export default function CafesPage() {
 					<span className={styles.title}>Рестораны</span>
 				</Desktop>
 				<CafesPanel className={styles.cafesPanel} />
-				<SEO title={`Рестораны — Lunch Layout`} />
+				<Helmet
+					title={`Рестораны — Lunch Layout`}
+					meta={[
+						{
+							name: "description",
+							content: "Страница заведений партнеров приложения",
+						},
+					]}
+				/>
 			</div>
 		</main>
 	);
