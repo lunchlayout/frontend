@@ -177,11 +177,11 @@
 	scroll-behavior: smooth;
 	&::-webkit-scrollbar {
 		width: $width;
-		border-radius: map-get($radius, ms);
+		border-radius: map-get($radius, sm);
 		background: $trackBg;
 	}
 	&::-webkit-scrollbar-thumb {
-		border-radius: map-get($radius, ms);
+		border-radius: map-get($radius, sm);
 		background: $thumbBg;
 	}
 	&::-webkit-scrollbar-button {
@@ -193,4 +193,14 @@
 	font-size: $size;
 	font-weight: 600;
 	@content;
+}
+
+@mixin hidden {
+	opacity: 0;
+	visibility: hidden;
+}
+
+@mixin visible {
+	opacity: 1;
+	visibility: visible;
 }

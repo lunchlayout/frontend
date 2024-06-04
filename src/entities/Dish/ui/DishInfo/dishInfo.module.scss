@@ -5,14 +5,14 @@
 		align-items: stretch;
 	}
 
-	@include mobile {
+	@include tablet {
 		flex-direction: column;
 	}
 }
 
 .image {
 	width: 20rem;
-	@include mobile {
+	@include tablet {
 		width: 100%;
 	}
 }
@@ -25,7 +25,11 @@
 }
 
 .title {
-	@include flex;
+	text-align: center;
+	@include flex {
+		gap: calc(map-get($gaps, default) / 2);
+		flex-wrap: wrap;
+	}
 }
 
 .name {

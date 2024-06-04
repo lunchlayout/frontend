@@ -3,11 +3,16 @@
 
 .default {
 	position: relative;
+
 	@include mobile {
 		@include flex(column) {
 			gap: map-get($gaps, default) * 1.5;
 			align-items: stretch;
 		}
+	}
+
+	@include mobile {
+		justify-content: flex-start;
 	}
 }
 
@@ -15,7 +20,7 @@
 	z-index: map-get($zIndex, caption);
 	@include desktop {
 		position: absolute;
-		top: 50%;
+		top: 55%;
 		transform: translateY(-50%);
 	}
 }
@@ -40,4 +45,10 @@
 
 .entertainment {
 	animation: showUp 1s;
+
+	//* Для того, чтобы карточки с разным размером контента не сдвигали дизайн
+	height: 23rem;
+	@include mobile {
+		height: 27rem;
+	}
 }

@@ -38,13 +38,12 @@
 
 .inputContainer {
 	@include flex(column) {
-		gap: map-get($gaps, primary);
+		gap: map-get($gaps, primary) * 2;
 		align-items: inherit;
 	}
-	@include desktop {
-		padding: map-get($padding, card) * 2;
-	}
+	padding: map-get($padding, card) * 2;
 	@include mobile {
+		gap: map-get($gaps, primary);
 		padding: map-get($padding, default);
 	}
 	border-radius: map-get($radius, md);

@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import SearchDishesPanel from "./searchCafesPanel";
+import SearchCafesPanel from "./searchCafesPanel";
 import { Provider } from "react-redux";
 import { mockStore } from "@app/model";
 
 const meta = {
-	component: SearchDishesPanel,
+	component: SearchCafesPanel,
 	decorators: [
 		Story => (
 			<Provider store={mockStore}>
@@ -12,16 +12,16 @@ const meta = {
 			</Provider>
 		),
 	],
-	title: "Features/SearchDishesPanel",
+	title: "Features/SearchCafesPanel",
 	tags: ["autodocs"],
 	parameters: {
 		layout: "centered",
 	},
-} satisfies Meta<typeof SearchDishesPanel>;
+} satisfies Meta<typeof SearchCafesPanel>;
 
-type Story = StoryObj<typeof SearchDishesPanel>;
+type Story = StoryObj<typeof SearchCafesPanel>;
 
-export const SearchDishesPanelSimple: Story = {
+export const SearchCafesPanelSimple: Story = {
 	args: {},
 };
 

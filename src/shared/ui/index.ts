@@ -24,6 +24,8 @@ import SnackbarNotice from "./SnackbarNotice";
 import PlayButton from "./PlayButton";
 import NoResultsFound from "./NoResultsFound";
 import SnackbarNoticeList from "./SnackbarNoticeList";
+import BurgerButton from "./BurgerButton";
+import Drawer from "./Drawer";
 
 export {
 	Button,
@@ -42,6 +44,8 @@ export {
 	SEO,
 	FormControl,
 	CloseButton,
+	BurgerButton,
+	Drawer,
 	Modal,
 	NavLink,
 	QRReader,
