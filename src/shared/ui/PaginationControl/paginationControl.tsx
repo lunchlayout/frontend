@@ -1,4 +1,4 @@
-import { ButtonController } from "@shared/ui";
+import ButtonController from "../ButtonController";
 import styles from "./paginationControl.module.scss";
 import { IPaginationControlProps } from "./paginationControl.props";
 
@@ -17,7 +17,9 @@ export default function PaginationControl({
 				onClick={onLeftClick}
 				className={styles.control}
 			/>
-			<span>{`${currentPage}/${pageCnt}`}</span>
+			<span
+				className={styles.label}
+			>{`${currentPage} / ${pageCnt}`}</span>
 			<ButtonController
 				disabled={currentPage >= pageCnt}
 				direction="right"

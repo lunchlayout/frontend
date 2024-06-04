@@ -1,6 +1,7 @@
 import { INavLinkProps } from "./navLink.props";
-import styles from "./navLink.module.scss";
+
 import { useMatch } from "react-router-dom";
+
 import { Link } from "@shared/ui";
 
 export default function NavLink({
@@ -11,14 +12,10 @@ export default function NavLink({
 }: INavLinkProps) {
 	const match = useMatch(to);
 
-	const isActiveClass = match ? "active" : "inactive";
+	const isActiveClass = match ? "underlined" : "text";
 
 	return (
-		<Link
-			to={to}
-			className={[styles[isActiveClass], className].join(" ")}
-			{...props}
-		>
+		<Link to={to} type={isActiveClass} className={className} {...props}>
 			{children}
 		</Link>
 	);

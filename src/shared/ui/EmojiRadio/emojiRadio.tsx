@@ -1,51 +1,35 @@
 import { IEmojiRadioProps } from "./emojiRadio.props";
 import { ReactElement, SVGProps } from "react";
 import styles from "./emojiRadio.module.scss";
-import { EmojiTypes } from "@shared/types";
+import { EmojiTypes, EmojiRus } from "./emojiTypes";
+import { Desktop } from "@shared/hoc";
+import { RADIO_ID } from "./consts";
 
 const emojiSvgs = new Map<
 	keyof typeof EmojiTypes,
 	ReactElement<SVGProps<SVGSVGElement>>
 >([
 	[
-		"happy",
+		"bad",
 		<svg
 			className={styles.emoji}
-			viewBox="0 0 34 34"
+			aria-label="bad"
+			width="32"
+			height="32"
+			viewBox="0 0 32 32"
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
 		>
 			<path
-				d="M21.5 12.5H21.515M12.5 12.5H12.515M32 17C32 25.2842 25.2842 32 17 32C8.71572 32 2 25.2842
-                        2 17C2 8.71572 8.71572 2 17 2C25.2842 2 32 8.71572 32 17ZM22.25 12.5C22.25 12.9142 21.9142 13.25
-                        21.5 13.25C21.0858 13.25 20.75 12.9142 20.75 12.5C20.75 12.0858 21.0858 11.75 21.5 11.75C21.9142
-                        11.75 22.25 12.0858 22.25 12.5ZM13.25 12.5C13.25 12.9142 12.9142 13.25 12.5 13.25C12.0858 13.25
-                            11.75 12.9142 11.75 12.5C11.75 12.0858 12.0858 11.75 12.5 11.75C12.9142 11.75 13.25 12.0858 13.25
-                            12.5ZM17 25.25C20.7507 25.25 23.75 22.5005 23.75 20H10.25C10.25 22.5005 13.2493 25.25 17 25.25Z"
-				strokeWidth="3"
-				strokeLinecap="round"
-				strokeLinejoin="round"
-			/>
-		</svg>,
-	],
-	[
-		"good",
-		<svg
-			className={styles.emoji}
-			viewBox="0 0 34 34"
-			fill="none"
-			xmlns="http://www.w3.org/2000/svg"
-		>
-			<path
-				d="M11 20C11 20 13.25 23 17 23C20.75 23 23 20 23 20M21.5 12.5H21.515M12.5 12.5H12.515M32
-                    17C32 25.2843 25.2843 32 17 32C8.71573 32 2 25.2843 2 17C2 8.71573 8.71573 2 17 2C25.2843 2
-                    32 8.71573 32 17ZM22.25 12.5C22.25 12.9142 21.9142 13.25 21.5 13.25C21.0858 13.25 20.75 12.9142
-                    20.75 12.5C20.75 12.0858 21.0858 11.75 21.5 11.75C21.9142 11.75 22.25 12.0858 22.25 12.5ZM13.25
-                        12.5C13.25 12.9142 12.9142 13.25 12.5 13.25C12.0858 13.25 11.75 12.9142 11.75 12.5C11.75 12.0858
-                        12.0858 11.75 12.5 11.75C12.9142 11.75 13.25 12.0858 13.25 12.5Z"
-				strokeWidth="3"
-				strokeLinecap="round"
-				strokeLinejoin="round"
+				d="M22 22C22 22 19.75 19 16 19C12.25 19 10 22 10 22M20.5 11.5H20.515M11.5 11.5H11.515M31
+			 16C31 24.2843 24.2843 31 16 31C7.71573 31 1 24.2843 1 16C1 7.71573 7.71573 1 16 1C24.2843 1 31 
+			 7.71573 31 16ZM21.25 11.5C21.25 11.9142 20.9142 12.25 20.5 12.25C20.0858 12.25 19.75 11.9142 
+			 19.75 11.5C19.75 11.0858 20.0858 10.75 20.5 10.75C20.9142 10.75 21.25 11.0858 21.25 11.5ZM12.25 
+			 11.5C12.25 11.9142 11.9142 12.25 11.5 12.25C11.0858 12.25 10.75 11.9142 10.75 11.5C10.75 11.0858 
+			 11.0858 10.75 11.5 10.75C11.9142 10.75 12.25 11.0858 12.25 11.5Z"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
 			/>
 		</svg>,
 	],
@@ -53,65 +37,100 @@ const emojiSvgs = new Map<
 		"normal",
 		<svg
 			className={styles.emoji}
-			viewBox="0 0 34 34"
+			aria-label="normal"
+			width="32"
+			height="32"
+			viewBox="0 0 32 32"
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
 		>
 			<path
-				d="M11 21.5H23M21.5 12.5H21.515M12.5 12.5H12.515M32 17C32 25.2842 25.2842 32 17
-                        32C8.71572 32 2 25.2842 2 17C2 8.71572 8.71572 2 17 2C25.2842 2 32 8.71572 32 17ZM22.25
-                        12.5C22.25 12.9142 21.9142 13.25 21.5 13.25C21.0858 13.25 20.75 12.9142 20.75 12.5C20.75
-                        12.0858 21.0858 11.75 21.5 11.75C21.9142 11.75 22.25 12.0858 22.25 12.5ZM13.25 12.5C13.25
-                            12.9142 12.9142 13.25 12.5 13.25C12.0858 13.25 11.75 12.9142 11.75 12.5C11.75 12.0858 12.0858
-                            11.75 12.5 11.75C12.9142 11.75 13.25 12.0858 13.25 12.5Z"
-				strokeWidth="3"
-				strokeLinecap="round"
-				strokeLinejoin="round"
+				d="M10 20.5H22M20.5 11.5H20.515M11.5 11.5H11.515M31 16C31 24.2842 24.2842 31 16 31C7.71572 
+			31 1 24.2842 1 16C1 7.71572 7.71572 1 16 1C24.2842 1 31 7.71572 31 16ZM21.25 11.5C21.25 11.9142 
+			20.9142 12.25 20.5 12.25C20.0858 12.25 19.75 11.9142 19.75 11.5C19.75 11.0858 20.0858 10.75 20.5 
+			10.75C20.9142 10.75 21.25 11.0858 21.25 11.5ZM12.25 11.5C12.25 11.9142 11.9142 12.25 11.5 12.25C11.0858 
+			12.25 10.75 11.9142 10.75 11.5C10.75 11.0858 11.0858 10.75 11.5 10.75C11.9142 10.75 12.25 11.0858 12.25 
+			11.5Z"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
 			/>
 		</svg>,
 	],
 	[
-		"bad",
+		"good",
 		<svg
 			className={styles.emoji}
-			viewBox="0 0 34 34"
+			aria-label="good"
+			width="32"
+			height="32"
+			viewBox="0 0 32 32"
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
 		>
 			<path
-				d="M23 23C23 23 20.75 20 17 20C13.25 20 11 23 11 23M21.5 12.5H21.515M12.5 12.5H12.515M32
-                    17C32 25.2843 25.2843 32 17 32C8.71573 32 2 25.2843 2 17C2 8.71573 8.71573 2 17 2C25.2843
-                    2 32 8.71573 32 17ZM22.25 12.5C22.25 12.9142 21.9142 13.25 21.5 13.25C21.0858 13.25 20.75
-                    12.9142 20.75 12.5C20.75 12.0858 21.0858 11.75 21.5 11.75C21.9142 11.75 22.25 12.0858 22.25
-                        12.5ZM13.25 12.5C13.25 12.9142 12.9142 13.25 12.5 13.25C12.0858 13.25 11.75 12.9142 11.75
-                        12.5C11.75 12.0858 12.0858 11.75 12.5 11.75C12.9142 11.75 13.25 12.0858 13.25 12.5Z"
-				strokeWidth="3"
-				strokeLinecap="round"
-				strokeLinejoin="round"
+				d="M10 19C10 19 12.25 22 16 22C19.75 22 22 19 22 19M20.5 11.5H20.515M11.5 11.5H11.515M31 
+			16C31 24.2843 24.2843 31 16 31C7.71573 31 1 24.2843 1 16C1 7.71573 7.71573 1 16 1C24.2843 1 31 
+			7.71573 31 16ZM21.25 11.5C21.25 11.9142 20.9142 12.25 20.5 12.25C20.0858 12.25 19.75 11.9142 19.75 
+			11.5C19.75 11.0858 20.0858 10.75 20.5 10.75C20.9142 10.75 21.25 11.0858 21.25 11.5ZM12.25 11.5C12.25 
+			11.9142 11.9142 12.25 11.5 12.25C11.0858 12.25 10.75 11.9142 10.75 11.5C10.75 11.0858 11.0858 10.75 
+			11.5 10.75C11.9142 10.75 12.25 11.0858 12.25 11.5Z"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+			/>
+		</svg>,
+	],
+	[
+		"happy",
+		<svg
+			className={styles.emoji}
+			aria-label="happy"
+			width="32"
+			height="32"
+			viewBox="0 0 32 32"
+			fill="none"
+			xmlns="http://www.w3.org/2000/svg"
+		>
+			<path
+				d="M20.5 11.5H20.515M11.5 11.5H11.515M31 16C31 24.2842 24.2842 31 16 31C7.71572 31 1 24.2842 1 
+			16C1 7.71572 7.71572 1 16 1C24.2842 1 31 7.71572 31 16ZM21.25 11.5C21.25 11.9142 20.9142 12.25 20.5 
+			12.25C20.0858 12.25 19.75 11.9142 19.75 11.5C19.75 11.0858 20.0858 10.75 20.5 10.75C20.9142 10.75 21.25 
+			11.0858 21.25 11.5ZM12.25 11.5C12.25 11.9142 11.9142 12.25 11.5 12.25C11.0858 12.25 10.75 11.9142 10.75 
+			11.5C10.75 11.0858 11.0858 10.75 11.5 10.75C11.9142 10.75 12.25 11.0858 12.25 11.5ZM16 24.25C19.7507 
+			24.25 22.75 21.5005 22.75 19H9.25C9.25 21.5005 12.2493 24.25 16 24.25Z"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
 			/>
 		</svg>,
 	],
 ]);
 
 export default function EmojiRadio({
-	checked,
 	emoji = "good",
-	onChange,
+	...props
 }: IEmojiRadioProps) {
 	return (
-		<>
-			<label tabIndex={0} className={styles.label} aria-label={emoji}>
+		<div className={[styles.default, styles[emoji]].join(" ")}>
+			<label tabIndex={0} className={styles.emojiContainer}>
 				<input
+					id={RADIO_ID}
 					type="radio"
-					checked={checked}
 					value={EmojiTypes[emoji]}
-					onChange={onChange}
-					className={styles.ratio}
+					className={styles.radio}
 					aria-hidden="true"
 					tabIndex={-1}
+					{...props}
 				/>
 				{emojiSvgs.get(emoji)}
 			</label>
-		</>
+			<label htmlFor={RADIO_ID} className={styles.description}>
+				<span>{EmojiRus[emoji]}</span>
+				<Desktop>
+					<span>{EmojiTypes[emoji] + "/" + emojiSvgs.size}</span>
+				</Desktop>
+			</label>
+		</div>
 	);
 }

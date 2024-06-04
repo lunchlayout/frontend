@@ -1,6 +1,7 @@
 import { IFormControlProps } from "./formControl.props";
 import styles from "./formControl.module.scss";
-import Button from "../Button";
+
+import { Button } from "@shared/ui";
 
 export default function FormControl({
 	className = "",
@@ -11,18 +12,16 @@ export default function FormControl({
 	return (
 		<div className={[styles.default, className].join(" ")}>
 			<Button
-				className={styles.control}
 				formId={formId}
-				customType="primary"
+				customType="outlined"
 				type="reset"
 				disabled={resetDisabled}
 			>
 				Сбросить
 			</Button>
 			<Button
-				className={styles.control}
 				formId={formId}
-				customType="primary"
+				customType="filled"
 				type="submit"
 				disabled={submitDisabled}
 			>

@@ -1,5 +1,6 @@
 import { ChangeEventHandler } from "react";
-import { EmojiTypes, IDefaultProps } from "@shared/types";
+import { IDefaultProps } from "@shared/types";
+import { EmojiTypes } from "./emojiTypes";
 
 export interface IEmojiRadioProps extends IDefaultProps {
 	checked: boolean;

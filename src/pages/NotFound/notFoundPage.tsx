@@ -1,12 +1,20 @@
-import { SEO } from "@shared/ui";
-import { NotFoundPageMain } from "@widgets/index";
+import { NotFoundPageContent } from "@widgets/index";
 import styles from "./notFoundPage.module.scss";
+import { Helmet } from "react-helmet";
 
 export default function NotFoundPage() {
 	return (
-		<>
-			<NotFoundPageMain className={styles.main} />
-			<SEO title={`Страница не найдена — Lunch Layout`} />
-		</>
+		<main className={styles.default}>
+			<NotFoundPageContent />
+			<Helmet
+				title={`Страница не найдена — Lunch Layout`}
+				meta={[
+					{
+						name: "description",
+						content: "Страница не найдена",
+					},
+				]}
+			/>
+		</main>
 	);
 }

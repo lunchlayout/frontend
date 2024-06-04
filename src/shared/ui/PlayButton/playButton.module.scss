@@ -1,0 +1,21 @@
+@import "../../../app/styles/variables", "../../../app/styles/mixins";
+
+.default.default {
+	@include icon(
+		$fill: map-get($colors, black1),
+		$hasHover: true,
+		$fillHover: map-get($colors, white1)
+	) {
+		& svg {
+			transform: translate(10%);
+		}
+	}
+
+	background: map-get($colors, playIcon);
+	backdrop-filter: blur(10px);
+	border: none;
+
+	&:hover:hover {
+		background: map-get($colors, black1);
+	}
+}

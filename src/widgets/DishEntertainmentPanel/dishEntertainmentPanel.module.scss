@@ -1,0 +1,23 @@
+@import "../../app/styles/variables", "../../app/styles/mixins";
+
+.default {
+	position: relative;
+	@include flex(column) {
+		align-items: stretch;
+		gap: map-get($gaps, primary);
+	}
+	@include container($maxWidth: 1000px);
+}
+
+.titleContainer {
+	@include flex {
+		gap: 0;
+		align-items: flex-start;
+	}
+	padding-bottom: map-get($padding, default);
+	border-bottom: 0.05rem solid map-get($colors, gray2);
+}
+
+.title {
+	@include semiBold($size: map-get($fontSizes, h2));
+}

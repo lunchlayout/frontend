@@ -1,9 +1,0 @@
-@import "../../app/styles/variables", "../../app/styles/mixins";
-
-.default {
-	@include mobileBoundary(bottom);
-}
-
-.content {
-	@include contentContainer;
-}

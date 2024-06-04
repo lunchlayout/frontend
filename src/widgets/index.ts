@@ -1,45 +1,29 @@
-import SendDishIdPanel from "./SendDishIdPanel";
+import SearchPanelByDishId from "./SearchPanelByDishId";
 import DishesPanel from "./DishesPanel";
 import ReviewForm from "./ReviewForm";
-import MobileDishControl from "./MobileDishControl";
-import MobileEntryControl from "./MobileEntryControl";
-import MobileCafeControl from "./MobileCafeControl";
-import MobileDishHeader from "./MobileDishHeader";
-import MobileEntryHeader from "./MobileEntryHeader";
-import DesktopDishHeader from "./DesktopDishHeader";
-import DesktopEntryHeader from "./DesktopEntryHeader";
-import DesktopReviewHeader from "./DesktopReviewHeader";
-import DesktopCafeHeader from "./DesktopCafeHeader";
-import MobileReviewControl from "./MobileReviewControl";
-import DesktopDishControl from "./DesktopDishControl";
+import DishHeader from "./DishHeader";
+import CommonHeader from "./CommonHeader";
+import DishControl from "./DishControl";
 import DishIdQRReader from "./DishIdQRReader";
-import MobileDishEntMain from "./MobileDishEntMain";
-import DesktopDishEntMain from "./DesktopDishEntMain";
-import DesktopMain from "./DesktopMain";
+import DishEntertainmentPanel from "./DishEntertainmentPanel";
 import Dish3DCanvas from "./Dish3DCanvas";
 import DishARCanvas from "./DishARCanvas";
-import NotFoundPageMain from "./NotFoundPageMain";
+import NotFoundPageContent from "./NotFoundPageContent";
+import BenefitPanel from "./BenefitPanel";
+import CafesPanel from "./CafesPanel";
 
 export {
-	SendDishIdPanel,
+	SearchPanelByDishId,
 	DishesPanel,
 	ReviewForm,
-	MobileCafeControl,
-	MobileDishHeader,
-	MobileEntryHeader,
-	DesktopDishHeader,
-	DesktopEntryHeader,
-	DesktopCafeHeader,
-	DesktopReviewHeader,
-	MobileDishControl,
-	MobileEntryControl,
-	MobileReviewControl,
-	DesktopDishControl,
+	DishHeader,
+	CommonHeader,
+	DishControl,
 	DishIdQRReader,
-	MobileDishEntMain,
-	DesktopDishEntMain,
-	DesktopMain,
+	DishEntertainmentPanel,
 	Dish3DCanvas,
 	DishARCanvas,
-	NotFoundPageMain,
+	NotFoundPageContent,
+	BenefitPanel,
+	CafesPanel,
 };

@@ -1,4 +1,5 @@
 import Layout from "./Layout";
 import DishesPage from "./DishesPage";
+import CafesPage from "./CafesPage";
 
-export { Layout, DishesPage };
+export { Layout, DishesPage, CafesPage };

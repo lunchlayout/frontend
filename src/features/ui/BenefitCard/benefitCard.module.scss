@@ -1,0 +1,17 @@
+@import "../../../app/styles/variables", "../../../app/styles/mixins";
+
+.default {
+	@include flex(column) {
+		align-items: flex-start;
+		gap: calc(map-get($gaps, default) / 2);
+	}
+}
+
+.title {
+	@include semiBold;
+	color: map-get($colors, white1);
+}
+
+.description {
+	color: map-get($colors, white2);
+}

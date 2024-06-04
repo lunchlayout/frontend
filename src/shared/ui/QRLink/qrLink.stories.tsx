@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import QRLink from "./qrLink";
+
 const meta = {
 	component: QRLink,
 	title: "Shared/QRLink",
@@ -13,7 +14,7 @@ type Story = StoryObj<typeof QRLink>;
 
 export const QRLinkSimple: Story = {
 	args: {
-		src: "/dishes/12345/ar",
+		src: "/example",
 		label: "Отсканируйте QR код для просмотра блюда в AR",
 	},
 };

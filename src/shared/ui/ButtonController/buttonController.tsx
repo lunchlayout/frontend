@@ -1,29 +1,33 @@
 import { IButtonControllerProps } from "./buttonController.props";
 import styles from "./buttonController.module.scss";
-import Button from "../Button";
+
+import { Button } from "@shared/ui";
+
 export default function ButtonController({
 	direction = "right",
-	onClick,
-	disabled = false,
-	customType,
 	className = "",
+	...props
 }: IButtonControllerProps) {
 	return (
 		<Button
-			disabled={disabled}
-			customType={customType}
-			onClick={onClick}
-			className={[styles.button, className].join(" ")}
+			customType="filled"
+			className={[styles.default, className].join(" ")}
+			{...props}
 		>
 			<svg
-				width="18"
-				height="23"
-				viewBox="0 0 18 23"
-				className={styles[direction]}
+				width="28"
+				height="15"
+				viewBox="0 0 28 15"
 				fill="none"
+				className={styles[direction]}
 				xmlns="http://www.w3.org/2000/svg"
 			>
-				<path d="M4.13924 0.185549C5.03315 0.184513 5.90017 0.482288 6.59447 1.0288L16.2265 8.74638C16.6043 9.03825 16.9093 9.40904 17.119 9.83116C17.3286 10.2533 17.4375 10.7159 17.4375 11.1845C17.4375 11.6531 17.3286 12.1157 17.119 12.5378C16.9093 12.9599 16.6043 13.3307 16.2265 13.6226L6.59447 21.3402C6.0146 21.7911 5.31587 22.0749 4.57791 22.1592C3.83995 22.2434 3.09244 22.1248 2.42057 21.8168C1.83665 21.567 1.33916 21.1593 0.987514 20.6424C0.635866 20.1256 0.444927 19.5214 0.4375 18.9021L0.4375 3.4669C0.444927 2.84756 0.635866 2.24338 0.987514 1.72653C1.33916 1.20968 1.83665 0.802004 2.42057 0.552181C2.96047 0.313875 3.54614 0.188936 4.13924 0.185549Z" />
+				<path
+					d="M1 8.5C0.447715 8.5 0 8.05228 0 7.5C0 6.94772 0.447715 6.5 1 6.5L1 8.5ZM27.7071 6.79289C28.0976
+				 7.18342 28.0976 7.81658 27.7071 8.20711L21.3431 14.5711C20.9526 14.9616 20.3195 14.9616 19.9289 14.5711C19.5384
+				  14.1805 19.5384 13.5474 19.9289 13.1569L25.5858 7.5L19.9289 1.84315C19.5384 1.45262 19.5384 0.819456 19.9289
+				   0.428932C20.3195 0.0384079 20.9526 0.0384079 21.3431 0.428932L27.7071 6.79289ZM1 6.5L27 6.5V8.5L1 8.5L1 6.5Z"
+				/>
 			</svg>
 		</Button>
 	);

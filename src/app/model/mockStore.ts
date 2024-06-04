@@ -3,7 +3,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import { mainReducer } from "./store";
 
 const mockState: IRootState = {
-	dishes: {
+	dishesSlice: {
 		isLoading: false,
 		errors: [],
 		modelLoadingProgress: {
@@ -39,7 +39,6 @@ const mockState: IRootState = {
 				{
 					description:
 						"Клубничный торт - самый любимый десерт Павла Дурова",
-					img: "https://rsute.ru/wp-content/uploads/2020/12/maxresdefault-59.jpg",
 				},
 				{
 					title: "Клубничный торт",
@@ -53,34 +52,74 @@ const mockState: IRootState = {
 			],
 		},
 	},
-	cafes: {
-		pageCnt: 5,
+	cafesSlice: {
 		isLoading: false,
 		errors: [],
-		cafe: {
+		currentCafes: {
+			pageCnt: 1,
+			cafes: [
+				{
+					cafeId: "123",
+					name: "Кекс и крендель",
+					logo: "https://img.hhcdn.ru/employer-logo/2422482.jpeg",
+				},
+				{
+					cafeId: "1234",
+					name: "Кекс и крендель",
+					logo: "https://img.hhcdn.ru/employer-logo/2422482.jpeg",
+				},
+				{
+					cafeId: "12345",
+					name: "Кекс и крендель",
+					logo: "https://img.hhcdn.ru/employer-logo/2422482.jpeg",
+				},
+				{
+					cafeId: "123456",
+					name: "Кекс и крендель",
+					logo: "https://img.hhcdn.ru/employer-logo/2422482.jpeg",
+				},
+			],
+		},
+		currentCafe: {
+			pageCnt: 5,
 			name: "Кекс и крендель",
 			logo: "https://img.hhcdn.ru/employer-logo/2422482.jpeg",
 			dishes: [
 				{
 					dishId: "12345",
-					name: "Клубничный торт",
-					amount: 1000,
+					name: "Греческий салат с авокадо и тунцом",
+					amount: 400,
 					unit: "г",
-					img: "https://rsute.ru/wp-content/uploads/2020/12/maxresdefault-59.jpg",
+					description:
+						"Изумительный салат, в состав которого входят самые свежие продукты",
+					img: "https://bye-bye-calories.ru/wp-content/uploads/1/c/1/1c14a5995fbf1b48e341e5fee35c1d55.jpeg",
 				},
 				{
 					dishId: "123456",
-					name: "Клубничный торт",
-					amount: 1000,
+					name: "Греческий салат с авокадо и тунцом",
+					amount: 400,
 					unit: "г",
-					img: "https://rsute.ru/wp-content/uploads/2020/12/maxresdefault-59.jpg",
+					description:
+						"Изумительный салат, в состав которого входят самые свежие продукты",
+					img: "https://bye-bye-calories.ru/wp-content/uploads/1/c/1/1c14a5995fbf1b48e341e5fee35c1d55.jpeg",
 				},
 				{
 					dishId: "1234567",
-					name: "Клубничный торт",
-					amount: 1000,
+					name: "Греческий салат с авокадо и тунцом",
+					amount: 400,
 					unit: "г",
-					img: "https://rsute.ru/wp-content/uploads/2020/12/maxresdefault-59.jpg",
+					description:
+						"Изумительный салат, в состав которого входят самые свежие продукты",
+					img: "https://bye-bye-calories.ru/wp-content/uploads/1/c/1/1c14a5995fbf1b48e341e5fee35c1d55.jpeg",
+				},
+				{
+					dishId: "12345678",
+					name: "Греческий салат с авокадо и тунцом",
+					amount: 400,
+					unit: "г",
+					description:
+						"Изумительный салат, в состав которого входят самые свежие продукты",
+					img: "https://bye-bye-calories.ru/wp-content/uploads/1/c/1/1c14a5995fbf1b48e341e5fee35c1d55.jpeg",
 				},
 			],
 		},

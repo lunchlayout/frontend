@@ -17,7 +17,9 @@ const meta = {
 type Story = StoryObj<typeof ButtonController>;
 
 export const ButtonControllerRight: Story = {
-	args: {},
+	args: {
+		direction: "right",
+	},
 };
 export const ButtonControllerLeft: Story = {
 	args: {

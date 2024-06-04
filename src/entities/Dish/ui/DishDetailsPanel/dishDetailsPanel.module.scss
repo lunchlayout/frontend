@@ -1,0 +1,75 @@
+@import "../../../../app/styles/variables", "../../../../app/styles/mixins";
+
+.default {
+	padding: map-get($padding, card);
+	border-radius: map-get($radius, sm);
+	background: map-get($colors, gray1);
+
+	@include grid {
+		align-items: flex-start;
+		justify-content: stretch;
+		grid-template-areas:
+			"allergens ingredients"
+			"nutritionalValue ingredients";
+	}
+
+	@include mobile {
+		grid-template-areas:
+			"ingredients"
+			"allergens"
+			"nutritionalValue";
+	}
+}
+
+$details: ingredients, allergens, nutritionalValue;
+
+@each $detail in $details {
+	.#{$detail} {
+		position: relative;
+		grid-area: $detail;
+		@include flex(column) {
+			gap: calc(map-get($gaps, default) / 2);
+			align-items: flex-start;
+		}
+
+		@if ($detail != nutritionalValue) {
+			& .list {
+				width: 100%;
+				@include grid {
+					grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+					align-items: flex-start;
+
+					row-gap: calc(map-get($gaps, default) / 4);
+					column-gap: 0;
+				}
+			}
+			@include mobile {
+				&::after {
+					content: "";
+					position: absolute;
+					bottom: calc(map-get($gaps, default) / 1.5 * -1);
+					min-width: 6rem;
+
+					border: 0.05rem solid map-get($colors, gray2);
+					border-radius: map-get($radius, sm);
+				}
+			}
+		}
+		@if ($detail == ingredients) {
+			@include desktop {
+				justify-self: center;
+			}
+		}
+	}
+}
+
+.title {
+	@include semiBold($size: map-get($fontSizes, h3));
+	@include mobile {
+		font-size: map-get($fontSizes, h4);
+	}
+}
+
+.list {
+	color: map-get($colors, black2);
+}

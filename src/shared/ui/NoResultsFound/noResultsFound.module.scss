@@ -1,0 +1,23 @@
+@import "../../../app/styles/variables", "../../../app/styles/mixins";
+
+.default {
+	@include flex {
+		gap: 0;
+	}
+
+	@include mobile {
+		flex-direction: column;
+	}
+}
+
+.image {
+	@include mobile {
+		//* Главный элемент изображения уходит влево. При смене изображения - удалить
+		transform: translate(10%);
+	}
+}
+
+.label {
+	font-size: map-get($fontSizes, h3);
+	color: map-get($colors, white2);
+}

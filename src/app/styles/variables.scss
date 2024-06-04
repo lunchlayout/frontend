@@ -1,51 +1,57 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wdth,wght@0,62.5..100,100..900;1,62.5..100,100..900&display=swap");
+@import url("/fonts/Gilroy/stylesheet.css");
 
 $colors: (
-	primary: #803e2f,
-	primaryHover: #803e2fcc,
-	secondary: #f6f5f1,
-	secondaryHover: #f6f5f1cc,
-	tertiary: #b59c45,
-	tertiaryHover: #b59c45cc,
-	primaryText: #26273b,
-	primaryTextHover: #26273baa,
-	track: #d4c596,
-	trackHover: #d4c596cc,
-	rate: #f5b340,
-	rateBg: #eff0ff,
-	scanBg: #f6f5f16b,
+	white1: #fff,
+	white2: #929292,
+	black1: #222328,
+	black2: #404046,
+	yellow: #e8c95f,
+	gray1: #fafafa,
+	gray2: #dddddd,
+	overlay: #00000080,
+	playIcon: #95959580,
+);
+
+$rateColors: (
+	bad: #e14f4f,
+	normal: #e8c95f,
+	good: #eaff6a,
+	happy: #66c269,
 );
 
 $quizColors: (
-	selected: #40aceecc,
-	correct: #33a22bcc,
-	wrong: #df3a3acc,
-	default: #eff0ff,
+	correct: #66c269,
+	wrong: #e14f4f,
 );
 
 $radius: (
-	s: 1rem,
-	m: 1.5rem,
-	rounded: 10rem,
+	sm: 1.25rem,
+	md: 2.5rem,
+	lg: 6.25rem,
 );
 
 $padding: (
-	button: 0.7rem 2.5rem,
-	input: 0.7rem 1rem,
-	rounded: 0.7rem,
+	control: 0.625rem 1.5rem,
+	card: 1.25rem,
+	panel: 3.5rem,
 	default: 1rem,
 );
 
 $fonts: (
-	family: "Noto Sans",
-	sizes: (
-		h1: 1.5rem,
-		h2: 1.3rem,
-		h3: 1.1rem,
-		h4: 1rem,
-		h5: 1rem,
-		h6: 1rem,
+	family1: (
+		"Gilroy",
+		sans-serif,
 	),
+);
+
+$fontSizes: (
+	h1: 3rem,
+	h2: 2rem,
+	h3: 1.5rem,
+	h4: 1.25rem,
+	h5: 1rem,
+	h6: 1rem,
+	default: 1rem,
 );
 
 $transitions: (
@@ -55,7 +61,7 @@ $transitions: (
 
 $gaps: (
 	primary: 2rem,
-	secondary: 1rem,
+	default: 1rem,
 );
 
 $zIndex: (

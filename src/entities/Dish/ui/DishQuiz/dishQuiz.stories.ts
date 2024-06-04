@@ -14,9 +14,9 @@ type Story = StoryObj<typeof DishQuiz>;
 
 export const DishQuizSimple: Story = {
 	args: {
-		answer: "3",
-		options: ["2", "3", "5"],
-		question: "Сколько видов мяса в мясной пицце",
+		answer: "Бариста",
+		options: ["Кофевар", "Кофе-мастер", "Бариста", "Молокосос"],
+		question: "Как называется человек, который готовит кофе?",
 	},
 };
 

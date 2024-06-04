@@ -73,7 +73,7 @@ export default function Modal({
 				aria-label={label}
 				className={[styles.modal, className].join(" ")}
 			>
-				<div className={styles.content}>{children}</div>
+				{children}
 				<CloseButton onClick={onClose} className={styles.close} />
 			</div>
 		</div>

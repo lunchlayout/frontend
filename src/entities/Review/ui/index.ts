@@ -1,6 +1,3 @@
-import ReviewLink from "./ReviewLink";
-import CommentSection from "./CommentSection";
-import RatingSection from "./RatingSection";
-import ReviewTextLink from "./ReviewTextLink";
+import ReviewSubmissionSuccess from "./ReviewSubmissionSuccess";
 
-export { ReviewLink, CommentSection, RatingSection, ReviewTextLink };
+export { ReviewSubmissionSuccess };

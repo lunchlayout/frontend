@@ -1,0 +1,37 @@
+@import "../../../../app/styles/variables", "../../../../app/styles/mixins";
+
+.default {
+	@include flex(column) {
+		justify-content: space-between;
+	}
+	padding: map-get($padding, card) map-get($padding, card) * 2;
+	border-radius: map-get($radius, sm);
+	background: map-get($colors, gray1);
+
+	@include transition(
+		$properties: (
+			outline,
+			background,
+			color,
+		)
+	);
+
+	&:hover {
+		background: map-get($colors, black1);
+		& * {
+			color: map-get($colors, white1);
+		}
+		& .logo {
+			outline: 0.1rem solid map-get($colors, white1);
+		}
+	}
+}
+
+.logo {
+	@include outline($type: rounded);
+	width: 110px;
+}
+
+.cafeName {
+	@include semiBold($size: map-get($fontSizes, h4));
+}

@@ -4,8 +4,8 @@ import { reducer as dishesReducer } from "@entities/Dish";
 import { reducer as cafesReducer } from "@entities/Cafe";
 
 const mainReducer = combineReducers({
-	dishes: dishesReducer,
-	cafes: cafesReducer,
+	dishesSlice: dishesReducer,
+	cafesSlice: cafesReducer,
 });
 
 const Store = configureStore({

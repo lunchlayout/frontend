@@ -13,13 +13,6 @@ const meta = {
 type Story = StoryObj<typeof SnackbarNotice>;
 
 export const SnackbarNoticeSimple: Story = {
-	parameters: {
-		docs: {
-			description: {
-				story: "Constructed with mui (material ui)",
-			},
-		},
-	},
 	args: {
 		open: true,
 		children: "Отзыв отправлен!",

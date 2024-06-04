@@ -1,22 +1,26 @@
 import { IRootState } from "@app/types";
 
-const dish = (state: IRootState) => state.dishes.dish;
+const dish = (state: IRootState) => state.dishesSlice.dish;
 
-const dishCafe = (state: IRootState) => state.dishes.dish?.cafe;
+const dishId = (state: IRootState) => state.dishesSlice.dishId;
 
-const dishEntDetails = (state: IRootState) => state.dishes.entertainmentDetails;
+const dishCafe = (state: IRootState) => state.dishesSlice.dish?.cafe;
 
-const scene = (state: IRootState) => state.dishes.scene;
+const dishEntDetails = (state: IRootState) =>
+	state.dishesSlice.entertainmentDetails;
+
+const scene = (state: IRootState) => state.dishesSlice.scene;
 
 const modelLoadingProgress = (state: IRootState) =>
-	state.dishes.modelLoadingProgress;
+	state.dishesSlice.modelLoadingProgress;
 
-const isLoading = (state: IRootState) => state.cafes.isLoading;
+const isLoading = (state: IRootState) => state.dishesSlice.isLoading;
 
-const errors = (state: IRootState) => state.cafes.errors;
+const errors = (state: IRootState) => state.dishesSlice.errors;
 
 export {
 	dish,
+	dishId,
 	dishCafe,
 	modelLoadingProgress,
 	dishEntDetails,

@@ -1,20 +1,30 @@
 @import "../../../../app/styles/variables", "../../../../app/styles/mixins";
 
 .default {
-	@include flex(column) {
-		gap: map-get($gaps, secondary);
-		justify-content: flex-start;
-		align-items: stretch;
-	}
-	padding: map-get($padding, default) * 2;
+	@include flex;
 	@include mobile {
-		padding: map-get($padding, default);
+		flex-direction: column-reverse;
 	}
-	border-radius: map-get($radius, m);
-	background: map-get($colors, secondary);
 }
-.text {
-	@include content;
-	max-width: 100%;
-	align-self: flex-start;
+
+.textContent {
+	flex-basis: 50%;
+	@include flex(column) {
+		align-items: flex-start;
+	}
+	@include mobile {
+		align-items: center;
+		text-align: center;
+	}
+}
+
+.title {
+	@include semiBold($size: map-get($fontSizes, h2));
+	@include mobile {
+		font-size: map-get($fontSizes, h3);
+	}
+}
+
+.story {
+	font-size: map-get($fontSizes, h4);
 }

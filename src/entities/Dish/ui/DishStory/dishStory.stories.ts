@@ -14,8 +14,8 @@ type Story = StoryObj<typeof DishStory>;
 
 export const DishStorySimple: Story = {
 	args: {
-		description: "Клубничный торт - самый любимый десерт Павла Дурова",
-		img: "https://rsute.ru/wp-content/uploads/2020/12/maxresdefault-59.jpg",
+		description:
+			"Капучино — любимый напиток Павла Дурова, он пьёт его целых 30 раз в день!",
 	},
 };
 

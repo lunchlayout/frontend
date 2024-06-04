@@ -3,8 +3,8 @@ import styles from "./link.module.scss";
 import { Link as ReactLink } from "react-router-dom";
 
 export default function Link({
-	type = "text",
-	to,
+	type = "outlined",
+	to = "/",
 	children,
 	className = "",
 }: ILinkProps) {

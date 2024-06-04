@@ -1,6 +1,4 @@
 export type {
-	IRatingContext,
-	ICommentContext,
 	IQueryContext,
 	IQuizContext,
 } from "./controlContext";

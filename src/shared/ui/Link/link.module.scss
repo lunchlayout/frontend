@@ -1,69 +1,43 @@
 @import "../../../app/styles/variables", "../../../app/styles/mixins";
 
 .default {
-	padding: map-get($padding, button);
-	border-radius: map-get($radius, m);
-	border: none;
-	cursor: pointer;
-	font-family: inherit;
-	color: map-get($colors, secondary);
-	text-decoration: none;
+	@include flex;
+
 	text-align: center;
-	transition: map-get($transitions, control);
-	@include flex {
-		display: inline-flex;
-		flex-direction: column;
-	}
-	@include outline;
-}
-.simple {
-	background: map-get($colors, secondary);
-	color: map-get($colors, primaryText);
-	&:hover {
-		background: map-get($colors, secondaryHover);
-	}
-}
-.primary {
-	background: map-get($colors, primary);
-	&:hover {
-		background: map-get($colors, primaryHover);
-	}
+	text-decoration: none;
+	font-family: inherit;
+	color: map-get($colors, black1);
+
+	@include transition(
+		$properties: (
+			background,
+			color,
+			outline,
+			border,
+			transform,
+		)
+	);
 }
 
-.secondary {
-	background: map-get($colors, tertiary);
-	&:hover {
-		background: map-get($colors, tertiaryHover);
-	}
-}
+.outlined {
+	padding: map-get($padding, control);
+	border-radius: map-get($radius, md);
+	border: 0.1rem solid map-get($colors, black1);
+	@include outline($type: rounded);
 
-.tertiary {
-	background: map-get($colors, track);
-	color: map-get($colors, primaryText);
 	&:hover {
-		background: map-get($colors, trackHover);
+		background: map-get($colors, black1);
+		color: map-get($colors, white1);
 	}
 }
 
 .text {
-	color: map-get($colors, primaryText);
-	padding: calc(map-get($padding, default) / 4)
-		calc(map-get($padding, default) / 2);
+	@include outline($type: text, $hasHover: true);
+}
 
-	&::after {
-		content: "";
+.none {
+}
 
-		border: 0.1rem solid map-get($colors, primary);
-		width: 100%;
-		border-radius: map-get($radius, m);
-		transform: scaleX(0);
-		transition: transform map-get($transitions, control);
-		transform-origin: center;
-		background: map-get($colors, primary);
-	}
-	&:hover {
-		&::after {
-			transform: scaleX(1);
-		}
-	}
+.underlined {
+	@include outline($type: text);
 }

@@ -3,3 +3,8 @@
 .default {
 	color: map-get($colors, secondary);
 }
+
+.loaderContainer {
+	@include flex;
+	flex: 1;
+}

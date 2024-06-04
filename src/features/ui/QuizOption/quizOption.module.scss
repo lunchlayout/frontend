@@ -6,33 +6,42 @@
 
 .option {
 	@include flex {
-		justify-content: flex-start;
+		gap: 0;
 	}
-	@include outline;
-	padding: map-get($padding, input);
-	border-radius: map-get($radius, m);
+	@include outline($type: rounded);
+	padding: nth(map-get($padding, control), 1)
+		nth(map-get($padding, control), 1) * 2;
+	border-radius: map-get($radius, lg);
+	border: 0.1rem solid map-get($colors, gray2);
+
 	cursor: pointer;
-	min-width: 10rem;
-	transition: map-get($transitions, link);
+	@include transition(
+		$duration: map-get($transitions, control),
+		$properties: (
+			background,
+			color,
+			border,
+		)
+	);
+	text-align: center;
+
 	&:has(.ratio:disabled) {
 		pointer-events: none;
+	}
+
+	&:hover,
+	&:has(.ratio:checked) {
+		background: map-get($colors, black1);
+		color: map-get($colors, white1);
+		border: 0.1rem solid map-get($colors, black1);
 	}
 }
 
 @each $type, $color in $quizColors {
-	@if $type != selected {
-		.#{$type} {
-			background: $color;
-			@if $type == default {
-				color: map-get($colors, primaryText);
-			} @else {
-				color: map-get($colors, secondary);
-			}
-		}
+	//* Стили статуса результата квиза должны быть выше других стилей
+	.#{$type}.#{$type}.#{$type} {
+		background: $color;
+		color: map-get($colors, white1);
+		border: 0.1rem solid $color;
 	}
-}
-
-.option:has(.ratio:checked) {
-	background: map-get($quizColors, selected);
-	color: map-get($colors, secondary);
 }

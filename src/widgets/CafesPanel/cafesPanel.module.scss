@@ -1,0 +1,25 @@
+@import "../../app/styles/variables", "../../app/styles/mixins";
+
+.default {
+	@include flex(column) {
+		align-items: stretch;
+		gap: map-get($gaps, primary);
+	}
+	padding: map-get($padding, card) * 2;
+
+	@include mobile {
+		padding: map-get($padding, card);
+	}
+	border: 0.1rem solid map-get($colors, gray2);
+	border-radius: map-get($radius, md);
+	min-height: 500px;
+}
+
+.searchContainer {
+	@include flex;
+}
+
+.cafeList,
+.notFound {
+	flex: 1;
+}

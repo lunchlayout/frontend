@@ -1,20 +1,22 @@
-import { Desktop, Mobile } from "@shared/hoc";
-import { SEO } from "@shared/ui";
 import { ReviewForm } from "@widgets/index";
 import styles from "./sendingPage.module.scss";
+import { Helmet } from "react-helmet";
 
 export default function SendingPage() {
 	return (
-		<main className={styles.main}>
-			<div className={styles.content}>
-				<Desktop>
-					<ReviewForm hasControl />
-				</Desktop>
-				<Mobile>
-					<ReviewForm />
-				</Mobile>
+		<main className={styles.default}>
+			<div className={styles.container}>
+				<ReviewForm />
 			</div>
-			<SEO title={`Обратная связь — Lunch Layout`} />
+			<Helmet
+				title={`Обратная связь — Lunch Layout`}
+				meta={[
+					{
+						name: "description",
+						content: "Страница отправки отзыва о приложении",
+					},
+				]}
+			/>
 		</main>
 	);
 }

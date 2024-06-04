@@ -1,9 +1,0 @@
-@import "../../../app/styles/variables", "../../../app/styles/mixins";
-
-.default {
-	@include flex(column) {
-		gap: map-get($gaps, secondary);
-		justify-content: flex-start;
-	}
-	color: map-get($colors, secondary);
-}

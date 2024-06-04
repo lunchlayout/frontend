@@ -1,0 +1,14 @@
+@import "../../../../app/styles/variables", "../../../../app/styles/mixins";
+
+.default {
+	@include flex {
+		justify-content: space-between;
+	}
+	padding: map-get($padding, card);
+	border-radius: map-get($radius, sm);
+	background: map-get($colors, gray1);
+}
+
+.cafeName {
+	@include semiBold($size: map-get($fontSizes, h4));
+}

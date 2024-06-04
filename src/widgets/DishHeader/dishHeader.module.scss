@@ -1,0 +1,9 @@
+@import "../../app/styles/variables", "../../app/styles/mixins";
+
+.content {
+	@include container;
+	@include flex {
+		justify-content: space-between;
+		gap: map-get($gaps, primary);
+	}
+}

@@ -1,7 +1,6 @@
 @import "../../app/styles/variables", "../../app/styles/mixins";
 
-.main {
-	@include mainContent {
-		padding-top: map-get($padding, default) * 5;
-	}
+.default {
+	@include mainContent;
+	@include flex;
 }

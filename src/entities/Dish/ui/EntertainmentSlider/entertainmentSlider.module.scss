@@ -3,8 +3,16 @@
 
 .default {
 	position: relative;
-	@include flex(column) {
-		gap: map-get($gaps, secondary) * 1.5;
+
+	@include mobile {
+		@include flex(column) {
+			gap: map-get($gaps, default) * 1.5;
+			align-items: stretch;
+		}
+	}
+
+	@include mobile {
+		justify-content: flex-start;
 	}
 }
 
@@ -12,21 +20,20 @@
 	z-index: map-get($zIndex, caption);
 	@include desktop {
 		position: absolute;
-		top: 50%;
+		top: 55%;
 		transform: translateY(-50%);
 	}
-	@include icon(map-get($colors, secondary));
 }
 
 .leftController {
 	@include desktop {
-		left: -3%;
+		left: -5%;
 	}
 }
 
 .rightController {
 	@include desktop {
-		right: -3%;
+		right: -5%;
 	}
 }
 
@@ -37,17 +44,11 @@
 }
 
 .entertainment {
-	width: 100%;
-	overflow: auto;
 	animation: showUp 1s;
-	@include scrollbar;
-	@include desktop {
-		height: 450px;
-	}
+
+	//* Для того, чтобы карточки с разным размером контента не сдвигали дизайн
+	height: 23rem;
 	@include mobile {
-		height: 350px;
-	}
-	& img {
-		max-height: 350px;
+		height: 27rem;
 	}
 }

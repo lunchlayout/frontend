@@ -1,9 +1,0 @@
-@import "../../../app/styles/variables", "../../../app/styles/mixins";
-
-.links {
-	@include resetList;
-	@include flex {
-		gap: map-get($gaps, primary);
-		justify-content: flex-start;
-	}
-}

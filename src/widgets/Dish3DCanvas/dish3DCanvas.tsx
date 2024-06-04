@@ -6,7 +6,7 @@ import { SceneSetup, WoodPlane3D } from "@features/ui";
 
 export default function Dish3DCanvas() {
 	return (
-		<Canvas className={styles.default}>
+		<Canvas className={[styles.default].join(" ")}>
 			<SceneSetup>
 				<Environment preset="apartment" background />
 			</SceneSetup>

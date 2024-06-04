@@ -1,33 +1,55 @@
 @import "../../../../app/styles/variables", "../../../../app/styles/mixins";
 
 .default {
-	padding: map-get($padding, default) * 1.5;
-	border-radius: map-get($radius, m);
-	background: map-get($colors, primary);
-	gap: map-get($gaps, secondary);
-	justify-content: space-between;
-	@include desktop {
-		@include flex;
+	@include flex {
+		align-items: stretch;
 	}
-	@include mobile {
-		@include flex(column);
-		padding: map-get($padding, default);
+
+	@include tablet {
+		flex-direction: column;
 	}
 }
-.info {
-	max-width: 100%;
-	align-self: flex-start;
-	@include flex(column) {
-		align-items: flex-start;
-		gap: map-get($gaps, secondary);
-	}
-	color: map-get($colors, secondary);
-}
+
 .image {
-	align-self: stretch;
-	width: 15rem;
-	flex: 1;
-	@include mobile {
+	width: 20rem;
+	@include tablet {
 		width: 100%;
 	}
+}
+
+.main {
+	flex: 1;
+	@include flex(column) {
+		align-items: stretch;
+	}
+}
+
+.title {
+	text-align: center;
+	@include flex {
+		gap: calc(map-get($gaps, default) / 2);
+		flex-wrap: wrap;
+	}
+}
+
+.name {
+	@include semiBold($size: map-get($fontSizes, h2));
+	@include mobile {
+		font-size: map-get($fontSizes, h3);
+	}
+}
+
+.amount {
+	padding: calc(map-get($padding, default) / 2) map-get($padding, default);
+	border: 0.1rem solid currentColor;
+	border-radius: map-get($radius, lg);
+	font-size: map-get($fontSizes, h4);
+	@include mobile {
+		font-size: inherit;
+	}
+	color: map-get($colors, white2);
+}
+
+.logo.logo {
+	border: none;
 }
