@@ -6,3 +6,8 @@
 		justify-content: flex-start;
 	}
 }
+
+.aboutDish {
+	padding: nth(map-get($padding, control), 1)
+		nth(map-get($padding, control), 2) * 1.5;
+}

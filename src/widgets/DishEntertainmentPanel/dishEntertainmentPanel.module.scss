@@ -20,7 +20,4 @@
 
 .title {
 	@include semiBold($size: map-get($fontSizes, h2));
-	@include mobile {
-		font-size: map-get($fontSizes, h3);
-	}
 }

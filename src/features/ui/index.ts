@@ -12,7 +12,6 @@ import CommonNavigation from "./CommonNavigation";
 import ARQRLink from "./ARQRLink";
 import WoodPlane3D from "./WoodPlane3D";
 import SceneSetup from "./SceneSetup";
-import SnackbarNotices from "./SnackbarNotices";
 import BenefitCard from "./BenefitCard";
 import BenefitList from "./BenefitList";
 import CafesPaginationControl from "./CafesPaginationControl";
@@ -33,7 +32,6 @@ export {
 	ARQRLink,
 	WoodPlane3D,
 	SceneSetup,
-	SnackbarNotices,
 	BenefitCard,
 	BenefitList,
 	CafesPaginationControl,

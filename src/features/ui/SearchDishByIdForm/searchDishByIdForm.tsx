@@ -1,16 +1,13 @@
 import { FormEvent, useState } from "react";
 import styles from "./searchDishByIdForm.module.scss";
-import { Button, Input } from "@shared/ui";
+import { Button, Input, SnackbarNoticeList } from "@shared/ui";
 import { actions, selectors } from "@entities/Dish";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "@app/index";
 import { ISearchDishByIdFormProps } from "./searchDishByIdForm.props";
 import { getDishPathById } from "@entities/Dish/lib";
-import { Notice } from "@features/context";
-import SnackbarNotices from "../SnackbarNotices";
-import { useImmer } from "use-immer";
-import { INoticeState } from "@shared/ui/SnackbarNotice";
 import { useSelector } from "react-redux";
+import { useNotices } from "@shared/hook";
 
 export default function SearchDishByIdForm({
 	className = "",
@@ -18,8 +15,8 @@ export default function SearchDishByIdForm({
 	const [dishId, setDishId] = useState("");
 	const navigate = useNavigate();
 	const dispatch = useAppDispatch();
-	const [notices, setNotices] = useImmer<INoticeState[]>([]);
 	const isLoading = useSelector(selectors.isLoading);
+	const { addNotice, deleteNotice, toggleNotice, notices } = useNotices();
 
 	async function handleSubmit(e: FormEvent<HTMLFormElement>) {
 		e.preventDefault();
@@ -28,13 +25,9 @@ export default function SearchDishByIdForm({
 		if (res.meta.requestStatus === "fulfilled") {
 			return navigate(getDishPathById(dishId));
 		} else {
-			setNotices(draft => {
-				draft.push({
-					id: draft.length + 1,
-					isOpen: true,
-					severity: "error",
-					text: "Товара с таким кодом не существует",
-				});
+			addNotice({
+				severity: "error",
+				text: "Товара с таким кодом не существует",
 			});
 		}
 		dispatch(actions.setIsLoading(false));
@@ -77,9 +70,11 @@ export default function SearchDishByIdForm({
 					</svg>
 				</Button>
 			</form>
-			<Notice.Context.Provider value={{ notices, setNotices }}>
-				<SnackbarNotices />
-			</Notice.Context.Provider>
+			<SnackbarNoticeList
+				onClose={deleteNotice}
+				toggleOpen={toggleNotice}
+				notices={notices}
+			/>
 		</>
 	);
 }

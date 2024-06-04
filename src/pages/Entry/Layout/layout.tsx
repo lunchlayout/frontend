@@ -10,7 +10,7 @@ export default function Layout() {
 		<>
 			<CommonHeader />
 			<Outlet />
-			<CircularLoader open={isLoading} />
+			<CircularLoader open={isLoading} hasBackdrop />
 		</>
 	);
 }

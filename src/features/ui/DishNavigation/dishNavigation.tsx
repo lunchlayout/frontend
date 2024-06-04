@@ -31,7 +31,11 @@ export default function DishNavigation({
 						<NavLink to={cafePath}>Блюда ресторана</NavLink>
 					</li>
 					<li>
-						<Button customType="filled" onClick={open}>
+						<Button
+							className={styles.aboutDish}
+							customType="filled"
+							onClick={open}
+						>
 							О блюде
 						</Button>
 					</li>

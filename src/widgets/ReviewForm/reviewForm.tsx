@@ -1,15 +1,18 @@
 import styles from "./reviewForm.module.scss";
 import { FormEvent, useState } from "react";
 import { IRating } from "@entities/Review/types";
-import { Notice } from "@features/context";
 import { api } from "@entities/Review";
 import { FORM_ID } from "./consts";
 import { IReviewFormProps } from "./reviewForm.props";
-import { CircularLoader, FormControl, TextArea } from "@shared/ui";
-import { useImmer } from "use-immer";
-import { INoticeState } from "@shared/ui/SnackbarNotice";
-import { EmojiRating, SnackbarNotices } from "@features/ui";
+import {
+	CircularLoader,
+	FormControl,
+	SnackbarNoticeList,
+	TextArea,
+} from "@shared/ui";
+import { EmojiRating } from "@features/ui";
 import { ReviewSubmissionSuccess } from "@entities/Review/ui";
+import { useNotices } from "@shared/hook";
 
 export default function ReviewForm({
 	hasControl = true,
@@ -20,7 +23,7 @@ export default function ReviewForm({
 	const [isSuccess, setIsSuccess] = useState(false);
 	const [isLoading, setIsLoading] = useState(false);
 
-	const [notices, setNotices] = useImmer<INoticeState[]>([]);
+	const { addNotice, deleteNotice, toggleNotice, notices } = useNotices();
 
 	async function sendReview(e: FormEvent<HTMLFormElement>) {
 		e.preventDefault();
@@ -31,13 +34,9 @@ export default function ReviewForm({
 			resetForm();
 			setIsLoading(false);
 		} else {
-			setNotices(draft => {
-				draft.push({
-					id: draft.length + 1,
-					isOpen: true,
-					severity: "warning",
-					text: "Поставьте оценку для отправки отзыва",
-				});
+			addNotice({
+				severity: "warning",
+				text: "Поставьте оценку для отправки отзыва",
 			});
 		}
 	}
@@ -83,10 +82,12 @@ export default function ReviewForm({
 				</section>
 			)}
 			{isSuccess && <ReviewSubmissionSuccess className={className} />}
-			<CircularLoader open={isLoading} />
-			<Notice.Context.Provider value={{ notices, setNotices }}>
-				<SnackbarNotices />
-			</Notice.Context.Provider>
+			<CircularLoader open={isLoading} hasBackdrop />
+			<SnackbarNoticeList
+				onClose={deleteNotice}
+				toggleOpen={toggleNotice}
+				notices={notices}
+			/>
 		</>
 	);
 }

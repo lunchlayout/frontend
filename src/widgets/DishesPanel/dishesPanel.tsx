@@ -3,7 +3,7 @@ import { DishList } from "@entities/Dish/ui";
 import { useSelector } from "react-redux";
 import { selectors } from "@entities/Cafe";
 import styles from "./dishesPanel.module.scss";
-import { NoResultsFound } from "@shared/ui";
+import { CircularLoader, NoResultsFound } from "@shared/ui";
 import { CafeInfo, CafeLogo } from "@entities/Cafe/ui";
 import { Desktop, Mobile } from "@shared/hoc";
 import { IDishesPanelProps } from "./dishesPanel.props";
@@ -12,6 +12,8 @@ export default function DishesPanel({ className = "" }: IDishesPanelProps) {
 	const currentCafe = useSelector(selectors.currentCafe);
 
 	const currentDishes = useSelector(selectors.currentDishes);
+
+	const isLoading = useSelector(selectors.isLoading);
 
 	return (
 		<section className={[styles.default, className].join(" ")}>
@@ -23,7 +25,8 @@ export default function DishesPanel({ className = "" }: IDishesPanelProps) {
 					</Desktop>
 				)}
 			</div>
-			{currentDishes && (
+			<CircularLoader open={isLoading} />
+			{currentDishes && !isLoading && (
 				<>
 					{!!currentDishes.dishes.length && currentCafe && (
 						<>

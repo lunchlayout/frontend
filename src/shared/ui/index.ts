@@ -23,6 +23,7 @@ import CircularLoader from "./CircularLoader";
 import SnackbarNotice from "./SnackbarNotice";
 import PlayButton from "./PlayButton";
 import NoResultsFound from "./NoResultsFound";
+import SnackbarNoticeList from "./SnackbarNoticeList";
 
 export {
 	Button,
@@ -50,4 +51,5 @@ export {
 	SnackbarNotice,
 	PlayButton,
 	NoResultsFound,
+	SnackbarNoticeList,
 };

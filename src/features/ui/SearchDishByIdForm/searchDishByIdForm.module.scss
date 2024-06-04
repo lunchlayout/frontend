@@ -28,6 +28,14 @@
 
 .btn.btn {
 	border: none;
-	@include icon($fill: currentColor);
-	padding-right: map-get($padding, default);
+	@include icon($fill: currentColor, $width: 4rem);
+	height: 3rem;
+	@include transition(
+		$duration: map-get($transitions, control),
+		$properties: (
+			color,
+			border,
+			outline,
+		)
+	);
 }

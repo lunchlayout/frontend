@@ -10,7 +10,7 @@
 		row-gap: map-get($gaps, primary);
 	}
 
-	@include mobile {
+	@include tablet {
 		grid-template-areas:
 			"image"
 			"searchById"
