@@ -13,11 +13,16 @@ export default function DishInfo({ className = "" }: IDishInfoProps) {
 	return (
 		<>
 			{dish && (
-				<article className={[styles.default, className].join(" ")}>
+				<article
+					className={[styles.default, className].join(" ")}
+					itemScope
+					itemType="https://schema.org/MenuItem"
+				>
 					<Image
 						className={styles.image}
 						src={dish.img}
 						alt={`${dish.name} - фотография блюда`}
+						itemProp="image"
 					/>
 					<div className={styles.main}>
 						<div className={styles.title}>
@@ -28,7 +33,9 @@ export default function DishInfo({ className = "" }: IDishInfoProps) {
 									className={styles.logo}
 								/>
 							)}
-							<span className={styles.name}>{dish.name}</span>
+							<span className={styles.name} itemProp="name">
+								{dish.name}
+							</span>
 							<span
 								className={styles.amount}
 							>{`${dish.amount} ${dish.unit}`}</span>

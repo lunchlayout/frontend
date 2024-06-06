@@ -3,7 +3,6 @@ import { ReactElement, SVGProps } from "react";
 import styles from "./emojiRadio.module.scss";
 import { EmojiTypes, EmojiRus } from "./emojiTypes";
 import { Desktop } from "@shared/hoc";
-import { RADIO_ID } from "./consts";
 
 const emojiSvgs = new Map<
 	keyof typeof EmojiTypes,
@@ -115,7 +114,7 @@ export default function EmojiRadio({
 		<div className={[styles.default, styles[emoji]].join(" ")}>
 			<label tabIndex={0} className={styles.emojiContainer}>
 				<input
-					id={RADIO_ID}
+					id={emoji}
 					type="radio"
 					value={EmojiTypes[emoji]}
 					className={styles.radio}
@@ -125,7 +124,7 @@ export default function EmojiRadio({
 				/>
 				{emojiSvgs.get(emoji)}
 			</label>
-			<label htmlFor={RADIO_ID} className={styles.description}>
+			<label htmlFor={emoji} className={styles.description}>
 				<span>{EmojiRus[emoji]}</span>
 				<Desktop>
 					<span>{EmojiTypes[emoji] + "/" + emojiSvgs.size}</span>

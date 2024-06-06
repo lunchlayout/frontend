@@ -3,6 +3,7 @@
 .default {
 	@include flex(column) {
 		align-items: stretch;
+		justify-content: flex-start;
 		gap: map-get($gaps, primary);
 	}
 	padding: map-get($padding, card) * 2;
@@ -12,7 +13,9 @@
 	}
 	border: 0.1rem solid map-get($colors, gray2);
 	border-radius: map-get($radius, md);
-	min-height: 500px;
+
+	//* При отсутствиии заведений появляется изображение, которое меняет размер панели
+	min-height: 510px;
 }
 
 .searchContainer {

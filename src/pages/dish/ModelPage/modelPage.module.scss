@@ -6,6 +6,9 @@
 }
 
 .content {
+	@include flex {
+		gap: 0;
+	}
 	@include container {
 		position: absolute;
 		left: 50%;

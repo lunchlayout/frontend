@@ -1,7 +1,4 @@
-export type {
-	IQueryContext,
-	IQuizContext,
-} from "./controlContext";
+export type { IQueryContext, IQuizContext } from "./controlContext";
 
 export type { IQuizResultContext } from "./quizResultContext";
 
