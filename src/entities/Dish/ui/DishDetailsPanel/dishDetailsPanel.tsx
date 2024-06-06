@@ -12,6 +12,13 @@ const NutritionalValueRu: Record<keyof INutritionalValue, string> = {
 	carbohydrates: "Углеводы",
 } as const;
 
+const NutritionalSchemaProps: Record<keyof INutritionalValue, string> = {
+	calories: "calories",
+	fats: "fatContent",
+	proteins: "proteinContent",
+	carbohydrates: "carbohydrateContent",
+} as const;
+
 export default function DishDetailsPanel({
 	className = "",
 }: IDishDetailsPanelProps) {
@@ -20,17 +27,28 @@ export default function DishDetailsPanel({
 	return (
 		<>
 			{dish && (
-				<div className={[styles.default, className].join(" ")}>
+				<div
+					className={[styles.default, className].join(" ")}
+					itemScope
+					itemType="https://schema.org/Recipe"
+				>
 					<div className={styles.ingredients}>
 						<span className={styles.title}>Состав</span>
 						<ol className={styles.list}>
 							{dish.ingredients.map((ingredient, idx) => {
-								return <li key={idx}>{ingredient}</li>;
+								return (
+									<li itemProp="recipeIngredient" key={idx}>
+										{ingredient}
+									</li>
+								);
 							})}
 						</ol>
 					</div>
 
-					<div className={styles.allergens}>
+					<div
+						className={styles.allergens}
+						itemProp="suitableForDiet"
+					>
 						<span className={styles.title}>Аллергены</span>
 						<ol className={styles.list}>
 							{dish.allergens.map((allergen, idx) => {
@@ -38,7 +56,12 @@ export default function DishDetailsPanel({
 							})}
 						</ol>
 					</div>
-					<div className={styles.nutritionalValue}>
+					<div
+						className={styles.nutritionalValue}
+						itemProp="nutrition"
+						itemScope
+						itemType="https://schema.org/NutritionInformation"
+					>
 						<span className={styles.title}>
 							Энергетическая ценность
 						</span>
@@ -47,6 +70,11 @@ export default function DishDetailsPanel({
 								([name, val], idx) => {
 									return (
 										<li
+											itemProp={
+												NutritionalSchemaProps[
+													name as keyof INutritionalValue
+												]
+											}
 											key={idx}
 										>{`${NutritionalValueRu[name as keyof INutritionalValue]}: ${val}`}</li>
 									);

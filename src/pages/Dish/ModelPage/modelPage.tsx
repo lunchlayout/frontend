@@ -7,12 +7,11 @@ import { Helmet } from "react-helmet";
 
 export default function ModelPage({ className = "" }: IModelPageProps) {
 	const dish = useSelector(selectors.dish);
-	const scene = useSelector(selectors.scene);
 
 	return (
 		<main className={[styles.default, className].join(" ")}>
 			<div className={styles.content}>
-				{scene && <Dish3DCanvas />}
+				<Dish3DCanvas />
 				{dish && (
 					<Helmet
 						title={`Модель — ${dish.name} — Lunch Layout`}

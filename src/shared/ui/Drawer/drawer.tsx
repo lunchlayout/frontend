@@ -18,7 +18,6 @@ export default function Drawer({
 		if (target instanceof HTMLElement) {
 			const isDrawer = target === drawerRef.current;
 			const isDrawerChildren = drawerRef.current?.contains(target);
-			console.log(target);
 			const isOutsideOfDrawer = !(
 				isDrawer ||
 				isDrawerChildren ||

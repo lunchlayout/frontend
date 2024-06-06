@@ -28,11 +28,19 @@ export default function ReviewForm({
 	async function sendReview(e: FormEvent<HTMLFormElement>) {
 		e.preventDefault();
 		if (rating) {
-			setIsLoading(true);
-			await api.sendReview({ rating, comment });
-			setIsSuccess(true);
-			resetForm();
-			setIsLoading(false);
+			try {
+				setIsLoading(true);
+				await api.sendReview({ rating, comment });
+				setIsSuccess(true);
+				resetForm();
+				setIsLoading(false);
+			} catch (error) {
+				addNotice({
+					severity: "warning",
+					text: "Ошибка сервера",
+				});
+				setIsLoading(false);
+			}
 		} else {
 			addNotice({
 				severity: "warning",

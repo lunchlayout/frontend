@@ -10,6 +10,7 @@ interface IDishesState extends IDefaultState {
 	scene?: Group<Object3DEventMap>;
 	modelLoadingProgress?: IProgress;
 	entertainmentDetails?: IEntertainmentDetails;
+	isModelLoading?: boolean;
 }
 
 export type { IDishesState };

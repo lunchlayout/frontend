@@ -15,7 +15,7 @@ export default function Model3D({
 			meshRef.current.rotation.z += 0.003;
 		}
 	});
-
+	console.log(scene);
 	return (
 		<mesh position={position} scale={scale} ref={meshRef}>
 			<primitive object={scene} />
