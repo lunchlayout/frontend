@@ -12,17 +12,24 @@ export default function DishCard({
 	className = "",
 }: IDishCardProps) {
 	return (
-		<article className={[styles.default, className].join(" ")}>
+		<article
+			className={[styles.default, className].join(" ")}
+			itemScope
+			itemType="https://schema.org/MenuItem"
+		>
 			<Image
 				height={160}
 				className={styles.image}
 				src={img}
 				alt={`${name} - фотография блюда`}
+				itemProp="image"
 			/>
 			<div className={styles.info}>
 				<span className={styles.amount}>{`${amount} ${unit}.`}</span>
-				<span className={styles.name}>{name}</span>
-				<p className={styles.description}>
+				<span className={styles.name} itemProp="name">
+					{name}
+				</span>
+				<p className={styles.description} itemProp="description">
 					{getClippedText(description)}
 				</p>
 			</div>

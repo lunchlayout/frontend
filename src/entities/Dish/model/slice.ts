@@ -13,6 +13,9 @@ const DishesSlice = createSlice({
 		setIsLoading(state, action: PayloadAction<boolean>) {
 			state.isLoading = action.payload;
 		},
+		setIsModelLoading(state, action: PayloadAction<boolean>) {
+			state.isModelLoading = action.payload;
+		},
 		setModelLoadingValue(state, action: PayloadAction<number>) {
 			if (state.modelLoadingProgress) {
 				state.modelLoadingProgress.value = action.payload;

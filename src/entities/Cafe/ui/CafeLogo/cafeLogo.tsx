@@ -13,6 +13,7 @@ export default function CafeLogo({
 			src={logo}
 			alt={`Логотип ${name}`}
 			className={[styles.logo, className].join(" ")}
+			itemProp="image"
 			{...props}
 		/>
 	);

@@ -16,7 +16,7 @@ export default function DishControl() {
 				<section>
 					<div className={styles.content}>
 						{!modelLoaded && <ProgressPanel />}
-						{modelLoaded && <ModelLink />}
+						{!!modelLoaded && <ModelLink />}
 					</div>
 				</section>
 			)}

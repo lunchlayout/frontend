@@ -16,6 +16,8 @@ const modelLoadingProgress = (state: IRootState) =>
 
 const isLoading = (state: IRootState) => state.dishesSlice.isLoading;
 
+const isModelLoading = (state: IRootState) => state.dishesSlice.isModelLoading;
+
 const errors = (state: IRootState) => state.dishesSlice.errors;
 
 export {
@@ -26,5 +28,6 @@ export {
 	dishEntDetails,
 	scene,
 	isLoading,
+	isModelLoading,
 	errors,
 };

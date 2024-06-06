@@ -4,8 +4,14 @@ import { CafeLogo } from "@entities/Cafe/ui";
 
 export default function CafeInfo({ className = "", ...cafe }: ICafeInfoProps) {
 	return (
-		<article className={[styles.default, className].join(" ")}>
-			<span className={styles.cafeName}>{cafe.name}</span>
+		<article
+			className={[styles.default, className].join(" ")}
+			itemScope
+			itemType="https://schema.org/Restaurant"
+		>
+			<span className={styles.cafeName} itemProp="name">
+				{cafe.name}
+			</span>
 			<CafeLogo {...cafe} width={90} />
 		</article>
 	);
