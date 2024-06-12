@@ -6,7 +6,9 @@
 		align-items: stretch;
 		gap: map-get($gaps, primary);
 	}
-	@include container($maxWidth: 1000px);
+	@include container($maxWidth: 1000px) {
+		padding: 0;
+	}
 }
 
 .titleContainer {

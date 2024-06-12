@@ -26,9 +26,9 @@ const emojiSvgs = new Map<
 			 19.75 11.5C19.75 11.0858 20.0858 10.75 20.5 10.75C20.9142 10.75 21.25 11.0858 21.25 11.5ZM12.25 
 			 11.5C12.25 11.9142 11.9142 12.25 11.5 12.25C11.0858 12.25 10.75 11.9142 10.75 11.5C10.75 11.0858 
 			 11.0858 10.75 11.5 10.75C11.9142 10.75 12.25 11.0858 12.25 11.5Z"
-				stroke-width="2"
-				stroke-linecap="round"
-				stroke-linejoin="round"
+				strokeWidth="2"
+				strokeLinecap="round"
+				strokeLinejoin="round"
 			/>
 		</svg>,
 	],
@@ -50,9 +50,9 @@ const emojiSvgs = new Map<
 			10.75C20.9142 10.75 21.25 11.0858 21.25 11.5ZM12.25 11.5C12.25 11.9142 11.9142 12.25 11.5 12.25C11.0858 
 			12.25 10.75 11.9142 10.75 11.5C10.75 11.0858 11.0858 10.75 11.5 10.75C11.9142 10.75 12.25 11.0858 12.25 
 			11.5Z"
-				stroke-width="2"
-				stroke-linecap="round"
-				stroke-linejoin="round"
+				strokeWidth="2"
+				strokeLinecap="round"
+				strokeLinejoin="round"
 			/>
 		</svg>,
 	],
@@ -74,9 +74,9 @@ const emojiSvgs = new Map<
 			11.5C19.75 11.0858 20.0858 10.75 20.5 10.75C20.9142 10.75 21.25 11.0858 21.25 11.5ZM12.25 11.5C12.25 
 			11.9142 11.9142 12.25 11.5 12.25C11.0858 12.25 10.75 11.9142 10.75 11.5C10.75 11.0858 11.0858 10.75 
 			11.5 10.75C11.9142 10.75 12.25 11.0858 12.25 11.5Z"
-				stroke-width="2"
-				stroke-linecap="round"
-				stroke-linejoin="round"
+				strokeWidth="2"
+				strokeLinecap="round"
+				strokeLinejoin="round"
 			/>
 		</svg>,
 	],
@@ -98,9 +98,9 @@ const emojiSvgs = new Map<
 			11.0858 21.25 11.5ZM12.25 11.5C12.25 11.9142 11.9142 12.25 11.5 12.25C11.0858 12.25 10.75 11.9142 10.75 
 			11.5C10.75 11.0858 11.0858 10.75 11.5 10.75C11.9142 10.75 12.25 11.0858 12.25 11.5ZM16 24.25C19.7507 
 			24.25 22.75 21.5005 22.75 19H9.25C9.25 21.5005 12.2493 24.25 16 24.25Z"
-				stroke-width="2"
-				stroke-linecap="round"
-				stroke-linejoin="round"
+				strokeWidth="2"
+				strokeLinecap="round"
+				strokeLinejoin="round"
 			/>
 		</svg>,
 	],

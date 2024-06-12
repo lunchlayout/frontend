@@ -18,8 +18,8 @@ export default function CloseButton({
 			>
 				<path
 					d="M1.16016 18.8375L18.8402 1.16248M1.16016 1.16248L18.8402 18.8375"
-					stroke-width="2"
-					stroke-linecap="round"
+					strokeWidth="2"
+					strokeLinecap="round"
 				/>
 			</svg>
 		</Button>

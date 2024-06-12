@@ -8,7 +8,7 @@ export default function CircularLoader({
 }: ICircularLoaderProps) {
 	return (
 		<>
-			{hasBackdrop && (
+			{hasBackdrop && open && (
 				<Backdrop
 					className={styles.default}
 					sx={{ zIndex: theme => theme.zIndex.drawer + 1 }}

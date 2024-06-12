@@ -7,7 +7,6 @@ import { REQUIRED_AXIS_LENGTH } from "./consts";
 
 export default function DishModel3D() {
 	const scene = useSelector(selectors.scene);
-	
 
 	const [scale, setScale] = useState<number>();
 	const [positionY, setPositionY] = useState<number>();
@@ -19,7 +18,7 @@ export default function DishModel3D() {
 		if (scene && !isFirstRender) {
 			const modelBox = new Box3().setFromObject(scene);
 			const modelSize = modelBox.getSize(new Vector3(0, 0, 0));
-			console.log(modelSize.z)
+			console.log(modelSize.z);
 			let requiredScale = 1;
 			while (modelSize.z * requiredScale < REQUIRED_AXIS_LENGTH) {
 				requiredScale++;

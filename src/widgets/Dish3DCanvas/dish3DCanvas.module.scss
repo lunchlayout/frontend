@@ -1,6 +1,10 @@
 @import "../../app/styles/variables", "../../app/styles/mixins";
 
 .default {
-	cursor: move;
+	cursor: grab;
 	border-radius: map-get($radius, sm) * 2.75;
+}
+
+.enter {
+	cursor: grabbing;
 }

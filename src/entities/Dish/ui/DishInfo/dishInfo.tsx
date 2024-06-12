@@ -28,7 +28,8 @@ export default function DishInfo({ className = "" }: IDishInfoProps) {
 						<div className={styles.title}>
 							{dishCafe && (
 								<CafeLogo
-									{...dishCafe}
+									logo={dishCafe.logo}
+									name={dishCafe.name}
 									width={90}
 									className={styles.logo}
 								/>

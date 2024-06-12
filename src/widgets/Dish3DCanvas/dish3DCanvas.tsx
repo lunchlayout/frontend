@@ -6,15 +6,23 @@ import { SceneSetup, WoodPlane3D } from "@features/ui";
 import { useSelector } from "react-redux";
 import { selectors } from "@entities/Dish";
 import { CircularLoader } from "@shared/ui";
+import { useState } from "react";
 
 export default function Dish3DCanvas() {
 	const isModelLoading = useSelector(selectors.isModelLoading);
 	const scene = useSelector(selectors.scene);
+	const [isEnter, setIsEnter] = useState(false);
 
 	return (
 		<>
 			{scene && !isModelLoading && (
-				<Canvas className={[styles.default].join(" ")}>
+				<Canvas
+					onPointerDown={() => setIsEnter(true)}
+					onPointerUp={() => setIsEnter(false)}
+					className={[styles.default, isEnter && styles.enter].join(
+						" ",
+					)}
+				>
 					<SceneSetup>
 						<Environment preset="apartment" background />
 					</SceneSetup>
