@@ -36,9 +36,9 @@ export default function SearchPanel({
 						2.25935C5.25836 2.67815 4.33968 3.292 3.56584 4.06584C2.003 5.62868 1.125 7.74835 1.125 
 						9.95855C1.125 12.1687 2.003 14.2884 3.56584 15.8513C5.12868 17.4141 7.24835 18.2921 9.45855 
 						18.2921C11.6687 18.2921 13.7884 17.4141 15.3513 15.8513Z"
-							stroke-width="1.6"
-							stroke-linecap="round"
-							stroke-linejoin="round"
+							strokeWidth="1.6"
+							strokeLinecap="round"
+							strokeLinejoin="round"
 						/>
 					</svg>
 					<Input

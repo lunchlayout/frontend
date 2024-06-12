@@ -8,7 +8,11 @@ export default function MainPage() {
 		<>
 			<main className={styles.default}>
 				<SearchPanelByDishId className={styles.searchById} />
-				<Image src="/images/entryGirl.png" className={styles.image} />
+				<Image
+					src="/images/entryGirl.png"
+					className={styles.image}
+					alt=""
+				/>
 				<BenefitPanel className={styles.benefits} />
 			</main>
 			<Helmet

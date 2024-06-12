@@ -1,0 +1,87 @@
+{
+    "name": "LunchLayout",
+    "short_name": "LunchLayout",
+    "description": "Отправься в виртуальное путешествие, открывая мир разных кулинарных удовольствий с помощью приложения для просмотра любимого блюда в дополненной реальности",
+    "start_url": "/",
+    "scope": "/",
+    "display": "minimal-ui",
+    "display_override": ["window-controls-overlay"],
+    "categories": [
+        "AR",
+        "3D"
+    ],
+    "lang": "ru",
+    "background_color": "#fff",
+    "theme_color": "#222328",
+    "shortcuts": [
+        {
+            "name": "Отсканировать QR код блюда",
+            "url": "/scan",
+            "icons": [
+                {   
+                    "src": "/images/appleFaviconPlate.png",
+                    "type": "image/png",
+                    "sizes": "180x180",
+                    "purpose": "any monochrome"
+                }
+            ]
+        },
+        {
+            "name": "Все рестораны",
+            "url": "/cafes",
+            "icons": [
+                {   
+                    "src": "/images/appleFaviconPlate.png",
+                    "type": "image/png",
+                    "sizes": "180x180",
+                    "purpose": "any monochrome"
+                }
+            ]
+        },
+        {
+            "name": "Оставить отзыв",
+            "url": "/reviews",
+            "icons": [
+                {   
+                    "src": "/images/appleFaviconPlate.png",
+                    "type": "image/png",
+                    "sizes": "180x180",
+                    "purpose": "any monochrome"
+                }
+            ]
+        }
+    ],
+    "orientation": "any",
+    "prefer_related_applications": true,
+    "icons": [
+        {   
+            "src": "/images/appleFaviconPlate.png",
+            "type": "image/png",
+            "sizes": "180x180",
+            "purpose": "any monochrome"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "/images/screenshots/modelPageDesktop.png",
+            "form_factor": "wide",
+            "sizes": "1920x1032",
+            "type": "image/png",
+            "purpose": "any monochrome"
+        },
+        {
+            "src": "/images/screenshots/modelPageMobile.png",
+            "form_factor": "narrow",
+            "sizes": "662x923",
+            "type": "image/png",
+            "purpose": "any monochrome"
+        },
+        {
+            "src": "/images/screenshots/dishPage.png",
+            "form_factor": "wide",
+            "sizes": "1920x1032",
+            "type": "image/png",
+            "purpose": "any monochrome"
+        }
+    ]
+}

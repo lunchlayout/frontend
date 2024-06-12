@@ -2,7 +2,6 @@ import styles from "./reviewForm.module.scss";
 import { FormEvent, useState } from "react";
 import { IRating } from "@entities/Review/types";
 import { api } from "@entities/Review";
-import { FORM_ID } from "./consts";
 import { IReviewFormProps } from "./reviewForm.props";
 import {
 	CircularLoader,
@@ -64,7 +63,6 @@ export default function ReviewForm({
 						</span>
 					</div>
 					<form
-						id={FORM_ID}
 						className={styles.form}
 						onSubmit={sendReview}
 						onReset={resetForm}
