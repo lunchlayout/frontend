@@ -14,7 +14,7 @@
     "preview": "vite preview",
     "sb": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "formatting": "prettier --write src/"
+    "formatting": "prettier --write src/ sw.ts"
   },
   "dependencies": {
     "@emotion/react": "^11.11.4",

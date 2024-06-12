@@ -23,7 +23,6 @@ export default function Drawer({
 				isDrawerChildren ||
 				target.tagName === "BUTTON"
 			);
-
 			if (isOutsideOfDrawer && onClose) {
 				onClose();
 			}
@@ -42,15 +41,18 @@ export default function Drawer({
 	}, []);
 
 	function setChildrenInert(root: HTMLElement, inert: boolean) {
-		for (const el of root.children) {
-			if (el instanceof HTMLElement && el !== containerRef.current) {
-				el.inert = inert;
+		if (containerRef.current) {
+			for (const el of root.children) {
+				if (el instanceof HTMLElement && el !== containerRef.current) {
+					el.inert = inert;
+				}
 			}
 		}
 	}
 
 	useEffect(() => {
 		const root = containerRef.current?.parentElement;
+
 		if (root) {
 			setChildrenInert(root, open);
 		}

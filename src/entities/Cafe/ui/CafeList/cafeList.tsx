@@ -19,7 +19,11 @@ export default function CafeList({ className = "" }: ICafeListProps) {
 							className={styles.cafeLink}
 							to={getCafePathById(cafe.cafeId)}
 						>
-							<CafeCard className={styles.cafe} {...cafe} />
+							<CafeCard
+								className={styles.cafe}
+								logo={cafe.logo}
+								name={cafe.name}
+							/>
 						</Link>
 					</li>
 				);
