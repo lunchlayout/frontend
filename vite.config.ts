@@ -11,7 +11,11 @@ export default defineConfig({
   server: {
     host: '192.168.0.127',
     port: 3000,
-    strictPort: true
+    strictPort: true,
+    https: {
+      key: 'cert/key.pem',
+      cert: 'cert/cert.pem'
+    }
   },
   resolve: {
     alias: {
