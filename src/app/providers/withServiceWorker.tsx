@@ -10,6 +10,7 @@ export default function ServiceWorkerProvider({ children }: IDefaultProps) {
 				.register(SERVICE_WORKER_PATH, {
 					type: "module",
 					updateViaCache: "all",
+					scope: '/'
 				})
 				.then(registration => {
 					sw = registration;
