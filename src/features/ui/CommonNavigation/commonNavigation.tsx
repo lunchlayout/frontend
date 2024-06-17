@@ -15,7 +15,7 @@ export default function CommonNavigation({
 		close: drawerClose,
 	} = useModal();
 	const handleDrawerClose = () => drawerClose();
-	console.log(isDrawerShown);
+
 	const NavigationPanel = (
 		<>
 			<nav className={className}>
